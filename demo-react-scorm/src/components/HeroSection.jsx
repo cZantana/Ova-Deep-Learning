@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext }  from "react";
 import Button from "./Button";
-import { useSCORM } from "../hooks/useSCORM";
+import { SCORMContext } from "../context/SCORMContext";
 import { useNavigate } from "react-router-dom";
 
+
 const HeroSection = () => {
-  const scormStatus = useSCORM();
+  const { scormStatus } = useContext(SCORMContext);
   const navigate = useNavigate();
 
   return (

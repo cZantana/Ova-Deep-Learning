@@ -1,6 +1,6 @@
 // src/pages/Quiz1.jsx
 import React, { useState } from 'react';
-import pipwerks from 'pipwerks-scorm-api-wrapper';
+import { updateQuizScore } from '../utils/scormManager';
 
 const questions = [
   {
@@ -68,23 +68,17 @@ const Quiz1 = () => {
 
   // Maneja el paso a la siguiente pregunta
   const handleNextQuestion = () => {
-    // Evalúa la respuesta actual
     if (selectedOption === questions[currentQuestion].correct) {
       setScore(prevScore => prevScore + 1);
     }
 
-    // Si es la última pregunta, finaliza el quiz
     if (currentQuestion === questions.length - 1) {
       setQuizFinished(true);
-      // Calcula el puntaje final (incluyendo la respuesta actual)
       const finalScore = score + (selectedOption === questions[currentQuestion].correct ? 1 : 0);
       
-      // Guarda la calificación parcial en suspend_data
-      const quizData = { quiz1: finalScore };
-      pipwerks.SCORM.set("cmi.suspend_data", JSON.stringify(quizData));
-      pipwerks.SCORM.commit();
+      // Actualizar la nota del quiz usando la función centralizada
+      updateQuizScore("quiz1", finalScore);
     } else {
-      // Pasa a la siguiente pregunta
       setCurrentQuestion(prev => prev + 1);
       setSelectedOption(null);
     }
