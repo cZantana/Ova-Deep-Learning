@@ -1,6 +1,6 @@
 import React, { useContext }  from "react";
 import Button from "./Button";
-import { SCORMContext } from "../context/SCORMContext";
+import  SCORMContext  from "../context/SCORMContext";
 import { useNavigate } from "react-router-dom";
 
 
@@ -34,6 +34,7 @@ const HeroSection = () => {
             <Button
               text="Talk to sales"
               type="secondary"
+              onClick={() => navigate("/Quiz2")}
               className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
             />
           </div>
