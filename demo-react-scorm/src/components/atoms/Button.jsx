@@ -11,31 +11,31 @@ const Button = ({
   onClick,
   ...props
 }) => {
-  // Clases base comunes para todos los botones
+  // Base classes common for all buttons
   const baseClasses =
-    "inline-flex items-center justify-center font-semibold rounded-lg transition duration-300 focus:outline-none";
+    "inline-flex items-center justify-center font-semibold rounded-full transition duration-300 focus:outline-none";
 
-  // Definir variantes (colores)
+  // Define color variants
   let variantClasses = "";
   if (type === "primary") {
     variantClasses =
       "bg-[var(--color-primary)] text-white hover:bg-[var(--color-pink-800)] focus:ring-2 focus:ring-[var(--color-pink-500)]";
   } else if (type === "secondary") {
     variantClasses =
-      "border border-[var(--color-primary)] text-[var(--color-primary)] bg-transparent hover:bg-[var(--color-pink-500)] hover:text-white focus:ring-2 focus:ring-[var(--color-pink-500)]";
+      "transition-all bg-[var(--color-primary)] border-0 border-[var(--color-primary)] text-[var(--color-neutral-300)] hover:bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-blue-500)] hover:text-white focus:ring-2 focus:ring-[var(--color-pink-500)]";
   } else if (type === "tertiary") {
     variantClasses =
-      "bg-transparent border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white";
+      "bg-transparent border-1 border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white";
   }
 
-  // TamaÃ±os
+  // Sizes
   const sizeClasses = {
-    sm: "py-2 px-4 text-sm",
-    md: "py-3 px-6 text-base",
-    lg: "py-4 px-8 text-lg",
+    sm: "py-1 px-4 text-sm",
+    md: "py-1.5 px-6 text-base",
+    lg: "py-3 px-8 text-lg",
   };
 
-  // Estado Loading
+  // Loading state
   let loadingClasses = loading
     ? "relative pointer-events-none opacity-70"
     : "";
@@ -43,7 +43,7 @@ const Button = ({
     ? "opacity-50 cursor-not-allowed"
     : "";
 
-  // Clases para iconos
+  // Icon classes
   let iconClasses = "";
   if (icon) {
     iconClasses =
@@ -63,8 +63,8 @@ const Button = ({
         <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
       )}
       {icon && iconPosition === "left" && <span>{icon}</span>}
-      {text}
-      {icon && iconPosition === "right" && <span>{icon}</span>}
+      <span className="sm:text-md md:text-lg font-medium">{text}</span>
+      {icon && iconPosition === "right" && <span className="text-xl">{icon}</span>}
     </button>
   );
 };

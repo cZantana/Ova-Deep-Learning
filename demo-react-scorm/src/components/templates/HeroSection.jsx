@@ -1,6 +1,6 @@
 import React, { useContext }  from "react";
-import Button from "./Button";
-import  SCORMContext  from "../context/SCORMContext";
+import Button from "../atoms/Button";
+import  SCORMContext  from "../../context/SCORMContext";
 import { useNavigate } from "react-router-dom";
 
 
@@ -24,21 +24,9 @@ const HeroSection = () => {
             multimedia, actividades semanales y evaluación automática en tiempo
             real, para el aprendizaje autónomo.
           </p>
-          <div className="mt-6 flex space-x-4">
+          <div className="mt-6 md:flex space-x-4">
             <Button
-              text="Quiz 1"
-              type="tertiary"
-              onClick={() => navigate("/Quiz1")}
-              // className="bg-[var(--color-primary)] hover:bg-[var(--color-pink-700)] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
-            />
-            <Button
-              text="Quiz 2"
-              type="tertiary"
-              onClick={() => navigate("/Quiz2")}
-              // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
-            />
-            <Button
-              text="Notas"
+              text="Continuar →"
               type="primary"
               onClick={() => navigate("/Notas")}
               // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
