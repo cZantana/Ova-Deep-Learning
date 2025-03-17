@@ -1,6 +1,8 @@
 // src/utils/scormManager.js
 import pipwerks from 'pipwerks-scorm-api-wrapper';
+import quizzesConfig from '../config/quizzes'; // Importa la configuración de quizzes
 
+// Recupera y parsea el suspend_data; si está vacío, retorna {}
 export const getSuspendData = () => {
   const data = pipwerks.SCORM.get("cmi.suspend_data");
   try {
@@ -11,6 +13,7 @@ export const getSuspendData = () => {
   }
 };
 
+// Actualiza la nota de un quiz específico solo si la nueva es mayor o no existe
 export const updateQuizScore = (quizKey, score) => {
   const data = getSuspendData();
   if (data[quizKey] === undefined || score > data[quizKey]) {
@@ -25,54 +28,66 @@ export const updateQuizScore = (quizKey, score) => {
 };
 
 // Finaliza el curso: calcula la nota final y actualiza los datos en el LMS.
-export const finalizeCourse = (weights = { quiz1: 0.3, quiz2: 0.7 }) => {
+// weights: objeto con la asignación de peso para cada quiz (ej. { quiz1: 0.3, quiz2: 0.7 })
+// Se asume que la suma de todos los pesos en weights es 1, si se han presentado todos.
+export const finalizeCourse = () => {
   const data = getSuspendData();
-  const totalQuizzes = 2;
-  const quizzesPresentados = [];
-  if (data.quiz1 != null) quizzesPresentados.push("quiz1");
-  if (data.quiz2 != null) quizzesPresentados.push("quiz2");
-  const completados = quizzesPresentados.length;
+  const quizKeys = quizzesConfig.map(quiz => quiz.id);
+  const totalQuizzes = quizKeys.length;
+  
+  // Crea un objeto "weights" a partir de quizzesConfig
+  const weights = quizzesConfig.reduce((acc, quiz) => {
+    acc[quiz.id] = quiz.weight;
+    return acc;
+  }, {});
 
+  // Filtra los quizzes que se han presentado (no nulos)
+  const quizzesCompleted = quizKeys.filter(key => data[key] != null);
+  const completados = quizzesCompleted.length;
+  
   // Actualiza el progreso en cmi.comments (si el LMS lo soporta)
   pipwerks.SCORM.set("cmi.comments", `${completados} completados de ${totalQuizzes}`);
 
-  // Obtiene la versión SCORM (por ejemplo, "2004" o "1.2")
-  const version = pipwerks.SCORM.version;
-
-  if (completados < totalQuizzes) {
-    // Si solo se ha presentado un quiz, usamos esa nota parcial como nota final
-    let partialScore = 0;
-    if (data.quiz1 != null && data.quiz2 == null) {
-      partialScore = data.quiz1;
-    } else if (data.quiz2 != null && data.quiz1 == null) {
-      partialScore = data.quiz2;
+  // Calcula la nota final usando solo los quizzes presentados.
+  let weightedSum = 0;
+  let sumWeights = 0;
+  quizKeys.forEach(key => {
+    if (data[key] != null) {
+      weightedSum += data[key] * weights[key];
+      sumWeights += weights[key];
     }
-    pipwerks.SCORM.set("cmi.core.score.raw", partialScore.toString());
+  });
+  
+  // Si ningún quiz fue presentado, asigna 0.
+  let finalScore = 0;
+  if (sumWeights > 0) {
+    finalScore = weightedSum / sumWeights;
+  }
+  
+  // Actualiza el puntaje en el LMS.
+  pipwerks.SCORM.set("cmi.core.score.raw", finalScore.toString());
+  
+  const version = pipwerks.SCORM.version; // "2004" o "1.2"
+  
+  if (completados < totalQuizzes) {
+    // Si no se han presentado todos los quizzes:
     pipwerks.SCORM.set("cmi.core.lesson_status", "incomplete");
     if (version === "2004") {
-      pipwerks.SCORM.set("cmi.success_status", partialScore >= 3.75 ? "passed" : "failed");
+      pipwerks.SCORM.set("cmi.success_status", finalScore >= 3.75 ? "passed" : "failed");
     }
-    if (typeof pipwerks.SCORM.save === "function") {
-      pipwerks.SCORM.save();
-    }
-    return partialScore;
   } else {
-    // Si se han presentado ambos quizzes, calcular la nota final
-    const finalScore = (data.quiz1 * weights.quiz1) + (data.quiz2 * weights.quiz2);
-    pipwerks.SCORM.set("cmi.core.score.raw", finalScore.toString());
-    
+    // Si se han presentado todas las actividades:
     if (version === "2004") {
-      // En SCORM 2004, se declara el curso como completado y se define el estado de éxito.
       pipwerks.SCORM.set("cmi.core.lesson_status", "completed");
       pipwerks.SCORM.set("cmi.success_status", finalScore >= 3.75 ? "passed" : "failed");
     } else {
-      // En SCORM 1.2, se declara directamente el estado como "passed" o "failed".
       pipwerks.SCORM.set("cmi.core.lesson_status", finalScore >= 3.75 ? "passed" : "failed");
     }
-    
-    if (typeof pipwerks.SCORM.save === "function") {
-      pipwerks.SCORM.save();
-    }
-    return finalScore;
   }
+  
+  if (typeof pipwerks.SCORM.save === "function") {
+    pipwerks.SCORM.save();
+  }
+  
+  return finalScore;
 };

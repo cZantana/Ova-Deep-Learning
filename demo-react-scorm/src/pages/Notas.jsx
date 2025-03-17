@@ -2,6 +2,10 @@
 import React, { useEffect, useState } from 'react';
 import { getSuspendData, finalizeCourse } from '../utils/scormManager';
 import pipwerks from 'pipwerks-scorm-api-wrapper';
+import quizzesConfig from '../config/quizzes';
+
+// Declaramos un objeto de pesos para los quizzes.
+// Por ejemplo, para tres quizzes:
 
 const Notas = () => {
   const [data, setData] = useState({});
@@ -10,48 +14,39 @@ const Notas = () => {
   const [progressText, setProgressText] = useState('');
 
   useEffect(() => {
-    // Recupera los datos almacenados en suspend_data
+    // Recupera los datos almacenados en cmi.suspend_data
     const suspendData = getSuspendData();
     setData(suspendData);
 
-    const totalQuizzes = 2;
-    let quizzesCompleted = 0;
-    if (suspendData.quiz1 != null) quizzesCompleted++;
-    if (suspendData.quiz2 != null) quizzesCompleted++;
-    setProgressText(`${quizzesCompleted} completados de ${totalQuizzes}`);
+    // Obtiene la cantidad total de quizzes a partir del objeto weights
+    const quizKeys = quizzesConfig.map(quiz => quiz.id);
+    const totalQuizzes = quizKeys.length;
+
+    // Cuenta cuántos quizzes tienen nota (no nulos)
+    const completedCount = quizKeys.filter(key => suspendData[key] != null).length;
+    setProgressText(`${completedCount} completados de ${totalQuizzes}`);
 
     // Actualiza el progreso en el LMS (por ejemplo, en cmi.comments)
-    pipwerks.SCORM.set("cmi.comments", `${quizzesCompleted} completados de ${totalQuizzes}`);
+    pipwerks.SCORM.set("cmi.comments", `${completedCount} completados de ${totalQuizzes}`);
     if (typeof pipwerks.SCORM.save === "function") {
       pipwerks.SCORM.save();
     }
 
-    if (quizzesCompleted === 0) {
-      // No hay quizzes presentados
+    // Calcula la nota final según los quizzes presentados:
+    // Si no se han presentado todos, se usa el promedio ponderado normalizado y se marca "incomplete"
+    // Si se han presentado todos, se calcula la nota final completa y se marca "completed" (y success se define en función del umbral)
+    if (completedCount === 0) {
       setCourseStatus("incomplete");
       setFinalScore(null);
-    } else if (quizzesCompleted < totalQuizzes) {
-      // Si solo se presenta un quiz, usamos esa nota parcial como nota final
-      let partialScore = suspendData.quiz1 != null ? suspendData.quiz1 : suspendData.quiz2;
-      pipwerks.SCORM.set("cmi.core.score.raw", partialScore.toString());
-      // Se declara el curso como "incomplete" porque no se han presentado todos los quizzes.
-      pipwerks.SCORM.set("cmi.core.lesson_status", "incomplete");
-      if (typeof pipwerks.SCORM.save === "function") {
-        pipwerks.SCORM.save();
-      }
+    } else if (completedCount < totalQuizzes) {
+      // Usamos finalizeCourse que ya está diseñado para calcular el promedio normalizado
+      const partialScore = finalizeCourse();
       setFinalScore(partialScore);
       setCourseStatus("incomplete");
     } else {
-      // Si se han presentado ambos quizzes, calcula la nota final usando Quiz1 30% y Quiz2 70%
-      const score = finalizeCourse({ quiz1: 0.3, quiz2: 0.7 });
-      if (score !== null) {
-        setFinalScore(score);
-        // finalizeCourse ya actualiza el LMS:
-        // - Si score >= 3.75, cmi.success_status se declara "passed"
-        // - De lo contrario, "failed"
-        // Además, cmi.core.lesson_status se declara "completed"
-        setCourseStatus(score >= 3.75 ? "passed" : "failed");
-      }
+      const score = finalizeCourse();
+      setFinalScore(score);
+      setCourseStatus(score >= 3.75 ? "passed" : "failed");
     }
   }, []);
 
@@ -64,14 +59,11 @@ const Notas = () => {
         </p>
       </div>
       <div className="partial-grades mb-4">
-        <p>
-          <strong>Quiz 1:</strong>{" "}
-          {data.quiz1 != null ? data.quiz1 : "No presentado"}
-        </p>
-        <p>
-          <strong>Quiz 2:</strong>{" "}
-          {data.quiz2 != null ? data.quiz2 : "No presentado"}
-        </p>
+        {quizzesConfig.map((quiz) => (
+          <p key={quiz.id}>
+            <strong>{quiz.title}:</strong> {data[quiz.id] != null ? data[quiz.id] : "No presentado"}
+          </p>
+        ))}
       </div>
       <div className="final-grade mb-4">
         {finalScore !== null ? (

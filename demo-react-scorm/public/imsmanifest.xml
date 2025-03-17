@@ -4,7 +4,7 @@
     xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2">
   <metadata>
     <schema>ADL SCORM</schema>
-    <schemaversion>1.2</schemaversion>
+    <schemaversion>2004</schemaversion>
   </metadata>
   <organizations default="org1">
     <organization identifier="org1">
