@@ -26,16 +26,22 @@ const HeroSection = () => {
           </p>
           <div className="mt-6 flex space-x-4">
             <Button
-              text="Empieza ahora →"
-              type="primary"
+              text="Quiz 1"
+              type="tertiary"
               onClick={() => navigate("/Quiz1")}
-              className="bg-[var(--color-primary)] hover:bg-[var(--color-pink-700)] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
+              // className="bg-[var(--color-primary)] hover:bg-[var(--color-pink-700)] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
             />
             <Button
-              text="Talk to sales"
-              type="secondary"
+              text="Quiz 2"
+              type="tertiary"
               onClick={() => navigate("/Quiz2")}
-              className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+              // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+            />
+            <Button
+              text="Notas"
+              type="primary"
+              onClick={() => navigate("/Notas")}
+              // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
             />
           </div>
           {/* Estado de SCORM */}
