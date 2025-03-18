@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Button from "../atoms/Button";
 import SCORMContext from "../../context/SCORMContext";
 import { useNavigate } from "react-router-dom";
-import quizzes from '../../config/Quizzes';
+import { quizzes } from '../../config/Quizzes';
 
 
 const HeroSection = () => {

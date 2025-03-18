@@ -1,6 +1,6 @@
 // src/utils/scormManager.js
 import pipwerks from 'pipwerks-scorm-api-wrapper';
-import quizzesConfig from '../config/Quizzes'; // Importa la configuración de quizzes
+import { quizzes } from '../config/Quizzes'; // Importa la configuración de quizzes
 
 // Recupera y parsea el suspend_data; si está vacío, retorna {}
 export const getSuspendData = () => {
@@ -32,11 +32,11 @@ export const updateQuizScore = (quizKey, score) => {
 // Se asume que la suma de todos los pesos en weights es 1, si se han presentado todos.
 export const finalizeCourse = () => {
   const data = getSuspendData();
-  const quizKeys = quizzesConfig.map(quiz => quiz.id);
+  const quizKeys = quizzes.map(quiz => quiz.id);
   const totalQuizzes = quizKeys.length;
   
-  // Crea un objeto "weights" a partir de quizzesConfig
-  const weights = quizzesConfig.reduce((acc, quiz) => {
+  // Crea un objeto "weights" a partir de quizzes
+  const weights = quizzes.reduce((acc, quiz) => {
     acc[quiz.id] = quiz.weight;
     return acc;
   }, {});
@@ -102,10 +102,10 @@ export const updateLastQuiz = (newQuizId) => {
   let currentBookmark = pipwerks.SCORM.get(bookmarkField);
   
   // Obtiene el índice del nuevo quiz según la configuración
-  const newIndex = quizzesConfig.findIndex(quiz => quiz.id === newQuizId);
+  const newIndex = quizzes.findIndex(quiz => quiz.id === newQuizId);
   let currentIndex = -1;
   if (currentBookmark) {
-    currentIndex = quizzesConfig.findIndex(quiz => quiz.id === currentBookmark);
+    currentIndex = quizzes.findIndex(quiz => quiz.id === currentBookmark);
   }
   
   // Si no hay bookmark actual o el nuevo quiz es de orden mayor, se actualiza

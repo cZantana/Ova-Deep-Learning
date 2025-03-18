@@ -2,15 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import { getSuspendData, finalizeCourse } from '../utils/scormManager';
 import pipwerks from 'pipwerks-scorm-api-wrapper';
-import quizzesConfig from '../config/Quizzes';
+import { quizzes } from '../config/Quizzes';
 import Button from '../components/atoms/Button';
 import { useNavigate } from "react-router-dom";
+import Calificaciones from '../components/templates/Calificaciones';
+import Navbar from '../components/organisms/Navbar';
 
 // Declaramos un objeto de pesos para los quizzes.
 // Por ejemplo, para tres quizzes:
 
 const Notas = () => {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
   const [data, setData] = useState({});
   const [finalScore, setFinalScore] = useState(null);
   const [courseStatus, setCourseStatus] = useState('');
@@ -22,7 +24,7 @@ const Notas = () => {
     setData(suspendData);
 
     // Obtiene la cantidad total de quizzes a partir del objeto weights
-    const quizKeys = quizzesConfig.map(quiz => quiz.id);
+    const quizKeys = quizzes.map(quiz => quiz.id);
     const totalQuizzes = quizKeys.length;
 
     // Cuenta cuántos quizzes tienen nota (no nulos)
@@ -53,48 +55,61 @@ const Notas = () => {
     }
   }, []);
 
+  // return (
+  //   <div className="notas-container p-4">
+  //     <h2 className="text-2xl font-bold mb-4">Notas Parciales y Final</h2>
+  //     <div className="progress mb-4">
+  //       <p>
+  //         <strong>Progreso:</strong> {progressText}
+  //       </p>
+  //     </div>
+  //     <div className="partial-grades mb-4">
+  //       {quizzes.map((quiz) => (
+  //         <p key={quiz.id}>
+  //           <strong>{quiz.title}:</strong> {data[quiz.id] != null ? data[quiz.id] : "No presentado"}
+  //         </p>
+  //       ))}
+  //     </div>
+  //     <div className="final-grade mb-4">
+  //       {finalScore !== null ? (
+  //         <p>
+  //           <strong>Nota Final:</strong> {finalScore.toFixed(2)} (sobre 5)
+  //         </p>
+  //       ) : (
+  //         <p>
+  //           La nota final no se puede calcular porque no se han presentado todos
+  //           los quizzes.
+  //         </p>
+  //       )}
+  //     </div>
+  //     <div className="course-status">
+  //       {courseStatus === "incomplete" ? (
+  //         <p className="text-red-600 font-bold">Curso Incompleto</p>
+  //       ) : courseStatus === "passed" ? (
+  //         <p className="text-green-600 font-bold">Curso Aprobado</p>
+  //       ) : courseStatus === "failed" ? (
+  //         <p className="text-red-600 font-bold">Curso Reprobado</p>
+  //       ) : null}
+  //     </div>
+  //     <Button
+  //             text="Volver"
+  //             type="primary"
+  //             onClick={() => navigate("/")}
+  //           // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+  //           />
+  //     <Calificaciones/>
+  //   </div>
+
+  // );
   return (
-    <div className="notas-container p-4">
-      <h2 className="text-2xl font-bold mb-4">Notas Parciales y Final</h2>
-      <div className="progress mb-4">
-        <p>
-          <strong>Progreso:</strong> {progressText}
-        </p>
-      </div>
-      <div className="partial-grades mb-4">
-        {quizzesConfig.map((quiz) => (
-          <p key={quiz.id}>
-            <strong>{quiz.title}:</strong> {data[quiz.id] != null ? data[quiz.id] : "No presentado"}
-          </p>
-        ))}
-      </div>
-      <div className="final-grade mb-4">
-        {finalScore !== null ? (
-          <p>
-            <strong>Nota Final:</strong> {finalScore.toFixed(2)} (sobre 5)
-          </p>
-        ) : (
-          <p>
-            La nota final no se puede calcular porque no se han presentado todos
-            los quizzes.
-          </p>
-        )}
-      </div>
-      <div className="course-status">
-        {courseStatus === "incomplete" ? (
-          <p className="text-red-600 font-bold">Curso Incompleto</p>
-        ) : courseStatus === "passed" ? (
-          <p className="text-green-600 font-bold">Curso Aprobado</p>
-        ) : courseStatus === "failed" ? (
-          <p className="text-red-600 font-bold">Curso Reprobado</p>
-        ) : null}
-      </div>
-      <Button
-              text="Volver"
-              type="primary"
-              onClick={() => navigate("/")}
-            // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
-            />
+    <div className="min-h-screen bg-gray-50">
+
+      {/* Barra de navegación */}
+      <Navbar />
+
+      {/* Calificaciones */}
+      <Calificaciones />
+
     </div>
   );
 };

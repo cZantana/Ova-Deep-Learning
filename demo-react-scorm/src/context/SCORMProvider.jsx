@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import pipwerks from 'pipwerks-scorm-api-wrapper';
 import SCORMContext from './SCORMContext';
 import { finalizeCourse } from '../utils/scormManager';
-import quizzesConfig from '../config/Quizzes';
+import { quizzes } from '../config/Quizzes';
 
 
 const SCORMProvider = ({ children }) => {
@@ -26,7 +26,7 @@ const SCORMProvider = ({ children }) => {
       data = {};
     }
     // Asegurarse de tener los quizzes definidos (usando la configuración central)
-    quizzesConfig.forEach(quiz => {
+    quizzes.forEach(quiz => {
       if (data[quiz.id] === undefined) {
         data[quiz.id] = null;
       }
@@ -77,7 +77,7 @@ const SCORMProvider = ({ children }) => {
       // } catch {
       //   data = {};
       // }
-      // quizzesConfig.forEach(quiz => {
+      // quizzes.forEach(quiz => {
       //   if (data[quiz.id] === undefined) {
       //     data[quiz.id] = null;
       //   }
