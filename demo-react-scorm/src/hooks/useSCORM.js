@@ -1,7 +1,7 @@
 // src/hooks/useSCORM.js
 import { useEffect, useState } from 'react';
 import pipwerks from 'pipwerks-scorm-api-wrapper';
-import quizzesConfig from '../config/quizzes'; // Importa la configuración central de quizzes
+import quizzesConfig from '../config/Quizzes'; // Importa la configuración central de quizzes
 
 export function useSCORM() {
   const [scormStatus, setScormStatus] = useState('No inicializado');

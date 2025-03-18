@@ -1,6 +1,6 @@
 // src/utils/scormManager.js
 import pipwerks from 'pipwerks-scorm-api-wrapper';
-import quizzesConfig from '../config/quizzes'; // Importa la configuración de quizzes
+import quizzesConfig from '../config/Quizzes'; // Importa la configuración de quizzes
 
 // Recupera y parsea el suspend_data; si está vacío, retorna {}
 export const getSuspendData = () => {
@@ -90,4 +90,31 @@ export const finalizeCourse = () => {
   }
   
   return finalScore;
+};
+
+// Función para actualizar el bookmark (último quiz realizado)
+export const updateLastQuiz = (newQuizId) => {
+  // Determina el campo de bookmark según la versión SCORM
+  const version = pipwerks.SCORM.version;
+  const bookmarkField = version === "2004" ? "cmi.location" : "cmi.core.lesson_location";
+  
+  // Obtiene el bookmark actual
+  let currentBookmark = pipwerks.SCORM.get(bookmarkField);
+  
+  // Obtiene el índice del nuevo quiz según la configuración
+  const newIndex = quizzesConfig.findIndex(quiz => quiz.id === newQuizId);
+  let currentIndex = -1;
+  if (currentBookmark) {
+    currentIndex = quizzesConfig.findIndex(quiz => quiz.id === currentBookmark);
+  }
+  
+  // Si no hay bookmark actual o el nuevo quiz es de orden mayor, se actualiza
+  if (currentIndex === -1 || newIndex > currentIndex) {
+    pipwerks.SCORM.set(bookmarkField, newQuizId);
+    if (typeof pipwerks.SCORM.save === "function") {
+      pipwerks.SCORM.save();
+    } else {
+      console.warn("SCORM.save no está disponible.");
+    }
+  }
 };

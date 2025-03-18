@@ -1,6 +1,8 @@
 // src/pages/Quiz1.jsx
-import React, { useState } from 'react';
-import { updateQuizScore } from '../utils/scormManager';
+import React, { useState, useContext } from 'react';
+import { updateQuizScore, updateLastQuiz } from '../utils/scormManager';
+import SCORMContext from "../context/SCORMContext";
+
 
 const questions = [
   {
@@ -60,6 +62,8 @@ const Quiz1 = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
+  const { refreshSCORMData } = useContext(SCORMContext);
+
 
   // Maneja la selección de opción
   const handleOptionClick = (index) => {
@@ -78,6 +82,10 @@ const Quiz1 = () => {
       
       // Actualizar la nota del quiz usando la función centralizada
       updateQuizScore("quiz1", finalScore);
+      // Actualiza el bookmark para indicar que el último quiz realizado es "quiz1"
+      // Esto se actualizará solo si "quiz1" es de orden mayor que el bookmark actual.
+      updateLastQuiz("quiz1");
+      refreshSCORMData();
     } else {
       setCurrentQuestion(prev => prev + 1);
       setSelectedOption(null);

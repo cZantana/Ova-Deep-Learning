@@ -2,12 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import { getSuspendData, finalizeCourse } from '../utils/scormManager';
 import pipwerks from 'pipwerks-scorm-api-wrapper';
-import quizzesConfig from '../config/quizzes';
+import quizzesConfig from '../config/Quizzes';
+import Button from '../components/atoms/Button';
+import { useNavigate } from "react-router-dom";
 
 // Declaramos un objeto de pesos para los quizzes.
 // Por ejemplo, para tres quizzes:
 
 const Notas = () => {
+  const navigate = useNavigate();  
   const [data, setData] = useState({});
   const [finalScore, setFinalScore] = useState(null);
   const [courseStatus, setCourseStatus] = useState('');
@@ -86,6 +89,12 @@ const Notas = () => {
           <p className="text-red-600 font-bold">Curso Reprobado</p>
         ) : null}
       </div>
+      <Button
+              text="Volver"
+              type="primary"
+              onClick={() => navigate("/")}
+            // className="bg-[var(--color-neutral-500)] hover:bg-[var(--color-neutral-600)] text-[var(--color-neutral-900)] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+            />
     </div>
   );
 };
