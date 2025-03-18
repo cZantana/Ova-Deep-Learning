@@ -11,7 +11,7 @@ const CallToAction = () => {
   const quizConfig = quizzesConfig.find(q => q.id === lastQuiz);
 
   return (
-    <section className="bg-[var(--color-neutral-400)] py-12">
+    <section className="bg-[var(--color-neutral-500)] py-12">
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col md:flex-row items-center justify-between">
         {/* Columna de texto */}
         <div className="md:w-1/2">

@@ -1,11 +1,12 @@
 // src/pages/Home.jsx
 import React, { useContext, useEffect } from 'react';
+import SCORMContext from '../context/SCORMContext';
 
 import HeroSection from '../components/templates/HeroSection';
 import Navbar from '../components/organisms/Navbar';
 import CallToAction from '../components/templates/CallToAction';
+import CourseGrid from '../components/templates/CourseGrid';
 
-import SCORMContext from '../context/SCORMContext';
 
 export default function Home() {
   const { refreshSCORMData } = useContext(SCORMContext);
@@ -22,8 +23,11 @@ export default function Home() {
       {/* Sección de héroe */}
       <HeroSection />
 
-      {/* Sección de héroe */}
+      {/* Sección de llamada a la accion */}
       <CallToAction />
+
+      {/* Sección de llamada a la accion */}
+      <CourseGrid />
 
     </div>
   );
