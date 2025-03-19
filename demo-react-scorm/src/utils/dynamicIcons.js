@@ -1,5 +1,5 @@
 // DynamicIcons.js (o en el archivo donde definas weeksData)
-const iconModules = import.meta.glob("../assets/iconsemana*.svg", {
+const iconModules = import.meta.glob("../assets/cardicons/iconsemana*.svg", {
   eager: true,
   query: "?url",
   import: "default",
