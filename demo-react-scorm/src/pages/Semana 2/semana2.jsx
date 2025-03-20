@@ -6,11 +6,13 @@ import SemanaContent from "../../components/templates/SemanaContent";
 import S2_1 from "./s2.1";
 import S2_2 from "./s2.2";
 import S2_3 from "./s2.3";
+import S2_4 from "./s2.4";
+
 
 const lastQuiz = getLastQuiz();
 const semana = "semana2_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S2_1, S2_2, S2_3];
+const docs = [S2_1, S2_2, S2_3, S2_4];
 
 // Datos del menú lateral para la semana
 const menuData = [
@@ -49,6 +51,16 @@ const menuData = [
       { title: "Entrenamiento", position: 62.55 },
       { title: "Pruebas Finales", position: 84.1 },
     ],
+  },
+  {
+    title: "Conjuntos de Datos en el Deep Learning",
+    docIndex: 3, // Asumiendo que es el cuarto documento en la lista
+    items: [
+      { title: "¿Qué son los Conjuntos de Datos Train, Dev y Test?", position: 5.0 },
+      { title: "Origen y Evolución del Concepto de Conjuntos de Datos", position: 8.0 },
+      { title: "Función y Propósito de Cada Conjunto de Datos", position: 11.0 },
+      { title: "Relevancias sobre los Conjuntos de Datos", position: 33.0 }
+    ]
   },
 ];
 
