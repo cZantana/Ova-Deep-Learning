@@ -1,8 +1,13 @@
 // Sidebar.jsx
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import SideAccordion from "../molecules/SideAccordion";
+import { updateLastQuiz } from '../../utils/scormManager';
+import SCORMContext from "../../context/SCORMContext";
 
-const Sidebar = ({ menuData, activeDocIndex, onSelectDoc }) => {
+const Sidebar = ({ menuData, weekId, activeDocIndex, onSelectDoc }) => {
+
+  const { refreshSCORMData } = useContext(SCORMContext);
+
   // Controlamos qué acordeón está expandido (solo uno a la vez)
   const initialIndex = menuData.findIndex(
     (section) => section.docIndex === activeDocIndex
@@ -89,7 +94,11 @@ const Sidebar = ({ menuData, activeDocIndex, onSelectDoc }) => {
               onSelectDoc(section.docIndex);
               setTimeout(() => {
                 scrollToSection(0);
+                updateLastQuiz(`${weekId}_${index}`);
+                console.log(`${weekId}_${index}`);
+                refreshSCORMData();
               }, 500);
+
               // En mobile, al seleccionar se cierra el sidebar
               setIsOpen(True);
             }}

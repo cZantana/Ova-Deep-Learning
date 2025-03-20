@@ -1,11 +1,14 @@
-// src/pages/Semana1.jsx
+// src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
+import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
-import S2_1 from "./S2.1";
-import S2_2 from "./S2.2";
-import S2_3 from "./S2.3";
+import S2_1 from "./s2.1";
+import S2_2 from "./s2.2";
+import S2_3 from "./s2.3";
 
+const lastQuiz = getLastQuiz();
+const semana = "semana2_0";
 // Arreglo de documentos (componentes) a mostrar
 const docs = [S2_1, S2_2, S2_3];
 
@@ -49,15 +52,15 @@ const menuData = [
   },
 ];
 
-const Semana1 = () => {
+const Semana2 = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} />
+      <SemanaContent docs={docs} menuData={menuData} weekId={semana} />
     </div>
   );
 };
 
-export default Semana1;
+export default Semana2;

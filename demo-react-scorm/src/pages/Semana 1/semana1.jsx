@@ -1,12 +1,18 @@
 // src/pages/Semana1.jsx
 import React from "react";
 import { useState, useEffect } from "react";
+import { getLastQuiz } from "../../utils/scormManager";
 import Navbar from "../../components/organisms/Navbar";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S1_1 from "./S1.1";
 import S1_2 from "./S1.2";
 
+const lastQuiz = getLastQuiz();
+const weekId = "semana1_0";
+
 // Datos del menú lateral para la semana
+const docs = [S1_1, S1_2];
+
 const menuData = [
   {
     title: "Conceptos del Deep Learning",
@@ -53,19 +59,16 @@ const useScrollPercentage = () => {
   return scrollPercentage;
 };
 
-// Arreglo de documentos (componentes) a mostrar
-const docs = [S1_1, S1_2];
 
 const Semana1 = () => {
   const scrollPercentage = useScrollPercentage();
-  console.log(scrollPercentage);
   
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} />
+      <SemanaContent docs={docs} menuData={menuData} weekId={weekId}/>
     </div>
   );
 };

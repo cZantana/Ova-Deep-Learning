@@ -8,13 +8,23 @@ import Sidebar from "../organisms/Sidebar"; // Ajusta la ruta según tu estructu
  *  - docs: un arreglo de componentes (por ejemplo, [S1_1, S1_2, ...])
  *  - menuData: la data para el sidebar.
  */
-const SemanaContent = ({ docs, menuData }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const SemanaContent = ({ docs, menuData, weekId }) => {
+
+  const initialIndex =
+  weekId && weekId.includes('_')
+    ? parseInt(weekId.split('_')[1], 10)
+    : 0;
+
+    const week = weekId && weekId.includes('_')
+  ? weekId.split('_')[0]
+  : weekId;
+
+  const [activeIndex, setActiveIndex] = useState(initialIndex);
 
   return (
     <section className="bg-[var(--color-neutral-500)] min-h-screen flex">
       {/* Sidebar a la izquierda */}
-      <Sidebar menuData={menuData} onSelectDoc={setActiveIndex} />
+      <Sidebar menuData={menuData} weekId={week} onSelectDoc={setActiveIndex} />
 
       {/* Área de documentos en slider */}
       <div className="relative flex-1 overflow-hidden py-6">

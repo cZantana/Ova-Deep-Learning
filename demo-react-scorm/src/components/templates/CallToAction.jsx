@@ -1,14 +1,22 @@
 import React, {useContext} from "react";
 import Button from "../atoms/Button";
 import SCORMContext from "../../context/SCORMContext";
-import { quizzes } from '../../config/Quizzes';
+import { weeksData } from '../../config/Quizzes';
 import { useNavigate } from "react-router-dom";
 
 
 const CallToAction = () => {
   const navigate = useNavigate();  
   const { scormStatus, lastQuiz } = useContext(SCORMContext);
-  const quizConfig = quizzes.find(q => q.id === lastQuiz);
+  const initialIndex =
+  lastQuiz && lastQuiz.includes('_')
+    ? parseInt(lastQuiz.split('_')[1], 10)
+    : 0;
+
+    const week = lastQuiz && lastQuiz.includes('_')
+  ? lastQuiz.split('_')[0]
+  : lastQuiz;
+  const quizConfig = weeksData.find(q => q.id === week);
 
   return (
     <section className="bg-[var(--color-neutral-500)] py-12">
@@ -17,7 +25,7 @@ const CallToAction = () => {
         <div className="md:w-1/2 ">
           <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] flex text-center sm:text-left">
           {lastQuiz && quizConfig ? (
-          <p>Continuar Con: {quizConfig.title}</p>
+          <p>Continuar Con: {quizConfig.description}</p>
           ) : (
             <p>Aún no has realizado ninguna actividad.</p>
           )}
@@ -32,14 +40,14 @@ const CallToAction = () => {
               
             </div>
             <Button
-              text={lastQuiz ? (
+              text={lastQuiz == null ? (
                 <p>Continuar</p>
               ) : (
                 <p>Empezar viaje</p>
               )} 
               type="tertiary" 
               onClick={() => navigate(lastQuiz ? (
-                quizConfig.route
+                quizConfig.link
               ) : (
                 ""
               ))} 

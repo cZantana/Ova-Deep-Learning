@@ -1,11 +1,19 @@
 import React  from "react";
 import { useNavigate } from "react-router-dom";
+import { updateLastQuiz } from '../../utils/scormManager';
+
 
 const SemanaCard = ({ semana, descripcion, iconoSrc, link }) => {
     const navigate = useNavigate();
+    const formatString = (str) => str.toLowerCase().replace(" ", "");
+    console.log(formatString(semana));
+  
     return (
       <div className="bg-[var(--color-neutral-500)] p-6 rounded-lg shadow-md max-w-sm text-LEFT hover:scale-105 transition duration-180 ease-in-out cursor-pointer" 
-        onClick={() => navigate((link))}>
+        onClick={() => {navigate((link))
+          updateLastQuiz(`${formatString(semana)}_0`);
+          refreshSCORMData();
+        }}>
         {/* Imagen del icono */}
         <div className="flex justify-left mb-4">
           <img src={iconoSrc} alt={`Icono Semana ${semana}`} className="w-10 h-10" />

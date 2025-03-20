@@ -2,6 +2,14 @@
 import pipwerks from 'pipwerks-scorm-api-wrapper';
 import { quizzes } from '../config/Quizzes'; // Importa la configuración de quizzes
 
+// En scormManager.js
+export const getLastQuiz = () => {
+  const version = pipwerks.SCORM.version;
+  const bookmarkField = version === "2004" ? "cmi.location" : "cmi.core.lesson_location";
+  const bookmark = pipwerks.SCORM.get(bookmarkField);
+  return bookmark;
+};
+
 // Recupera y parsea el suspend_data; si está vacío, retorna {}
 export const getSuspendData = () => {
   const data = pipwerks.SCORM.get("cmi.suspend_data");
