@@ -106,7 +106,7 @@ const imageGlobs = {
     if (!images) {
       throw new Error(`La carpeta para la key "${folderKey}" no existe en el mapeo.`);
     }
-    console.log(images);
+    // console.log(images);
   
     // Reemplaza las rutas de las imágenes en el HTML
     let processedHtml = rawHtml.replace(
@@ -151,6 +151,7 @@ const imageGlobs = {
     const cssToInsert = `
   span {
     background: transparent !important;
+    font-family: system-ui;
   }
   img {
     object-fit: contain;
