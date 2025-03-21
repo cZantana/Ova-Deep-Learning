@@ -1,0 +1,3460 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="S4.4%20Overfitting%20y%20Regularización_archivos/filelist.xml">
+<link rel=Edit-Time-Data
+href="S4.4%20Overfitting%20y%20Regularización_archivos/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>miguel mora</o:Author>
+  <o:LastAuthor>Miguel Angel Mora Ramirez</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>4</o:TotalTime>
+  <o:Created>2025-03-20T21:46:00Z</o:Created>
+  <o:LastSaved>2025-03-20T21:46:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2937</o:Words>
+  <o:Characters>16154</o:Characters>
+  <o:Lines>134</o:Lines>
+  <o:Paragraphs>38</o:Paragraphs>
+  <o:CharactersWithSpaces>19053</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData
+href="S4.4%20Overfitting%20y%20Regularización_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="S4.4%20Overfitting%20y%20Regularización_archivos/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES-CO</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:20.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	mso-font-kerning:0pt;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:16.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#434343;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h5
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h6
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:26.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:16.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	color:#666666;
+	mso-ansi-language:#000A;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;
+	mso-ansi-language:#000A;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	line-height:115%;}
+@page WordSection1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-page-numbers:1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:8795746;
+	mso-list-template-ids:-192362616;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1
+	{mso-list-id:110590895;
+	mso-list-template-ids:-2126991318;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2
+	{mso-list-id:130906234;
+	mso-list-template-ids:2056520522;}
+@list l2:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3
+	{mso-list-id:560677711;
+	mso-list-template-ids:-351876392;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4
+	{mso-list-id:657659190;
+	mso-list-template-ids:-44511538;}
+@list l4:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5
+	{mso-list-id:712778498;
+	mso-list-template-ids:-1931334922;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6
+	{mso-list-id:1091241993;
+	mso-list-template-ids:-411673394;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7
+	{mso-list-id:1550416607;
+	mso-list-template-ids:707159026;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8
+	{mso-list-id:1600481118;
+	mso-list-template-ids:-1263354452;}
+@list l8:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9
+	{mso-list-id:1602638139;
+	mso-list-template-ids:940497998;}
+@list l9:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10
+	{mso-list-id:1861889663;
+	mso-list-template-ids:-827194782;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11
+	{mso-list-id:1878001381;
+	mso-list-template-ids:1526228074;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12
+	{mso-list-id:1899854147;
+	mso-list-template-ids:-1027702618;}
+@list l12:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13
+	{mso-list-id:2011132686;
+	mso-list-template-ids:1772679182;}
+@list l13:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l13:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14
+	{mso-list-id:2057773085;
+	mso-list-template-ids:1424148970;}
+@list l14:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l14:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15
+	{mso-list-id:2138714460;
+	mso-list-template-ids:-1621978232;}
+@list l15:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l15:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+table.TableNormal
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ES-CO style='tab-interval:36.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_zf0lraafj09h"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:11.0pt;line-height:115%;color:black'>SEMANA 4<o:p></o:p></span></b></h3>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_k2lfr0umwpxa"></a><span class=SpellE><b style='mso-bidi-font-weight:
+normal'><span lang=es style='font-size:13.0pt;line-height:115%;color:black'>Overfitting</span></b></span><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt;
+line-height:115%;color:black'>, <span class=SpellE>Underfitting</span> y
+Regularización en Deep <span class=SpellE>Learning</span><o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es>Overfitting</span></b></span><span lang=es> (sobreajuste), <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Underfitting</b></span><b
+style='mso-bidi-font-weight:normal'> </b>(<span class=SpellE>infraajuste</span>)
+y <b style='mso-bidi-font-weight:normal'>Regularización</b> son conceptos
+fundamentales en el aprendizaje automático y el <span class=SpellE>deep</span> <span
+class=SpellE>learning</span>. Son cruciales para comprender cómo los modelos de
+<span class=SpellE>deep</span> <span class=SpellE>learning</span> aprenden de
+los datos y cómo generalizan a nuevos datos no vistos. A continuación, se </span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>proporciona una definición completa de
+cada uno, la matemática subyacente, su propósito, la necesidad de cada uno y su
+utilidad en diferentes contextos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="image3.png" o:spid="_x0000_i1036" type="#_x0000_t75"
+ style='width:451.5pt;height:239.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image001.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=602 height=319
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image002.gif" v:shapes="image3.png"><![endif]></span><b
+style='mso-bidi-font-weight:normal'><span lang=es><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><br>
+<b style='mso-bidi-font-weight:normal'>Imagen tomada de: </b><a
+href="https://www.freecodecamp.org/news/what-is-overfitting-machine-learning/"><span
+class=SpellE><span style='color:#1155CC'>What</span></span><span
+style='color:#1155CC'> <span class=SpellE>is</span> <span class=SpellE>Overfitting</span>
+in Machine <span class=SpellE>Learning</span>?</span></a></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_xkonbuyehrs3"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'>¿Qué es el <span
+class=SpellE>Underfitting</span>?<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es>Underfitting</span></b></span><span lang=es> se refiere a una situación
+en la que un modelo de machine <span class=SpellE>learning</span> no puede
+aprender adecuadamente a partir de los datos de entrenamiento. Esto sucede
+cuando el modelo es demasiado simple, lo que significa que tiene una capacidad
+limitada para capturar la complejidad de los datos. En otras palabras, el
+modelo &quot;subestima&quot; la relación entre las características de entrada y
+la variable de salida, resultando en predicciones imprecisas.</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><br>
+<span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image11.png"
+ o:spid="_x0000_i1035" type="#_x0000_t75" style='width:159pt;height:168.75pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image003.png"
+  o:title="" croptop="12723f" cropbottom="13595f" cropleft="5225f" cropright="37231f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=212 height=225
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image004.gif" v:shapes="image11.png"><![endif]></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://www.superannotate.com/blog/overfitting-and-underfitting-in-machine-learning"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Overfitting and
+underfitting in machine learning | <span class=SpellE>SuperAnnotate</span></span></a></span><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:12.0pt;
+line-height:115%;color:black;mso-ansi-language:EN-US'><o:p></o:p></span></b></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_b3jxe5ej9qx4"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'>Características del <span
+class=SpellE>Underfitting</span><o:p></o:p></span></b></h3>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l2 level1 lfo8'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Modelo Demasiado Simple</span></b><span
+     lang=es>: Un modelo que sufre de <span class=SpellE>underfitting</span>
+     generalmente tiene una estructura o capacidad limitada. Esto podría
+     deberse a un número insuficiente de parámetros (por ejemplo, pocas
+     neuronas en una red neuronal o un polinomio de bajo grado en la regresión
+     polinómica) o a la elección de un modelo que no es adecuado para los datos
+     (por ejemplo, usar un modelo lineal para datos no lineales).<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo8'><span class=SpellE><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Bias</span></b></span><b
+     style='mso-bidi-font-weight:normal'><span lang=es> Alto</span></b><span
+     lang=es>: Un modelo que subestima la relación en los datos generalmente
+     tiene un <span class=SpellE><b style='mso-bidi-font-weight:normal'>bias</b></span><b
+     style='mso-bidi-font-weight:normal'> (sesgo)</b> alto. El <span
+     class=SpellE>bias</span> alto indica que el modelo es incapaz de captar la
+     complejidad de los datos y hace suposiciones demasiado simplificadas sobre
+     la relación entre las entradas y la salida.<br style='mso-special-character:
+     line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo8'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Rendimiento Deficiente en Datos de Entrenamiento y
+     Prueba</span></b><span lang=es>: A diferencia del <span class=SpellE>overfitting</span>,
+     donde el modelo tiene un error de entrenamiento bajo, pero un error de
+     prueba alto en el <span class=SpellE>underfitting</span>, el modelo tiene
+     un error alto tanto en los datos de entrenamiento como en los de prueba.
+     Esto se debe a que el modelo no ha aprendido correctamente la estructura
+     de los datos.<br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l2 level1 lfo8'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Generalización
+     Insuficiente</span></b><span lang=es>: Un modelo que sufre de <span
+     class=SpellE>underfitting</span> no generaliza bien porque no aprende lo
+     suficiente de los datos de entrenamiento. Esto significa que el modelo
+     tiene un rendimiento consistentemente pobre en cualquier conjunto de
+     datos, ya que no ha captado los patrones subyacentes.</span></li>
+</ol>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_uis8b8cyxr2u"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'>¿Por Qué se Produce el <span
+class=SpellE>Underfitting</span>?<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <span class=SpellE>underfitting</span>
+ocurre por varias razones:</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l12 level1 lfo7'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Modelo Insuficientemente
+     Complejo</span></b><span lang=es>: Si la estructura del modelo es
+     demasiado simple para los datos, como usar una línea recta para un
+     conjunto de datos que sigue una curva compleja, el modelo no tendrá la
+     capacidad de ajustarse adecuadamente.</span></li>
+ <li class=MsoNormal style='mso-list:l12 level1 lfo7'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Demasiada Regularización</span></b><span lang=es>:
+     La regularización es una técnica para evitar el <span class=SpellE>overfitting</span>,
+     pero si se aplica en exceso, puede hacer que el modelo se vuelva demasiado
+     simple y conduzca al <span class=SpellE>underfitting</span>.</span></li>
+ <li class=MsoNormal style='mso-list:l12 level1 lfo7'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Pocos Datos de Entrenamiento</span></b><span
+     lang=es>: Si el modelo no tiene suficientes ejemplos de los cuales
+     aprender, puede ser incapaz de capturar la variabilidad y los patrones
+     complejos en los datos.</span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l12 level1 lfo7'><span
+     class=SpellE><b style='mso-bidi-font-weight:normal'><span lang=es>Hiperparámetros</span></b></span><b
+     style='mso-bidi-font-weight:normal'><span lang=es> Mal Ajustados</span></b><span
+     lang=es>: La elección incorrecta de <span class=SpellE>hiperparámetros</span>,
+     como una tasa de aprendizaje demasiado alta que impide la convergencia
+     adecuada, puede llevar al <span class=SpellE>underfitting</span>.</span></li>
+</ol>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_o1g4t5qarjpi"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'><o:p>&nbsp;</o:p></span></b></h3>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_6iizdteqim0m"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'><o:p>&nbsp;</o:p></span></b></h3>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_mcfcryd3zajk"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'>Cómo Evitar el <span
+class=SpellE>Underfitting</span><o:p></o:p></span></b></h3>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l8 level1 lfo3'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Aumentar la Complejidad
+     del Modelo</span></b><span lang=es>: Usar un modelo más complejo que tenga
+     la capacidad de aprender patrones más intrincados en los datos. Por
+     ejemplo, aumentar el número de neuronas o capas en una red neuronal.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l8 level1 lfo3'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Reducir la Regularización</span></b><span lang=es>:
+     Si se está utilizando regularización, puede ser útil reducir su intensidad
+     para permitir que el modelo se ajuste más a los datos.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l8 level1 lfo3'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Aumentar el Número de Épocas de Entrenamiento</span></b><span
+     lang=es>: Entrenar el modelo durante más tiempo para asegurarse de que
+     tenga la oportunidad de aprender suficientemente de los datos.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l8 level1 lfo3'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Añadir Más
+     Características Relevantes</span></b><span lang=es>: Incluir más
+     características que sean relevantes para la tarea de aprendizaje puede
+     ayudar al modelo a capturar mejor la relación entre las variables de
+     entrada y salida.</span></li>
+</ol>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_sx6wje3xbs4w"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:black'>¿Qué es <span
+class=SpellE>Overfitting</span>?<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es>Overfitting</span></b></span><span lang=es>, o sobreajuste, ocurre
+cuando un modelo de aprendizaje automático se ajusta demasiado a los datos de
+entrenamiento, capturando tanto los patrones reales como el ruido o las
+peculiaridades de esos datos específicos. Como resultado, el modelo aprende a
+memorizar los datos de entrenamiento en lugar de generalizar patrones a partir
+de ellos. Esto lleva a un rendimiento pobre cuando el modelo se enfrenta a
+nuevos datos que no ha visto antes.<span style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image5.png" o:spid="_x0000_i1034"
+ type="#_x0000_t75" style='width:160.5pt;height:166.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image003.png"
+  o:title="" croptop="12593f" cropbottom="14237f" cropleft="37122f"
+  cropright="5225f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=214 height=222
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image005.gif" v:shapes="image5.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'><br>
+Imagen <span class=SpellE>tomada</span> de: </span></b><span lang=es><a
+href="https://www.superannotate.com/blog/overfitting-and-underfitting-in-machine-learning"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Overfitting and
+underfitting in machine learning | <span class=SpellE>SuperAnnotate</span></span></a></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Matemáticamente</span></b><span
+lang=es>, el sobre ajuste puede entenderse mediante el concepto de <b
+style='mso-bidi-font-weight:normal'>error de generalización</b>, que es la
+diferencia entre el error en los datos de entrenamiento y el error en los datos
+de prueba. El error <b style='mso-bidi-font-weight:normal'>total </b>de un
+modelo puede dividirse en tres componentes:</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l15 level1 lfo1'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Error Irreducible</span></b><span
+     lang=es>: Error inherente a cualquier modelo debido a la variabilidad
+     natural en los datos.<br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l15 level1 lfo1'><span class=SpellE><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Bias</span></b></span><b
+     style='mso-bidi-font-weight:normal'><span lang=es> (Sesgo)</span></b><span
+     lang=es>: Error debido a suposiciones simplificadas en el modelo. Un
+     modelo con <span class=SpellE>high</span> <span class=SpellE>bias</span>
+     (Alto sesgo) <b style='mso-bidi-font-weight:normal'>subestima </b>la
+     relación entre las variables de entrada y salida, resultando en un <b
+     style='mso-bidi-font-weight:normal'>error de entrenamiento alto</b>.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l15 level1 lfo1'><span
+     class=SpellE><b style='mso-bidi-font-weight:normal'><span lang=es>Variance</span></b></span><b
+     style='mso-bidi-font-weight:normal'><span lang=es> (Varianza)</span></b><span
+     lang=es>: Error debido a la <b style='mso-bidi-font-weight:normal'>sensibilidad
+     </b>del modelo a las <b style='mso-bidi-font-weight:normal'>fluctuaciones </b>en
+     el conjunto de datos de entrenamiento. Un modelo con <span class=SpellE>high</span>
+     <span class=SpellE>variance</span> (Varianza alta) puede tener un error de
+     entrenamiento bajo pero un <b style='mso-bidi-font-weight:normal'>error de
+     prueba alto </b>porque se <b style='mso-bidi-font-weight:normal'>ajusta
+     demasiado </b>a los <b style='mso-bidi-font-weight:normal'>datos de
+     entrenamiento</b>.</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <b style='mso-bidi-font-weight:normal'>sobreajuste</b>
+ocurre cuando el <span class=SpellE><b style='mso-bidi-font-weight:normal'>bias</b></span><b
+style='mso-bidi-font-weight:normal'> es bajo </b>y la <b style='mso-bidi-font-weight:
+normal'>varianza es alta</b>, es decir, cuando el modelo se ajusta muy bien a
+los datos de entrenamiento, pero no generaliza bien a los datos nuevos.</span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_mbsxmvdnh39r"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>¿Por Qué se Produce el <span
+class=SpellE>Overfitting</span>?<o:p></o:p></span></b></h3>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;margin-bottom:12.0pt;mso-list:
+     l9 level1 lfo10'><b style='mso-bidi-font-weight:normal'><span lang=es>Modelo
+     Demasiado Complejo para los Datos</span></b><span lang=es>:</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Cuando la complejidad del modelo
+supera la cantidad o la variabilidad de los datos de entrenamiento, el modelo
+tiene suficiente flexibilidad para aprender detalles específicos de los datos
+de entrenamiento, incluyendo ruido y <span class=SpellE>outliers</span>.</span></p>
+
+<ol style='margin-top:0cm' start=2 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;margin-bottom:12.0pt;mso-list:
+     l9 level1 lfo10'><b style='mso-bidi-font-weight:normal'><span lang=es>Cantidad
+     Insuficiente de Datos de Entrenamiento</span></b><span lang=es>:</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Con un número limitado de muestras de
+entrenamiento, es más probable que el modelo aprenda detalles específicos de
+esas muestras en lugar de patrones generalizables.</span></p>
+
+<ol style='margin-top:0cm' start=3 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;margin-bottom:12.0pt;mso-list:
+     l9 level1 lfo10'><b style='mso-bidi-font-weight:normal'><span lang=es>Entrenamiento
+     Demasiado Prolongado</span></b><span lang=es>:</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Si el modelo se entrena durante
+demasiadas épocas, especialmente en redes neuronales, puede comenzar a aprender
+patrones muy específicos a los datos de entrenamiento en lugar de
+características generales.</span></p>
+
+<ol style='margin-top:0cm' start=4 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;margin-bottom:12.0pt;mso-list:
+     l9 level1 lfo10'><b style='mso-bidi-font-weight:normal'><span lang=es>Falta
+     de Regularización</span></b><span lang=es>:</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>La ausencia de técnicas de
+regularización permite que los modelos sean tan complejos como lo deseen para
+minimizar el error de entrenamiento, lo que aumenta el riesgo de <span
+class=SpellE>overfitting</span>.</span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_vupz4c1hqzt4"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Cómo Evitar el <span
+class=SpellE>Overfitting</span><o:p></o:p></span></b></h3>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l1 level1 lfo14'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Aumentar el Tamaño del
+     Conjunto de Datos de Entrenamiento</span></b><span lang=es>:<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Más datos permiten al modelo
+aprender patrones generales en lugar de detalles específicos de ejemplos
+individuales. Las técnicas de <b style='mso-bidi-font-weight:normal'>data <span
+class=SpellE>augmentation</span></b> pueden ser útiles en problemas como la
+clasificación de imágenes, donde se pueden generar nuevas muestras a partir de
+las existentes mediante transformaciones como rotación, cambio de escala, etc.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<ol style='margin-top:0cm' start=2 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo14'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Regularización</span></b><span lang=es>:<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>L2 <span class=SpellE>Regularization</span> (Ridge)</span></b><span
+lang=es>: Penaliza los pesos grandes, empujándolos a valores más pequeños y
+promoviendo un modelo más simple.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>L1 <span class=SpellE>Regularization</span> (Lasso)</span></b><span
+lang=es>: Promueve la escasez de características al penalizar la suma de los
+valores absolutos de los pesos, empujando muchos de ellos a cero.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><b style='mso-bidi-font-weight:
+normal'><span lang=es>Dropout</span></b></span><span lang=es>: Durante el
+entrenamiento, apaga aleatoriamente una fracción de las neuronas en cada capa.
+Esto evita que las neuronas dependan demasiado unas de otras y fuerza a la red
+a aprender representaciones más robustas.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<ol style='margin-top:0cm' start=3 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo14'><span class=SpellE><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Early</span></b></span><b
+     style='mso-bidi-font-weight:normal'><span lang=es> <span class=SpellE>Stopping</span></span></b><span
+     lang=es>:<br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Monitorea el error de validación
+durante el entrenamiento y detiene el proceso cuando el error de validación
+deja de mejorar, evitando que el modelo se ajuste demasiado a los datos de
+entrenamiento.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<ol style='margin-top:0cm' start=4 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo14'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Simplificar el Modelo</span></b><span lang=es>:<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Reducir la complejidad del modelo
+puede ayudar a evitar el <span class=SpellE>overfitting</span>. Esto puede
+implicar reducir el número de capas o neuronas en una red neuronal, reducir el
+grado de un polinomio en la regresión polinómica, o podar árboles de decisión
+para limitar su profundidad.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<ol style='margin-top:0cm' start=5 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo14'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Cross-<span class=SpellE>Validation</span>
+     (Validación Cruzada)</span></b><span lang=es>:<br style='mso-special-character:
+     line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Dividir los datos en múltiples
+pliegues y entrenar varios modelos para cada subconjunto de datos. Esto ayuda a
+asegurar que el modelo generalice bien en diferentes partes del conjunto de
+datos y no dependa demasiado de un solo subconjunto.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<ol style='margin-top:0cm' start=6 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo14'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Regularización de Peso Decaído (<span class=SpellE>Weight</span>
+     <span class=SpellE>Decay</span>)</span></b><span lang=es>:<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Una técnica específica para
+optimizadores como Adam, que incorpora un término de decaimiento del peso en la
+actualización de los pesos, similar a L2 <span class=SpellE>regularization</span>,
+para penalizar pesos grandes.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<ol style='margin-top:0cm' start=7 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo14'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Ensemble <span class=SpellE>Methods</span> (Métodos
+     de Ensamble)</span></b><span lang=es>:<br style='mso-special-character:
+     line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level2 lfo14'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Técnicas como <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>bagging</b></span> (Bootstrap <span
+class=SpellE>Aggregating</span>) y <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>boosting</b></span> combinan múltiples modelos para reducir la varianza
+y mejorar la generalización del modelo. <span class=SpellE>Random</span> Forest
+es un ejemplo de <span class=SpellE>bagging</span>, mientras que <span
+class=SpellE>AdaBoost</span> es un ejemplo de <span class=SpellE>boosting</span>.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Ahora</span></b><span
+lang=es> bien, ya que se entienden estos dos conceptos, vamos a ver las
+técnicas de regularización, para reducir al máximo, o, evitar por completo, el <span
+class=SpellE>underfitting</span> o el <span class=SpellE>overfitting</span>, y
+su efecto en el entrenamiento de redes neuronales.<br>
+<br>
+</span><b style='mso-bidi-font-weight:normal'><span lang=es style='font-size:
+13.0pt;line-height:115%'>¿Qué es la Regularización?<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Regularización</span></b><span
+lang=es> es un conjunto de <b style='mso-bidi-font-weight:normal'>técnicas </b>utilizadas
+para prevenir el sobreajuste <b style='mso-bidi-font-weight:normal'>penalizando
+la complejidad del modelo</b>. La idea básica es añadir un término de
+regularización a la función de pérdida que <b style='mso-bidi-font-weight:normal'>desaliente
+a la red de ajustarse demasiado a los datos de entrenamiento</b>. Este término
+penaliza los parámetros del modelo (como los pesos de una red neuronal) que son
+grandes en magnitud, <b style='mso-bidi-font-weight:normal'>incentivando
+soluciones más simples </b>y evitando que el modelo <b style='mso-bidi-font-weight:
+normal'>se ajuste demasiado a ruidos específicos </b>de los datos de
+entrenamiento. La regularización se implementa, generalmente, añadiendo un
+término de penalización a la función de pérdida. Los métodos más comunes de
+regularización en <span class=SpellE>deep</span> <span class=SpellE>learning</span>
+son: <b style='mso-bidi-font-weight:normal'>L2 <span class=SpellE>regularization</span></b>,
+<b style='mso-bidi-font-weight:normal'>L1 <span class=SpellE>regularization</span></b>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>Dropout</b></span>, <b
+style='mso-bidi-font-weight:normal'>Data <span class=SpellE>Augmentation</span></b>
+y <span class=SpellE><b style='mso-bidi-font-weight:normal'>Early</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE>Stopping</span><br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:#4A86E8'><span
+style='mso-spacerun:yes'> </span>L2 <span class=SpellE>Regularization</span>
+(Ridge <span class=SpellE>Regularization</span>)<o:p></o:p></span></b></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_h0zvis5e5cbo"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto y Definición<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>L2
+<span class=SpellE>Regularization</span></span></b><span lang=es>, también
+conocida como <b style='mso-bidi-font-weight:normal'>Ridge <span class=SpellE>Regularization</span></b>,
+es una técnica de regularización que penaliza los pesos grandes al añadir un
+término proporcional al cuadrado de los pesos a la función de pérdida del
+modelo. La idea principal es evitar que los parámetros del modelo tomen valores
+extremadamente altos, lo que puede llevar a un sobreajuste.<span
+style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="_x0000_i1033" type="#_x0000_t75"
+ style='width:156pt;height:199.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image006.png"
+  o:title="" cropleft="34555f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=208 height=266
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image007.jpg" v:shapes="_x0000_i1033"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Imagen
+tomada de: </span></b><span lang=es><a
+href="https://medium.com/intuition/understanding-l1-and-l2-regularization-with-analytical-and-probabilistic-views-8386285210fc"><span
+class=SpellE><span style='color:#1155CC'>Understanding</span></span><span
+style='color:#1155CC'> L1 and L2 <span class=SpellE>regularization</span> <span
+class=SpellE>with</span> <span class=SpellE>analytical</span> and <span
+class=SpellE>probabilistic</span> <span class=SpellE>views</span> | <span
+class=SpellE>by</span> Yuki <span class=SpellE>Shizuya</span> | <span
+class=SpellE>Intuition</span> | Medium</span></a> <br>
+<br>
+<b style='mso-bidi-font-weight:normal'>Para </b>entender mejor qué hace la <span
+class=SpellE>regularizacion</span> L2, ver el siguiente video: <a
+href="https://www.youtube.com/watch?v=VqKq78PVO9g"><span style='color:#1155CC'>Machine
+<span class=SpellE>Learning</span> Tutorial Python - 17: L1 and L2 <span
+class=SpellE>Regularization</span> | Lasso, Ridge <span class=SpellE>Regression</span></span></a>
+</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_unju572nsz0s"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Matemática detrás de L2 <span class=SpellE>Regularization</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>La función de pérdida regularizada se
+define como:</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image4.png" o:spid="_x0000_i1032"
+ type="#_x0000_t75" style='width:177pt;height:48.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image008.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=236 height=65
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image009.gif" v:shapes="image4.png"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>donde:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l0 level1 lfo13'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>L</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>0</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>(</m:r><m:r>θ</m:r><m:r>)</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:26.25pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image010.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=35 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image011.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es la función de pérdida
+original (por ejemplo, la entropía cruzada en clasificación o el <b
+style='mso-bidi-font-weight:normal'>error cuadrático medio </b>en regresión).</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo13'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>θ</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>i</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:9pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image012.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=12 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image013.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>son los pesos del modelo.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo13'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>λ</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image014.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=8 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image015.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es el hiperparámetro de
+regularización que controla la fuerza de la penalización.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_wtnhhpjqx8n4"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>¿Para Qué Sirve?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>L2 <span class=SpellE>Regularization</span>
+ayuda a reducir el <span class=SpellE><b style='mso-bidi-font-weight:normal'>overfitting</b></span>
+al limitar la magnitud de los pesos, haciendo que el modelo prefiera soluciones
+más simples y evitando que se ajuste demasiado a los datos de entrenamiento. Es
+especialmente útil en modelos lineales y redes neuronales profundas.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_tmrmgc312198"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto de Utilidad<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l11 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Redes Neuronales</span></b><span lang=es>: Reduce el riesgo de
+sobreajuste en redes neuronales profundas al evitar que los pesos se vuelvan
+extremadamente grandes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Regresión Lineal y Polinómica</span></b><span lang=es>: Se utiliza para
+evitar la multicolinealidad y estabilizar el modelo, asegurando que los
+coeficientes no sean demasiado grandes.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:#4A86E8'>L1 <span class=SpellE>Regularization</span>
+(Lasso <span class=SpellE>Regularization</span>)<o:p></o:p></span></b></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ithnz20gkio"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto y Definición<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>L1
+<span class=SpellE>Regularization</span></span></b><span lang=es>, también
+conocida como <b style='mso-bidi-font-weight:normal'>Lasso <span class=SpellE>Regularization</span></b>
+(<span class=SpellE>Least</span> Absolute <span class=SpellE>Shrinkage</span>
+and <span class=SpellE>Selection</span> <span class=SpellE>Operator</span>), es
+una técnica de regularización que penaliza los pesos grandes al añadir un
+término proporcional al valor absoluto de los pesos a la función de pérdida del
+modelo. A diferencia de L2, L1 <span class=SpellE>regularization</span> tiende
+a hacer que algunos pesos sean exactamente cero, lo que puede resultar en un
+modelo más simple y escaso.<span style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image10.png" o:spid="_x0000_i1031"
+ type="#_x0000_t75" style='width:169.5pt;height:199.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image006.png"
+  o:title="" cropright="31874f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=226 height=266
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image016.jpg" v:shapes="image10.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Imagen
+tomada de: </span></b><span lang=es><a
+href="https://medium.com/intuition/understanding-l1-and-l2-regularization-with-analytical-and-probabilistic-views-8386285210fc"><span
+class=SpellE><span style='color:#1155CC'>Understanding</span></span><span
+style='color:#1155CC'> L1 and L2 <span class=SpellE>regularization</span> <span
+class=SpellE>with</span> <span class=SpellE>analytical</span> and <span
+class=SpellE>probabilistic</span> <span class=SpellE>views</span> | <span
+class=SpellE>by</span> Yuki <span class=SpellE>Shizuya</span> | <span
+class=SpellE>Intuition</span> | Medium</span></a> <br>
+<b style='mso-bidi-font-weight:normal'><span style='color:black'>Para </span></b><span
+style='color:black'>entender mejor qué hace la <span class=SpellE>regularizacion</span>
+L1, ver el siguiente video: </span><a
+href="https://www.youtube.com/watch?v=VqKq78PVO9g"><span style='color:#1155CC'>Machine
+<span class=SpellE>Learning</span> Tutorial Python - 17: L1 and L2 <span
+class=SpellE>Regularization</span> | Lasso, Ridge <span class=SpellE>Regression</span></span></a><span
+style='color:black'> </span></span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_fpn3xjsr36gx"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Matemática detrás de L1 <span class=SpellE>Regularization</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>La función de pérdida regularizada se
+define como:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image2.png" o:spid="_x0000_i1030"
+ type="#_x0000_t75" style='width:188.25pt;height:51pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image017.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=251 height=68
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image018.gif" v:shapes="image2.png"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>donde:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l10 level1 lfo2'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>L</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>0</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>(</m:r><m:r>θ</m:r><m:r>)</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:26.25pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image010.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=35 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image011.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es la función de pérdida
+original.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo2'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>θ</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>i</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:9pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image012.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=12 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image013.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>​ son los pesos del modelo.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo2'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>λ</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image014.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=8 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image015.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es el hiperparámetro de
+regularización.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_2hfsfoxn8cke"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>¿Para Qué Sirve?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>L1 <span class=SpellE>Regularization</span>
+es útil no solo para reducir el <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>overfitting</b></span>, sino también para la <b style='mso-bidi-font-weight:
+normal'>selección de características</b>. Al forzar algunos pesos a ser
+exactamente cero, L1 regularización efectivamente elimina algunas
+características del modelo, haciendo que sea más fácil de interpretar y más
+eficiente computacionalmente.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_i63np6nkwmpl"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto de Utilidad<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Selección de Características</span></b><span lang=es>: Útil en
+problemas de alta dimensionalidad para seleccionar un subconjunto de
+características relevantes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo12'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Modelos Escasos</span></b><span lang=es>: Adecuado cuando se espera que
+solo unas pocas características sean importantes.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:12.0pt;line-height:115%;color:#4A86E8'>Dropout</span></b></span><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt;
+line-height:115%;color:#4A86E8'><o:p></o:p></span></b></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_vsn9y7xgshbn"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto y Definición<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es>Dropout</span></b></span><span lang=es> es una técnica de
+regularización específicamente diseñada para redes neuronales. Durante el
+entrenamiento, <span class=SpellE><b style='mso-bidi-font-weight:normal'>dropout</b></span>
+apaga aleatoriamente un porcentaje de neuronas en cada capa de la red en cada
+iteración, lo que impide que las neuronas se vuelvan demasiado dependientes
+unas de otras.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_pcrurd2ee3zi"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Matemática detrás de <span class=SpellE>Dropout</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>No hay una ecuación matemática directa
+para <span class=SpellE><b style='mso-bidi-font-weight:normal'>dropout</b></span>
+en la función de pérdida, pero el proceso de <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>dropout</b></span> puede describirse como
+un multiplicador binario aleatorio aplicado a cada neurona:</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image6.png" o:spid="_x0000_i1029"
+ type="#_x0000_t75" style='width:82.5pt;height:24pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image019.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=110 height=32
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image020.gif" v:shapes="image6.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>donde:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l13 level1 lfo4'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>i</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:9pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image021.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=12 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image022.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es la salida de la neurona iii
+antes del dropout.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l13 level1 lfo4'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>r</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>i</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image023.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image024.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es una variable aleatoria que
+sigue una distribución de Bernoulli, con </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>p</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image025.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=8 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image026.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>siendo la probabilidad de que </span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>r</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>i</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>=1</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:27.75pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image027.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=37 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image028.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>.</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image8.png" o:spid="_x0000_i1028"
+ type="#_x0000_t75" style='width:388.5pt;height:192.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image029.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=518 height=257
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image030.jpg" v:shapes="image8.png"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://medium.com/analytics-vidhya/a-simple-introduction-to-dropout-regularization-with-code-5279489dda1e"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>A Simple Introduction
+to Dropout Regularization (With Code!) </span><span style='color:#1155CC'>| <span
+class=SpellE>by</span> <span class=SpellE>Nisha</span> <span class=SpellE>McNealis</span>
+| <span class=SpellE>Analytics</span> <span class=SpellE>Vidhya</span> | Medium</span></a>
+</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Durante el entrenamiento, una neurona se
+mantiene activa con una probabilidad </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>p</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image025.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=8 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image026.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>y se apaga con una probabilidad </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>1-</m:r><m:r>p</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:25.5pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image031.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=34 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image032.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_8hslhafhm0i"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>¿Para Qué Sirve?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><span lang=es>Dropout</span></span><span
+lang=es> ayuda a prevenir el <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>overfitting</b></span> al reducir la <span class=SpellE>co-adaptación</span>
+entre las neuronas, lo que obliga a la red a aprender representaciones más
+robustas y generales de los datos.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ytnfa6hiai12"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto de Utilidad<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l7 level1 lfo16'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Redes Neuronales Profundas</span></b><span lang=es>: Es especialmente
+útil en redes profundas, donde la capacidad de ajuste es alta y el riesgo de <span
+class=SpellE>overfitting</span> es significativo.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo16'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Problemas de Visión por Computadora y NLP</span></b><span lang=es>: <span
+class=SpellE>Dropout</span> es comúnmente utilizado en redes convolucionales y
+recurrentes para mejorar la generalización.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:12.0pt;line-height:115%;color:#4A86E8'>Data <span
+class=SpellE>Augmentation</span><o:p></o:p></span></b></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_4yqnarsr2uur"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto y Definición<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Data
+<span class=SpellE>Augmentation</span></span></b><span lang=es> es una técnica
+de regularización que aumenta artificialmente el tamaño del conjunto de datos
+de entrenamiento aplicando transformaciones a los datos existentes. Esto
+incluye operaciones como rotación, traslación, escalado, volteo y adición de
+ruido, entre otras.</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image1.png" o:spid="_x0000_i1027"
+ type="#_x0000_t75" style='width:5in;height:165pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image033.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=480 height=220
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image034.jpg" v:shapes="image1.png"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://www.researchgate.net/figure/Comparison-between-general-data-augmentation-and-explicit-consistency-regularization-It_fig6_340805955"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Comparison between
+general data augmentation and explicit consistency... </span><span
+style='color:#1155CC'>| <span class=SpellE>Download</span> <span class=SpellE>Scientific</span>
+<span class=SpellE>Diagram</span></span></a> </span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_repkdxtxdbu3"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Matemática detrás de Data <span class=SpellE>Augmentation</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Matemáticamente, <b style='mso-bidi-font-weight:
+normal'>data <span class=SpellE>augmentation</span></b> no modifica la función
+de pérdida, sino que modifica el conjunto de datos de entrenamiento aplicando
+una función de transformación </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>T</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image035.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image036.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>:<span style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image9.png" o:spid="_x0000_i1026"
+ type="#_x0000_t75" style='width:88.5pt;height:25.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image037.png"
+  o:title="" cropbottom="11894f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=118 height=34
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image038.gif" v:shapes="image9.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>donde:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l14 level1 lfo15'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image039.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image040.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es el conjunto de datos
+original.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l14 level1 lfo15'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>T</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image035.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image036.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>es una transformación aplicada a
+cada muestra en </span><!--[if gte msEquation 12]><m:oMath><i style='mso-bidi-font-style:
+ normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image039.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image040.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_wua6ynv88ew5"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>¿Para Qué Sirve?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Data <span class=SpellE>augmentation</span>
+ayuda a reducir el <span class=SpellE><b style='mso-bidi-font-weight:normal'>overfitting</b></span>
+al proporcionar al modelo más datos de entrenamiento y aumentar la variabilidad
+en los datos. Esto fuerza al modelo a aprender características que son
+invariantes a las transformaciones aplicadas.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_kg3ebpo12zwl"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto de Utilidad<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l3 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Visión por Computadora</span></b><span lang=es>: Es ampliamente
+utilizado en tareas de clasificación de imágenes y detección de objetos, donde
+las transformaciones visuales pueden generar muchas variaciones del mismo dato.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Reconocimiento de Voz</span></b><span lang=es>: Data <span
+class=SpellE>augmentation</span> también se utiliza en el procesamiento de
+señales de audio, como en el reconocimiento de voz.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:12.0pt;line-height:115%;color:#4A86E8'>Early</span></b></span><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt;
+line-height:115%;color:#4A86E8'> <span class=SpellE>Stopping</span><o:p></o:p></span></b></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_emc2g6vfrnze"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto y Definición<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><b style='mso-bidi-font-weight:normal'><span
+lang=es>Early</span></b></span><b style='mso-bidi-font-weight:normal'><span
+lang=es> <span class=SpellE>Stopping</span></span></b><span lang=es> es una
+técnica de regularización que detiene el entrenamiento de un modelo cuando el
+rendimiento en el conjunto de validación deja de mejorar. La idea es detener el
+entrenamiento antes de que el modelo comience a <span class=SpellE>sobreajustarse</span>
+a los datos de entrenamiento.</span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image7.png" o:spid="_x0000_i1025"
+ type="#_x0000_t75" style='width:246pt;height:207pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image041.png"
+  o:title="" croptop="5014f" cropbottom="8706f" cropleft="6196f" cropright="2144f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=328 height=276
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image042.jpg" v:shapes="image7.png"><![endif]></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ywhi6ia83t0c"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Matemática detrás de <span class=SpellE>Early</span>
+<span class=SpellE>Stopping</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><span lang=es>Early</span></span><span
+lang=es> <span class=SpellE>stopping</span> no implica cambios en la función de
+pérdida, pero su implementación práctica se basa en la monitorización del <b
+style='mso-bidi-font-weight:normal'>error de validación</b> (</span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>E</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>val</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:19.5pt;height:15pt'>
+ <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image043.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=26 height=20
+src="S4.4%20Overfitting%20y%20Regularización_archivos/image044.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>):</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l4 level1 lfo11'><span
+     lang=es>Durante el entrenamiento, después de cada época, se evalúa el
+     modelo en un conjunto de validación.</span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l4 level1 lfo11'><span
+     lang=es>Si </span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+        style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+        mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+        style='mso-bidi-font-style:normal'><span lang=es style='font-family:
+        "Cambria Math",serif'><m:r>E</m:r></span></i></m:e><m:sub><i
+        style='mso-bidi-font-style:normal'><span lang=es style='font-family:
+        "Cambria Math",serif'><m:r>val</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+     lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+     mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:
+     -4.5pt;mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;
+     mso-fareast-language:ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape
+      id="_x0000_i1025" type="#_x0000_t75" style='width:19.5pt;height:15pt'>
+      <v:imagedata src="S4.4%20Overfitting%20y%20Regularización_archivos/image043.png"
+       o:title="" chromakey="white"/>
+     </v:shape><![endif]--><![if !vml]><img width=26 height=20
+     src="S4.4%20Overfitting%20y%20Regularización_archivos/image044.gif"
+     v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>no mejora
+     después de un número definido de épocas consecutivas, el entrenamiento se
+     detiene.</span></li>
+</ol>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_8eqqnmnoy62h"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>¿Para Qué Sirve?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span class=SpellE><span lang=es>Early</span></span><span
+lang=es> <span class=SpellE>stopping</span> ayuda a prevenir el <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>overfitting</b></span> al
+detener el entrenamiento en el punto en el que el modelo comienza a <span
+class=SpellE>sobreajustarse</span> a los datos de entrenamiento, maximizando
+así su rendimiento en datos no vistos.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_1349ylv4hnmo"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Contexto de Utilidad<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l6 level1 lfo6'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Entrenamiento de Redes Neuronales</span></b><span lang=es>: Muy útil
+cuando el entrenamiento es largo y costoso, ya que evita gastar tiempo y
+recursos entrenando un modelo más allá del punto óptimo.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo6'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Modelos de Alto Riesgo</span></b><span lang=es>: En aplicaciones donde
+es crucial evitar el sobreajuste debido a la importancia de la precisión del
+modelo, como en medicina o finanzas.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Cada una de estas técnicas de
+regularización: <b style='mso-bidi-font-weight:normal'>L2 <span class=SpellE>regularization</span></b>,
+<b style='mso-bidi-font-weight:normal'>L1 <span class=SpellE>regularization</span></b>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>Dropout</b></span>, <b
+style='mso-bidi-font-weight:normal'>Data <span class=SpellE>Augmentation</span></b>
+y <span class=SpellE><b style='mso-bidi-font-weight:normal'>Early</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE>Stopping</span></b>,
+juega un papel crucial en la mejora de la generalización de los modelos de <span
+class=SpellE>deep</span> <span class=SpellE>learning</span> y en la reducción
+del riesgo de <span class=SpellE>overfitting</span>. Al entender cómo y cuándo
+aplicar cada técnica, los practicantes de <span class=SpellE>deep</span> <span
+class=SpellE>learning</span> pueden desarrollar modelos más robustos y
+efectivos que generalicen bien a datos no vistos, lo que es esencial para el
+éxito en aplicaciones del mundo real.</span></p>
+
+</div>
+
+</body>
+
+</html>
