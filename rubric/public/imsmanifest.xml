@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="rubric" version="1.0"
+    xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+    xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>2004</schemaversion>
+  </metadata>
+  <organizations default="org1">
+    <organization identifier="org1">
+      <title>Demo Obtener Respuesta API</title>
+      <item identifier="item1" identifierref="resource1">
+        <title>Inicio</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="resource1" adlcp:scormtype="sco" type="webcontent" href="index.html">
+      <file href="index.html"/>
+      <!-- Agrega aquí otros archivos necesarios generados por el build -->
+    </resource>
+  </resources>
+</manifest>

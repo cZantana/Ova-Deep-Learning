@@ -61,7 +61,7 @@ const DragAndDropForm = () => {
 
       // Llamada al endpoint
       const response = await axios.post(
-        "http://127.0.0.1:8000/create_assistant_with_vector",
+        "https://dam.toolia.site/create_assistant_with_vector",
         formData,
         {
           headers: {
