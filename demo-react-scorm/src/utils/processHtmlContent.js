@@ -102,6 +102,8 @@ const imageGlobs = {
   
   export function processHtmlContent(rawHtml, folderKey, omitList = []) {
     // Verifica que exista el key en el objeto.
+    console.log(folderKey);
+    
     const images = imageGlobs[folderKey];
     if (!images) {
       throw new Error(`La carpeta para la key "${folderKey}" no existe en el mapeo.`);
@@ -114,7 +116,11 @@ const imageGlobs = {
       (match, p1, p2) => {
         // p2 es el nombre de la imagen (por ejemplo, "image002.jpg")
         const imagePath = Object.keys(images).find(path => path.endsWith(p2));
+        console.log(p2);
+        console.log(imagePath);
+
         if (imagePath) {
+          
           const originalUrl = images[imagePath]; // Ejemplo: "/src/assets/semana1/s1.2/image002.jpg"
           // Se asume que el nombre sigue el patrón "image" + dígitos + extensión
           const regex = /(image)(\d+)(\.\w+)$/i;
@@ -136,12 +142,18 @@ const imageGlobs = {
             const newFileName = `${prefix}${newNumStr}.png`;
             // Reemplaza el nombre del archivo en la URL original
             const newUrl = originalUrl.replace(p2, newFileName);
+            console.log(`src="${newUrl}"`);
+            
             return `src="${newUrl}"`;
           } else {
             // Si el nombre no sigue el patrón esperado, retorna la URL original
+            console.log(`src="${originalUrl}"`);
+            
             return `src="${originalUrl}"`;
           }
         } else {
+          console.log(match);
+          
           return match;
         }
       }
