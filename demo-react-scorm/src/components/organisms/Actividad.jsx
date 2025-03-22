@@ -21,7 +21,7 @@ const Actividad = ({
                             </p>
                         )}
                         {activityTitle && (
-                            <h2 className="text-2xl font-bold mt-2 mb-2">
+                            <h2 className="text-2xl font-bold mt-2 mb-2 ">
                                 {activityTitle}
                             </h2>
                         )}

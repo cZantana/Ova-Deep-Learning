@@ -90,6 +90,9 @@ const rubricData = [
     }
   ];
 
+
+
+
 const S2_5_1 = () => {
     return (
         <div className="min-h-screen bg-[var(--color-neutral-300)] p-4">
