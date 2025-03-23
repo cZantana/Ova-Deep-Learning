@@ -1,19 +1,22 @@
 // src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
-import { getLastQuiz } from "../../utils/scormManager";
+// import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S4_1 from "./s4.1";
 import S4_2 from "./s4.2";
 import S4_3 from "./s4.3";
 import S4_4 from "./s4.4";
+import S4_5_1 from "./s4.5.1";
+import S4_5_2 from "./s4.5.2";
 
 
 
-const lastQuiz = getLastQuiz();
+
+// const lastQuiz = getLastQuiz();
 const semana = "semana4_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S4_1, S4_2, S4_3, S4_4];
+const docs = [S4_1, S4_2, S4_3, S4_4,S4_5_1,S4_5_2];
 
 // Datos del menú lateral para la semana
 const menuData = [
@@ -60,6 +63,25 @@ const menuData = [
     { title: "Early Stopping", position: 98.1 },
     ]
   },
+  {
+    title: "Actividad 3",
+  docIndex: 4, // Asumiendo que es el sexto documento en la lista
+  items: [
+    { title: "Explicación de la actividad", position: 0.2 },
+    { title: "Rúbrica de evaluacion", position: 8.7 },
+    { title: "Sube tus archivos", position: 66.2 },
+    ]
+  },
+  {
+    title: "Actividad 4",
+  docIndex: 5, // Asumiendo que es el sexto documento en la lista
+  items: [
+    { title: "Explicación de la actividad", position: 0.2 },
+    { title: "Rúbrica de evaluacion", position: 8.7 },
+    { title: "Sube tus archivos", position: 66.2 },
+    ]
+  },
+
 ];
 
 const Semana4 = () => {

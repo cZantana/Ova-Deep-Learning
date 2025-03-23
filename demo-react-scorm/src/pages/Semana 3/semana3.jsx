@@ -1,18 +1,19 @@
 // src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
-import { getLastQuiz } from "../../utils/scormManager";
+// import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S3_1 from "./s3.1";
 import S3_2 from "./s3.2";
 import S3_3 from "./s3.3";
 import S3_4 from "./s3.4";
+import S3_5_1 from "./s3.5.1";
 
 
-const lastQuiz = getLastQuiz();
+// const lastQuiz = getLastQuiz();
 const semana = "semana3_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S3_1, S3_2, S3_3, S3_4];
+const docs = [S3_1, S3_2, S3_3, S3_4, S3_5_1];
 
 // Datos del menú lateral para la semana
 const menuData = [
@@ -55,6 +56,15 @@ const menuData = [
     { title: "Variance (Varianza)", position: 12.2 },
     { title: "Trade-off entre Bias y Variance", position: 21.5 },
     { title: "Aplicaciones y Contextos", position: 29.4 },
+    ]
+  },
+  {
+    title: "Actividad 2",
+  docIndex: 4, // Asumiendo que es el sexto documento en la lista
+  items: [
+    { title: "Explicación de la actividad", position: 0.2 },
+    { title: "Rúbrica de evaluacion", position: 8.7 },
+    { title: "Sube tus archivos", position: 66.2 },
     ]
   },
 ];

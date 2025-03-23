@@ -7,11 +7,9 @@ import ArrastrarSoltar from "../../components/molecules/ArrastrarSoltar";
 
 const actividadData = {
     activityCode: "S2.5.1",
-    activityTitle: "Actividad Implementación de Redes Neuronales Básicas en Google Colab",
+    activityTitle: "Actividad 1. Implementación de Redes Neuronales Básicas en Google Colab",
     activitySubtitle: "Implementación de modelos básicos sin uso de librerías especializadas",
-    metaText: `En esta actividad se evaluará la implementación de un perceptrón y redes neuronales simples utilizando únicamente operaciones matriciales con NumPy. Se espera que se realice la implementación desde cero, demostrando comprensión de los conceptos fundamentales del Deep Learning y la lógica de clasificación.
-    
-  Nota: Todo el contenido mostrado aquí corresponde a la parte introductoria que antecede la sección "Introducción".`,
+    metaText: `En esta actividad se evaluará la implementación de un perceptrón y redes neuronales simples utilizando únicamente operaciones matriciales con NumPy. Se espera que se realice la implementación desde cero, demostrando comprensión de los conceptos fundamentales del Deep Learning y la lógica de clasificación.`,
     imageUrl: "/src/assets/actividad-img.png", // Ajusta la ruta según tu proyecto
   };    
 

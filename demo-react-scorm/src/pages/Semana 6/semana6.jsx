@@ -1,19 +1,20 @@
 // src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
-import { getLastQuiz } from "../../utils/scormManager";
+// import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S6_1 from "./s6.1";
 import S6_2 from "./s6.2";
+import S6_3_1 from "./s6.3.1";
 
 
 
 
 
-const lastQuiz = getLastQuiz();
+// const lastQuiz = getLastQuiz();
 const semana = "semana6_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S6_1, S6_2];
+const docs = [S6_1, S6_2,S6_3_1];
 
 // Datos del menú lateral para la semana
 const menuData = [
@@ -37,6 +38,15 @@ const menuData = [
       { title: "Precisión, Recall y F1 Score", position: 45.8 },
       { title: "ROC y AUC", position: 64.3 },
     ],
+  },
+  {
+    title: "Actividad 6",
+  docIndex: 2, // Asumiendo que es el sexto documento en la lista
+  items: [
+    { title: "Explicación de la actividad", position: 0.2 },
+    { title: "Rúbrica de evaluacion", position: 8.7 },
+    { title: "Sube tus archivos", position: 66.2 },
+    ]
   },
 ];
 

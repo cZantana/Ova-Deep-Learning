@@ -58,8 +58,19 @@ const Actividad = ({
                     </div>
                 )}
                 {metaText && (
-                    <p className="text-base leading-relaxed text-center">
-                        {metaText}
+                    <p className="text-base leading-relaxed text-justify">
+                        {metaText.split("\n\n").map((line, index) => {
+                            // Si la línea empieza con "- " (bullet point) o con un número seguido de ".", aplica ml-4
+                            const isBulletPoint = /^•/.test(line);
+                            const isNumberedList = /^\d+\./.test(line);
+
+                            return (
+                                <div key={index} className={isBulletPoint || isNumberedList ? "ml-8" : ""}>
+                                    <p>{line}</p>
+                                    <p className="mb-4"></p>
+                                </div>
+                            );
+                        })}
                     </p>
                 )}
             </div>

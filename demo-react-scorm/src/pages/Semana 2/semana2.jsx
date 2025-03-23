@@ -1,7 +1,7 @@
 // src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
-import { getLastQuiz } from "../../utils/scormManager";
+// import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S2_1 from "./s2.1";
 import S2_2 from "./s2.2";
@@ -11,7 +11,7 @@ import S2_5_1 from "./s2.5.1";
 
 
 
-const lastQuiz = getLastQuiz();
+// const lastQuiz = getLastQuiz();
 const semana = "semana2_0";
 // Arreglo de documentos (componentes) a mostrar
 const docs = [S2_1, S2_2, S2_3, S2_4, S2_5_1];
@@ -65,9 +65,12 @@ const menuData = [
     ]
   },
   {
-    title: "Actividad",
-    docIndex: 4, // Asumiendo que es el cuarto documento en la lista
-    items: [
+    title: "Actividad 1",
+  docIndex: 4, // Asumiendo que es el sexto documento en la lista
+  items: [
+    { title: "Explicación de la actividad", position: 0.2 },
+    { title: "Rúbrica de evaluacion", position: 12.1 },
+    { title: "Sube tus archivos", position: 66.2 },
     ]
   },
 ];

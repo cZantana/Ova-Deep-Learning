@@ -5,17 +5,19 @@ import Navbar from "../../components/organisms/Navbar";
 import SemanaContent from "../../components/templates/SemanaContent";
 
 
-import S9_3_1 from "./s9.3.1";
+import S14_2_1 from "./s14.2.1";
+import S14_4_1 from "./s14.4.1";
 
 
-const semana = "semana9_0";
+
+const semana = "semana14_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S9_3_1];
+const docs = [S14_2_1, S14_4_1];
 
 // Datos del menú lateral para la semana
 const menuData = [
     {
-      title: "Actividad 9",
+      title: "Actividad 14",
       docIndex: 0, // Asumiendo que es el sexto documento en la lista
       items: [
         { title: "Explicación de la actividad", position: 0.2 },
@@ -23,9 +25,18 @@ const menuData = [
         { title: "Sube tus archivos", position: 66.2 },
         ]
       },
+      {
+        title: "Actividad 15",
+        docIndex: 1, // Asumiendo que es el sexto documento en la lista
+        items: [
+          { title: "Explicación de la actividad", position: 0.2 },
+          { title: "Rúbrica de evaluacion", position: 8.7 },
+          { title: "Sube tus archivos", position: 66.2 },
+          ]
+        },
 ];
 
-const Semana9 = () => {
+const Semana14 = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar en la parte superior */}
@@ -36,4 +47,4 @@ const Semana9 = () => {
   );
 };
 
-export default Semana9;
+export default Semana14;

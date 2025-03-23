@@ -82,7 +82,7 @@ const Quiz2 = () => {
       updateQuizScore("quiz2", finalScore);
       // Actualiza el bookmark para indicar que el último quiz realizado es "quiz1"
       // Esto se actualizará solo si "quiz1" es de orden mayor que el bookmark actual.
-      updateLastQuiz("quiz2");
+      // updateLastQuiz("quiz2");
       refreshSCORMData();
     } else {
       setCurrentQuestion(prev => prev + 1);

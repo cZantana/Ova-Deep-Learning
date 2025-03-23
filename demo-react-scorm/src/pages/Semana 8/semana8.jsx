@@ -1,18 +1,15 @@
 // src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
-import { getLastQuiz } from "../../utils/scormManager";
+// import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S8_1 from "./s8.1";
+import S8_2_1 from "./s8.2.1";
 
 
-
-
-
-const lastQuiz = getLastQuiz();
 const semana = "semana8_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S8_1];
+const docs = [S8_1,S8_2_1];
 
 // Datos del menú lateral para la semana
 const menuData = [
@@ -33,7 +30,16 @@ const menuData = [
           { title: "Contextos de Uso de las CNNs", position: 85.9 },
           { title: "Arquitecturas Populares de CNN", position: 92.4 }
         ]
-      }
+      },
+      {
+        title: "Actividad 8",
+      docIndex: 1, // Asumiendo que es el sexto documento en la lista
+      items: [
+        { title: "Explicación de la actividad", position: 0.2 },
+        { title: "Rúbrica de evaluacion", position: 8.7 },
+        { title: "Sube tus archivos", position: 66.2 },
+        ]
+      },
 ];
 
 const Semana8 = () => {

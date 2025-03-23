@@ -5,17 +5,17 @@ import Navbar from "../../components/organisms/Navbar";
 import SemanaContent from "../../components/templates/SemanaContent";
 
 
-import S9_3_1 from "./s9.3.1";
+import S16_1_1 from "./s16.1.1";
 
 
-const semana = "semana9_0";
+const semana = "semana16_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S9_3_1];
+const docs = [S16_1_1];
 
 // Datos del menú lateral para la semana
 const menuData = [
     {
-      title: "Actividad 9",
+      title: "Actividad 16",
       docIndex: 0, // Asumiendo que es el sexto documento en la lista
       items: [
         { title: "Explicación de la actividad", position: 0.2 },
@@ -25,7 +25,7 @@ const menuData = [
       },
 ];
 
-const Semana9 = () => {
+const Semana16 = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navbar en la parte superior */}
@@ -36,4 +36,4 @@ const Semana9 = () => {
   );
 };
 
-export default Semana9;
+export default Semana16;

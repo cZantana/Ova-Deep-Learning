@@ -1,18 +1,20 @@
 // src/pages/Semana2.jsx
 import React from "react";
 import Navbar from "../../components/organisms/Navbar";
-import { getLastQuiz } from "../../utils/scormManager";
+// import { getLastQuiz } from "../../utils/scormManager";
 import SemanaContent from "../../components/templates/SemanaContent";
 import S5_1 from "./s5.1";
 import S5_2 from "./s5.2";
+import S5_3_1 from "./s5.3.1";
 
 
 
 
-const lastQuiz = getLastQuiz();
+
+// const lastQuiz = getLastQuiz();
 const semana = "semana5_0";
 // Arreglo de documentos (componentes) a mostrar
-const docs = [S5_1, S5_2];
+const docs = [S5_1, S5_2, S5_3_1];
 
 // Datos del menú lateral para la semana
 const menuData = [
@@ -34,6 +36,16 @@ const menuData = [
     { title: "¿Qué es PyTorch?", position: 70.8 },
     ],
   },
+  {
+    title: "Actividad 5",
+  docIndex: 2, // Asumiendo que es el sexto documento en la lista
+  items: [
+    { title: "Explicación de la actividad", position: 0.2 },
+    { title: "Rúbrica de evaluacion", position: 8.7 },
+    { title: "Sube tus archivos", position: 66.2 },
+    ]
+  },
+
 ];
 
 const Semana5 = () => {
