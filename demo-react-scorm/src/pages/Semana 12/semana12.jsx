@@ -8,7 +8,7 @@ import SemanaContent from "../../components/templates/SemanaContent";
 import S12_3_1 from "./s12.3.1";
 
 
-const semana = "semana11_0";
+const semana = "semana12_0";
 // Arreglo de documentos (componentes) a mostrar
 const docs = [S12_3_1];
 

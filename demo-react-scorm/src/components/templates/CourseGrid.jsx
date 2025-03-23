@@ -24,8 +24,8 @@ const CourseGrid = () => {
 
         {/* Grilla de tarjetas */}
         <div className="content center grid grid-cols-1 sm:grid-cols-2 md:sm:grid-cols-2 lg:grid-cols-3">
-          {weeksData.map((week) => (
-            <div className="justify-center flex flex-wrap gap-2 p-7">
+          {weeksData.map((week, i) => (
+            <div  key={i} className="justify-center flex flex-wrap gap-2 p-7">
             <SemanaCard
             key={week.id}
             semana={week.title} 

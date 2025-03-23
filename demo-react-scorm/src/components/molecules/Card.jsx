@@ -1,12 +1,15 @@
-import React  from "react";
+import React, { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 import { updateLastQuiz } from '../../utils/scormManager';
+import SCORMContext from "../../context/SCORMContext";
 
 
 const SemanaCard = ({ semana, descripcion, iconoSrc, link }) => {
     const navigate = useNavigate();
     const formatString = (str) => str.toLowerCase().replace(" ", "");
-    console.log(formatString(semana));
+    const { refreshSCORMData } = useContext(SCORMContext);
+
+    // console.log(formatString(semana));
   
     return (
       <div className="bg-[var(--color-neutral-500)] p-6 rounded-lg shadow-md max-w-sm text-LEFT hover:scale-105 transition duration-180 ease-in-out cursor-pointer" 

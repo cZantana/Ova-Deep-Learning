@@ -1,6 +1,8 @@
 // src/components/semana/SemanaContent.jsx
 import React, { useState } from "react";
 import Sidebar from "../organisms/Sidebar"; // Ajusta la ruta según tu estructura
+import AudioPlayer from "../../components/organisms/AudioPlayer";
+import myAudioFile from "./s1.1.wav"; // Ajusta la ruta a tu proyecto
 
 /**
  * Componente que renderiza el contenido de la semana: el sidebar y los documentos en slider.
@@ -25,6 +27,7 @@ const SemanaContent = ({ docs, menuData, weekId }) => {
     <section className="bg-[var(--color-neutral-500)] min-h-screen flex">
       {/* Sidebar a la izquierda */}
       <Sidebar menuData={menuData} weekId={week} onSelectDoc={setActiveIndex} />
+      <AudioPlayer src={myAudioFile} />
 
       {/* Área de documentos en slider */}
       <div className="relative flex-1 overflow-hidden py-6">

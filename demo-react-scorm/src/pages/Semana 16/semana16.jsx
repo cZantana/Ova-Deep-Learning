@@ -15,7 +15,7 @@ const docs = [S16_1_1];
 // Datos del menú lateral para la semana
 const menuData = [
     {
-      title: "Actividad 16",
+      title: "Actividad Final",
       docIndex: 0, // Asumiendo que es el sexto documento en la lista
       items: [
         { title: "Explicación de la actividad", position: 0.2 },

@@ -58,7 +58,7 @@ const imageGlobs = {
         { eager: true, query: '?url', import: 'default' }
     ),
     "s5.1": import.meta.glob(
-        "../assets/semana5/s5.2/*",
+        "../assets/semana5/s5.1/*",
         { eager: true, query: '?url', import: 'default' }
     ),
     "s5.2": import.meta.glob(
@@ -78,7 +78,7 @@ const imageGlobs = {
         { eager: true, query: '?url', import: 'default' }
     ),
     "s7.2": import.meta.glob(
-        "../assets/semana8/s7.2/*",
+        "../assets/semana7/s7.2/*",
         { eager: true, query: '?url', import: 'default' }
     ),
     "s8.1": import.meta.glob(
@@ -102,7 +102,7 @@ const imageGlobs = {
   
   export function processHtmlContent(rawHtml, folderKey, omitList = []) {
     // Verifica que exista el key en el objeto.
-    console.log(folderKey);
+    // console.log(folderKey);
     
     const images = imageGlobs[folderKey];
     if (!images) {
@@ -116,8 +116,8 @@ const imageGlobs = {
       (match, p1, p2) => {
         // p2 es el nombre de la imagen (por ejemplo, "image002.jpg")
         const imagePath = Object.keys(images).find(path => path.endsWith(p2));
-        console.log(p2);
-        console.log(imagePath);
+        // console.log(p2);
+        // console.log(imagePath);
 
         if (imagePath) {
           
@@ -142,22 +142,37 @@ const imageGlobs = {
             const newFileName = `${prefix}${newNumStr}.png`;
             // Reemplaza el nombre del archivo en la URL original
             const newUrl = originalUrl.replace(p2, newFileName);
-            console.log(`src="${newUrl}"`);
+            // console.log(`src="${newUrl}"`);
             
             return `src="${newUrl}"`;
           } else {
             // Si el nombre no sigue el patrón esperado, retorna la URL original
-            console.log(`src="${originalUrl}"`);
+            // console.log(`src="${originalUrl}"`);
             
             return `src="${originalUrl}"`;
           }
         } else {
-          console.log(match);
+          // console.log(match);
           
           return match;
         }
       }
     );
+
+      // Reemplazo de enlaces de YouTube
+  processedHtml = processedHtml.replace(
+    /<a[^>]+href="https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([^"]+)"[^>]*>[\s\S]*?<\/a>/gi,
+    (match, videoId) => {
+      return `
+<div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 15px">
+  <iframe
+    src="https://www.youtube.com/embed/${videoId}"
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;">
+  </iframe>
+</div>`;
+    }
+  );
   
     // Bloque CSS a insertar
     const cssToInsert = `

@@ -12,6 +12,7 @@ const weekId = "semana1_0";
 
 // Datos del menú lateral para la semana
 const docs = [S1_1, S1_2];
+const audios = ["s1.1.wav"];
 
 const menuData = [
   {
@@ -47,7 +48,7 @@ const Semana1 = () => {
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} weekId={weekId}/>
+      <SemanaContent audios={audios} docs={docs} menuData={menuData} weekId={weekId}/>
     </div>
   );
 };
