@@ -22,7 +22,6 @@ const FileDragger = ({ onFilesSelected }) => {
                    hover:file:bg-gray-200
                    mb-2"
       />
-      <p className="text-gray-600 text-sm">Selecciona archivos para cargarlos.</p>
     </div>
   );
 };
@@ -92,108 +91,110 @@ const DragAndDropForm = () => {
         </h2>
         <h1 className="hidden sm:block px-6 text-center text-[#687079] font-sans text-1xl font-regular [font-feature-settings:'liga'_off,'clig'_off]">
         ¡Bienvenido! A continuación, deberás configurar un <strong>asistente inteligente</strong> y ajustar los <strong>parámetros más importantes</strong> para personalizarlo a tu gusto. 
-        Estas instrucciones te guiarán en el proceso de cargar la rúbrica de tu actividad
+        Estas instrucciones te guiarán en el proceso de cargar la <strong>rúbrica de tu actividad.</strong>
         </h1>
+        <div className="sm:p-8">
+             {/* Actividad */}
+              <div className="mb-4">
+                <label className="block text-[#687079] font-regular mb-1">
+                Nombre de la actividad
+                </label>
+                <input
+                  type="text"
+                  placeholder="Coloca el nombre de la actividad..."
+                  value={actividad}
+                  onChange={(e) => setActividad(e.target.value)}
+                  className="bg-[#F7F7FF] w-full  rounded px-3 py-2
+                          focus:outline-none focus:border-indigo-500 placeholder:text-[13px] placeholder:text-[#B6B7CD]"
+                />
+              </div>
 
-        {/* Vector Store Name */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-1">
-            Vector Store Name:
-          </label>
-          <input
-            type="text"
-            value={vectorStoreName}
-            onChange={(e) => setVectorStoreName(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2
-                       focus:outline-none focus:border-indigo-500"
-          />
+              {/* Vector Store Name */}
+            <div className="mb-4">
+              <label className="block text-[#687079] font-regular mb-1">
+              Nombre de la actividad
+              </label>
+              <input
+                type="text"
+                placeholder="Coloca el nombre de la actividad..."
+                value={vectorStoreName}
+                onChange={(e) => setVectorStoreName(e.target.value)}
+                className="bg-[#F7F7FF] w-full  rounded px-3 py-2
+                          focus:outline-none focus:border-indigo-500 placeholder:text-[13px] placeholder:text-[#B6B7CD]"
+              />
+            </div>
+
+            {/* Assistant Name */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-1">
+                Assistant Name:
+              </label>
+              <input
+                type="text"
+                value={assistantName}
+                onChange={(e) => setAssistantName(e.target.value)}
+                className="w-full border border-gray-300 rounded px-3 py-2
+                          focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
+            {/* Assistant Instructions */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-1">
+                Assistant Instructions:
+              </label>
+              <textarea
+                value={assistantInstructions}
+                onChange={(e) => setAssistantInstructions(e.target.value)}
+                rows={3}
+                className="w-full border border-gray-300 rounded px-3 py-2
+                          focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
+            {/* Assistant Temperature */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-1">
+                Assistant Temperature:
+              </label>
+              <input
+                type="number"
+                value={assistantTemperature}
+                onChange={(e) => setAssistantTemperature(e.target.value)}
+                className="w-full border border-gray-300 rounded px-3 py-2
+                          focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
+            {/* Assistant Top P */}
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-1">
+                Assistant Top P:
+              </label>
+              <input
+                type="number"
+                value={assistantTopP}
+                onChange={(e) => setAssistantTopP(e.target.value)}
+                className="w-full border border-gray-300 rounded px-3 py-2
+                          focus:outline-none focus:border-indigo-500"
+              />
+            </div>
+
+            {/* Componente FileDragger */}
+            <FileDragger onFilesSelected={handleFilesSelected} />
+
+            {/* Listado de archivos si existen */}
+            {files.length > 0 && (
+              <div className="mt-2">
+                <h4 className="text-gray-700 font-semibold mb-1">Archivos seleccionados:</h4>
+                <ul className="list-disc list-inside text-sm text-gray-600">
+                  {files.map((file, index) => (
+                    <li key={index}>{file.name}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
         </div>
-
-        {/* Assistant Name */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-1">
-            Assistant Name:
-          </label>
-          <input
-            type="text"
-            value={assistantName}
-            onChange={(e) => setAssistantName(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2
-                       focus:outline-none focus:border-indigo-500"
-          />
-        </div>
-
-        {/* Assistant Instructions */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-1">
-            Assistant Instructions:
-          </label>
-          <textarea
-            value={assistantInstructions}
-            onChange={(e) => setAssistantInstructions(e.target.value)}
-            rows={3}
-            className="w-full border border-gray-300 rounded px-3 py-2
-                       focus:outline-none focus:border-indigo-500"
-          />
-        </div>
-
-        {/* Assistant Temperature */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-1">
-            Assistant Temperature:
-          </label>
-          <input
-            type="number"
-            value={assistantTemperature}
-            onChange={(e) => setAssistantTemperature(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2
-                       focus:outline-none focus:border-indigo-500"
-          />
-        </div>
-
-        {/* Assistant Top P */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-1">
-            Assistant Top P:
-          </label>
-          <input
-            type="number"
-            value={assistantTopP}
-            onChange={(e) => setAssistantTopP(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2
-                       focus:outline-none focus:border-indigo-500"
-          />
-        </div>
-
-        {/* Actividad */}
-        <div className="mb-4">
-          <label className="block text-gray-700 font-semibold mb-1">
-            Actividad:
-          </label>
-          <input
-            type="text"
-            value={actividad}
-            onChange={(e) => setActividad(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2
-                       focus:outline-none focus:border-indigo-500"
-          />
-        </div>
-
-        {/* Componente FileDragger */}
-        <FileDragger onFilesSelected={handleFilesSelected} />
-
-        {/* Listado de archivos si existen */}
-        {files.length > 0 && (
-          <div className="mt-2">
-            <h4 className="text-gray-700 font-semibold mb-1">Archivos seleccionados:</h4>
-            <ul className="list-disc list-inside text-sm text-gray-600">
-              {files.map((file, index) => (
-                <li key={index}>{file.name}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         {/* Botón de envío */}
         <button
           onClick={handleSubmit}
