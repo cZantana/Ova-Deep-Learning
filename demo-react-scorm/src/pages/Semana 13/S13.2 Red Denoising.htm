@@ -1,0 +1,2386 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="S13.2%20Red%20Denoising_archivos/filelist.xml">
+<link rel=Edit-Time-Data href="S13.2%20Red%20Denoising_archivos/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>miguel mora</o:Author>
+  <o:LastAuthor>Miguel Angel Mora Ramirez</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2025-03-24T02:25:00Z</o:Created>
+  <o:LastSaved>2025-03-24T02:25:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1653</o:Words>
+  <o:Characters>9092</o:Characters>
+  <o:Lines>75</o:Lines>
+  <o:Paragraphs>21</o:Paragraphs>
+  <o:CharactersWithSpaces>10724</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="S13.2%20Red%20Denoising_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="S13.2%20Red%20Denoising_archivos/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES-CO</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:20.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	mso-font-kerning:0pt;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:16.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#434343;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h6
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:26.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:16.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	color:#666666;
+	mso-ansi-language:#000A;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;
+	mso-ansi-language:#000A;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	line-height:115%;}
+@page WordSection1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-page-numbers:1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:95685290;
+	mso-list-template-ids:-1765752564;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1
+	{mso-list-id:203911272;
+	mso-list-template-ids:1308143986;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2
+	{mso-list-id:263198758;
+	mso-list-template-ids:898656294;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3
+	{mso-list-id:870341199;
+	mso-list-template-ids:-1824723094;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4
+	{mso-list-id:1051656718;
+	mso-list-template-ids:658508276;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5
+	{mso-list-id:1079136105;
+	mso-list-template-ids:1239209018;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6
+	{mso-list-id:1324242203;
+	mso-list-template-ids:-1896178414;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7
+	{mso-list-id:1550417709;
+	mso-list-template-ids:-1882452898;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8
+	{mso-list-id:1696691984;
+	mso-list-template-ids:-631704746;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9
+	{mso-list-id:1774134049;
+	mso-list-template-ids:-393416840;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10
+	{mso-list-id:1858158555;
+	mso-list-template-ids:-850393852;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11
+	{mso-list-id:1882014190;
+	mso-list-template-ids:415289510;}
+@list l11:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+table.TableNormal
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ES-CO style='tab-interval:36.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es>SEMANA
+13<o:p></o:p></span></b></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_9iu8zy8tv86j"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>¿Qué es una Red <span
+class=SpellE>Denoising</span>?<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Una <b style='mso-bidi-font-weight:normal'>Red
+<span class=SpellE>Denoising</span></b> (también conocida como <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Denoising</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE>Autoencoder</span></b>)
+es una clase de red neuronal diseñada específicamente para <b style='mso-bidi-font-weight:
+normal'>eliminar ruido de los datos</b>. El concepto clave detrás de estas
+redes es que se entrenan para reconstruir datos limpios a partir de datos que
+han sido contaminados por ruido. Es decir, el modelo aprende a restaurar la
+versión original y sin ruido de los datos de entrada.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_l36sbesu3qk"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'>¿Cómo
+Funciona una Red <span class=SpellE>Denoising</span>?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El entrenamiento de una <b
+style='mso-bidi-font-weight:normal'>Red <span class=SpellE>Denoising</span></b>
+implica dos etapas principales:</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l11 level1 lfo6'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Añadir ruido a los datos
+     de entrada</span></b><span lang=es>: Durante el entrenamiento, se añade
+     deliberadamente <b style='mso-bidi-font-weight:normal'>ruido</b> a los
+     datos de entrada. Esto puede ser cualquier tipo de ruido, como ruido
+     gaussiano en imágenes o errores de transmisión en señales.</span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l11 level1 lfo6'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Entrenamiento para
+     eliminar el ruido</span></b><span lang=es>: El objetivo del modelo es
+     aprender a reconstruir los datos originales sin ruido a partir de los
+     datos ruidosos. La red es entrenada para minimizar la diferencia entre la
+     versión restaurada (limpia) y la versión original (sin ruido) de los
+     datos.</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El proceso se puede resumir como:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l10 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Input</span></b><span lang=es>: Datos con ruido.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Output esperado</span></b><span lang=es>: Datos sin ruido.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Objetivo</span></b><span lang=es>: Minimizar la diferencia entre la
+reconstrucción y los datos originales.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Este tipo de red es una extensión de los <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Autoencoders</b></span>,
+donde la tarea no es solo codificar y decodificar los datos, sino también
+filtrar el ruido no deseado durante el proceso de decodificación.</span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_agd1tqv9lcr8"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Concepto de Reducción de
+Ruido con Redes Neuronales<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>La <b style='mso-bidi-font-weight:normal'>reducción
+de ruido</b> se refiere al proceso de eliminar información irrelevante o
+distorsionante (es decir, ruido) de los datos, mientras se conservan las
+características importantes. Este proceso es crucial en diversas aplicaciones
+donde los datos reales están contaminados por ruido debido a limitaciones en
+los sensores, compresión, transmisión, o simplemente porque los datos son
+inherentemente ruidosos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>En el caso de las <b style='mso-bidi-font-weight:
+normal'>Redes <span class=SpellE>Denoising</span></b>, la idea es que la red
+neuronal aprenda automáticamente a identificar y eliminar el ruido, manteniendo
+intactas las características importantes de los datos.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_f57hmm99c5ca"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Estructura de una Red <span class=SpellE>Denoising</span>:<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Una red <span class=SpellE>Denoising</span>
+típicamente tiene una arquitectura similar a un <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>autoencoder</b></span>:</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l0 level1 lfo10'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Codificador (<span
+     class=SpellE>Encoder</span>)</span></b><span lang=es>: El codificador toma
+     la versión ruidosa de los datos y extrae una representación comprimida que
+     captura la estructura principal de los datos.</span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l0 level1 lfo10'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Decodificador (<span
+     class=SpellE>Decoder</span>)</span></b><span lang=es>: El decodificador
+     toma esta representación comprimida y trata de reconstruir la versión
+     original (sin ruido) de los datos.</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El entrenamiento de la red implica
+optimizar una <b style='mso-bidi-font-weight:normal'>función de pérdida</b> que
+mide la diferencia entre la salida de la red (la reconstrucción) y la versión
+limpia de los datos.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><span style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="image4.png" o:spid="_x0000_i1028" type="#_x0000_t75"
+ style='width:417.75pt;height:161.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S13.2%20Red%20Denoising_archivos/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=557 height=215
+src="S13.2%20Red%20Denoising_archivos/image002.jpg" v:shapes="image4.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://www.researchgate.net/publication/339024845_An_End-to-End_Trainable_Framework_for_Joint_Optimization_of_Document_Enhancement_and_Recognition"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>(PDF) An End-to-End
+Trainable Framework for Joint Optimization of Document Enhancement and
+Recognition</span></a></span><span lang=es style='mso-ansi-language:EN-US'> </span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_ffsocrv8z00x"></a><b style='mso-bidi-font-weight:normal'><span
+style='font-size:13.0pt;line-height:115%;color:black;mso-ansi-language:ES-CO'><br>
+</span></b><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Aplicaciones Prácticas de
+las Redes <span class=SpellE>Denoising</span><o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Las <b style='mso-bidi-font-weight:normal'>Redes
+<span class=SpellE>Denoising</span></b> tienen muchas aplicaciones prácticas,
+especialmente en campos donde los datos están frecuentemente contaminados por
+ruido o distorsión. A continuación, algunas de las aplicaciones más relevantes:</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_xmjpl186lalr"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>1. Mejora de Imágenes (<span class=SpellE>Image</span>
+<span class=SpellE>Denoising</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Una de las aplicaciones más comunes de
+las redes <span class=SpellE>Denoising</span> es en la mejora de imágenes. Las
+imágenes, especialmente en fotografía digital, pueden estar contaminadas por
+diversos tipos de ruido, como:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l8 level1 lfo1'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ruido gaussiano</span></b><span lang=es>: Ruido aleatorio que puede
+aparecer en imágenes digitales debido a la sensibilidad del sensor.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo1'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ruido de compresión</span></b><span lang=es>: Artefactos causados por
+la compresión excesiva (por ejemplo, compresión JPEG).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo1'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ruido de baja resolución</span></b><span lang=es>: Cuando una imagen es
+de baja calidad debido a la baja resolución, se percibe como ruidosa o borrosa.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Image</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=SpellE>Denoising</span></b> es el proceso de eliminar
+estos tipos de ruido para mejorar la calidad visual de las imágenes.<span
+style='mso-no-proof:yes'> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:36.0pt;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image3.png" o:spid="_x0000_i1027"
+ type="#_x0000_t75" style='width:371.25pt;height:192.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.2%20Red%20Denoising_archivos/image003.png" o:title=""
+  croptop="25342f" cropbottom="3390f" cropleft="2567f" cropright="3513f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=495 height=257
+src="S13.2%20Red%20Denoising_archivos/image004.jpg" v:shapes="image3.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://towardsdatascience.com/denoising-autoencoders-dae-how-to-use-neural-networks-to-clean-up-your-data-cd9c19bc6915"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Denoising Autoencoders
+(DAE) — How To Use Neural Networks to Clean Up Your Data | by Saul <span
+class=SpellE>Dobilas</span></span></a></span><span lang=es style='mso-ansi-language:
+EN-US'> </span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a name="_qqleaufk4lg"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'>Ejemplo
+de Uso:<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Fotografía</span></b><span lang=es>: En cámaras de smartphones, las
+imágenes capturadas en condiciones de poca luz a menudo tienen mucho ruido. Las
+redes <span class=SpellE>Denoising</span> pueden mejorar estas imágenes
+eliminando el ruido y restaurando detalles importantes.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Restauración de imágenes históricas</span></b><span lang=es>: Las fotos
+antiguas que han sido dañadas o que contienen ruido debido a técnicas de
+digitalización pueden ser restauradas con redes <span class=SpellE>Denoising</span>.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_jas8uz1woq97"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>2. Eliminación de Ruido en Señales de Audio<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>En el procesamiento de señales de
+audio, el ruido puede afectar la calidad del sonido, ya sea en grabaciones,
+transmisiones o incluso en sistemas de reconocimiento de voz. Las redes <span
+class=SpellE>Denoising</span> se utilizan para limpiar las señales de audio de
+este ruido, mejorando la calidad y la inteligibilidad.<span style='mso-no-proof:
+yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:36.0pt;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image2.png" o:spid="_x0000_i1026"
+ type="#_x0000_t75" style='width:393pt;height:255.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.2%20Red%20Denoising_archivos/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=524 height=341
+src="S13.2%20Red%20Denoising_archivos/image006.jpg" v:shapes="image2.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a name="_gnaptf1vsx1"></a><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='color:black;
+mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span> de: </span></b><span
+lang=es><a
+href="https://www.researchgate.net/publication/331839796_Signal_Speech_Reconstruction_and_Noise_removal_using_Convolutional_Denoising_Audioencoders_with_Neural_Deep_Learning"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Signal Speech
+Reconstruction and Noise removal using Convolutional Denoising <span
+class=SpellE>Audioencoders</span> with Neural Deep Learning | Request PDF</span></a></span><span
+lang=es style='color:black;mso-ansi-language:EN-US'> </span><span lang=EN-US
+style='color:black;mso-ansi-language:EN-US'><o:p></o:p></span></h5>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_7sw4g7z4yq6n"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='color:black'>Ejemplo de Uso:<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l4 level1 lfo11'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Reconocimiento de voz</span></b><span lang=es>: Los sistemas de
+reconocimiento de voz, como los asistentes de voz, pueden mejorar su precisión
+si las señales de entrada se limpian de ruido de fondo o interferencias.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo11'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Restauración de audio</span></b><span lang=es>: Las grabaciones de
+audio antiguas o dañadas pueden ser limpiadas utilizando redes <span
+class=SpellE>Denoising</span>, lo que mejora la calidad del sonido.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ukl08jco9k0"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>3. Reducción de Ruido en Datos Médicos (Señales y
+Escaneos)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>En el campo médico, los datos como las
+imágenes de resonancia magnética (MRI), tomografías computarizadas (CT), y
+electrocardiogramas (ECG) pueden contener ruido debido a las limitaciones en
+los sensores o la interferencia de otros sistemas. Las redes <span
+class=SpellE>Denoising</span> se utilizan para limpiar estas señales, lo que
+permite una interpretación y diagnóstico más precisos.<span style='mso-no-proof:
+yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:36.0pt;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image1.png" o:spid="_x0000_i1025"
+ type="#_x0000_t75" style='width:425.25pt;height:324pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.2%20Red%20Denoising_archivos/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=432
+src="S13.2%20Red%20Denoising_archivos/image008.jpg" v:shapes="image1.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://paperswithcode.com/paper/learning-medical-image-denoising-with-deep"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Learning Medical Image
+Denoising with Deep Dynamic Residual Attention Network | Papers With Code</span></a></span><span
+lang=es style='mso-ansi-language:EN-US'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_gg35tbb7ylwx"></a><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></b></h5>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_qjclzs9ese2k"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='color:black'>Ejemplo de Uso:<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l6 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Imágenes médicas</span></b><span lang=es>: Eliminar ruido en las
+imágenes médicas permite a los médicos ver con mayor claridad las estructuras
+importantes en el cuerpo humano y puede mejorar los diagnósticos.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Análisis de ECG</span></b><span lang=es>: El ruido en los
+electrocardiogramas (ECG) puede interferir con la capacidad de un médico o un
+sistema automatizado para detectar problemas cardíacos. Las redes <span
+class=SpellE>Denoising</span> pueden eliminar este ruido y facilitar la
+detección de anomalías.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_r9wvbreo0qp5"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>4. Mejora de Datos de Sensores en <span
+class=SpellE>IoT</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>En el campo del <b style='mso-bidi-font-weight:
+normal'>Internet de las Cosas (<span class=SpellE>IoT</span>)</b>, los
+dispositivos de sensores a menudo recopilan datos que están contaminados por
+interferencias o errores. Las redes <span class=SpellE>Denoising</span> pueden
+ayudar a filtrar el ruido de estos datos, mejorando la precisión de los
+sistemas basados en sensores.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_ev435rz5ojsr"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='color:black'>Ejemplo de Uso:<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l9 level1 lfo12'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Automóviles autónomos</span></b><span lang=es>: Los sensores en
+vehículos autónomos (LIDAR, radar, cámaras) a menudo recogen ruido debido al
+entorno. Las redes <span class=SpellE>Denoising</span> ayudan a mejorar la
+calidad de los datos recibidos, permitiendo decisiones más precisas del
+vehículo.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l9 level1 lfo12'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Monitorización industrial</span></b><span lang=es>: En la
+monitorización de fábricas y sistemas industriales, los sensores pueden recoger
+datos con ruido debido a interferencias electromagnéticas u otros factores.
+Limpiar estos datos es crucial para el mantenimiento predictivo y la
+optimización del rendimiento.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_1fl2c12pssa3"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Tipos de Ruido y Cómo
+Tratarlo<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Existen diferentes tipos de ruido que las
+redes <span class=SpellE>Denoising</span> pueden abordar, dependiendo de la
+naturaleza de los datos y la aplicación:</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_6b3099wt94pk"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>1. Ruido Gaussiano<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>ruido gaussiano</b> es uno de los tipos de ruido más comunes en
+imágenes y señales, caracterizado por variaciones aleatorias en los valores de
+los píxeles o puntos de datos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>: Imágenes digitales tomadas en
+condiciones de poca luz suelen tener ruido gaussiano.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo8'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Solución</span></b><span lang=es>: Las redes <span class=SpellE>Denoising</span>
+pueden aprender a filtrar estas variaciones y restaurar una imagen más clara.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_bu4sbibhma87"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>2. Ruido de Sal y Pimienta (Salt-and-<span
+class=SpellE>Pepper</span> <span class=SpellE>Noise</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Este tipo de ruido aparece como
+píxeles blancos y negros dispersos en la imagen, generando una apariencia de
+&quot;sal y pimienta&quot;.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>: Imágenes viejas o dañadas por
+defectos en los sensores de imagen.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Solución</span></b><span lang=es>: Las redes <span class=SpellE>Denoising</span>
+son entrenadas para identificar estos puntos de ruido y restaurar los valores
+correctos de los píxeles.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_96y2r2gylzg8"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>3. Ruido de Baja Resolución<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>ruido de baja resolución</b> ocurre cuando una imagen o señal ha sido
+capturada o almacenada con una calidad inferior a la ideal, y por lo tanto
+aparece borrosa o degradada.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>: Imágenes de baja resolución que han
+sido escaladas.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Solución</span></b><span lang=es>: Las redes <span class=SpellE>Denoising</span>
+pueden aprender a restaurar los detalles perdidos al eliminar artefactos de
+baja resolución.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_plds4t9219u7"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Subtemas Clave en Redes <span
+class=SpellE>Denoising</span><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a name="_j8y4j2knw4n"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>1. Preprocesamiento de Datos<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Antes de entrenar una red <span
+class=SpellE>Denoising</span>, los datos deben ser preprocesados adecuadamente.
+Esto incluye agregar ruido de manera controlada durante el entrenamiento para
+asegurarse de que la red aprenda a eliminar diferentes tipos de ruido.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_j71vheibkx0r"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:11.0pt;line-height:115%;color:black'>2. Evaluación de la
+Calidad de la Imagen<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Después de la eliminación de ruido, es
+crucial evaluar la calidad de las imágenes o señales resultantes. Las métricas
+comunes para esto incluyen:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>PSNR (<span class=SpellE>Peak</span> <span class=SpellE>Signal-to-Noise</span>
+Ratio)</span></b><span lang=es>: Mide la relación entre la señal original y el
+ruido residual.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo4'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>SSIM (<span class=SpellE>Structural</span> <span class=SpellE>Similarity</span>
+<span class=SpellE>Index</span>)</span></b><span lang=es>: Mide la similitud
+estructural entre la imagen original y la imagen reconstruida.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+36.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_snf8dfjp4du3"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:11.0pt;line-height:115%;color:black'>3. Generalización a
+Diferentes Tipos de Ruido<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Una red <span class=SpellE>Denoising</span>
+bien entrenada debe ser capaz de manejar diferentes tipos de ruido, no solo el
+tipo de ruido específico para el que fue entrenada. Esto puede implicar el
+entrenamiento en varios tipos de ruido simultáneamente.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Código
+Google <span class=SpellE>Coolab</span> ejemplo red <span class=SpellE>denoising</span>:
+</span></b><span lang=es><a
+href="https://colab.research.google.com/drive/17dohrsj446EGzpzUtX_TD_V2sMr7W6Oi?usp=sharing"><span
+style='color:#1155CC'>Practica <span class=SpellE>autoencoders</span> red <span
+class=SpellE><span class=GramE>denoising.ipynb</span></span></span></a> <span
+style='color:red'>(<span class=SpellE>Porfavor</span> colocar el link de <span
+class=SpellE>google</span> <span class=SpellE>colab</span>)</span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Las <b style='mso-bidi-font-weight:normal'>Redes
+<span class=SpellE>Denoising</span></b> son herramientas poderosas para mejorar
+la calidad de los datos en aplicaciones donde el ruido es un problema. Desde la
+<b style='mso-bidi-font-weight:normal'>mejora de imágenes</b> hasta la <b
+style='mso-bidi-font-weight:normal'>eliminación de ruido en señales de audio</b>
+y datos de sensores en <span class=SpellE><b style='mso-bidi-font-weight:normal'>IoT</b></span>,
+estas redes tienen aplicaciones cruciales en muchos campos. La capacidad de <b
+style='mso-bidi-font-weight:normal'>eliminar ruido</b> mientras se preservan
+las características importantes de los datos permite a las redes <span
+class=SpellE>Denoising</span> mejorar la precisión y eficiencia de sistemas que
+dependen de datos limpios, y su arquitectura basada en <span class=SpellE>autoencoders</span>
+ofrece una solución flexible y eficaz para una variedad de problemas.</span></p>
+
+</div>
+
+</body>
+
+</html>

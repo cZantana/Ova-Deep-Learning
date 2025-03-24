@@ -1,0 +1,3114 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="S13.1%20Algoritmos%20de%20Autoencoders_archivos/filelist.xml">
+<link rel=Edit-Time-Data
+href="S13.1%20Algoritmos%20de%20Autoencoders_archivos/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>miguel mora</o:Author>
+  <o:LastAuthor>Miguel Angel Mora Ramirez</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>3</o:TotalTime>
+  <o:Created>2025-03-24T02:13:00Z</o:Created>
+  <o:LastSaved>2025-03-24T02:13:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2834</o:Words>
+  <o:Characters>15590</o:Characters>
+  <o:Lines>129</o:Lines>
+  <o:Paragraphs>36</o:Paragraphs>
+  <o:CharactersWithSpaces>18388</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData
+href="S13.1%20Algoritmos%20de%20Autoencoders_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="S13.1%20Algoritmos%20de%20Autoencoders_archivos/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES-CO</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:20.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	mso-font-kerning:0pt;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:16.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#434343;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h6
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:26.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:16.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	color:#666666;
+	mso-ansi-language:#000A;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;
+	mso-ansi-language:#000A;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	line-height:115%;}
+@page WordSection1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-page-numbers:1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:23219364;
+	mso-list-template-ids:177777336;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1
+	{mso-list-id:417673327;
+	mso-list-template-ids:-1411998436;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2
+	{mso-list-id:453329822;
+	mso-list-template-ids:1792947542;}
+@list l2:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level2
+	{mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level3
+	{mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level4
+	{mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3
+	{mso-list-id:493956433;
+	mso-list-template-ids:1331196226;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4
+	{mso-list-id:724184858;
+	mso-list-template-ids:1546176114;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5
+	{mso-list-id:812336076;
+	mso-list-template-ids:918993674;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6
+	{mso-list-id:921330382;
+	mso-list-template-ids:-2026762564;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7
+	{mso-list-id:944843637;
+	mso-list-template-ids:-1282252540;}
+@list l7:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8
+	{mso-list-id:1061488928;
+	mso-list-template-ids:-1952154802;}
+@list l8:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l8:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9
+	{mso-list-id:1553685985;
+	mso-list-template-ids:-1696049472;}
+@list l9:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l9:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:396.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10
+	{mso-list-id:1787232395;
+	mso-list-template-ids:702210824;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l10:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11
+	{mso-list-id:1882399897;
+	mso-list-template-ids:1381919670;}
+@list l11:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l11:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12
+	{mso-list-id:2127461212;
+	mso-list-template-ids:-1157586412;}
+@list l12:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l12:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+table.TableNormal
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ES-CO style='tab-interval:36.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es>SEMANA
+13<o:p></o:p></span></b></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_yqqj2y3r28by"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Introducción a los
+Algoritmos de <span class=SpellE>Autoencoders</span><o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Los <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoders</b></span> son un tipo
+especial de red neuronal utilizada principalmente para <b style='mso-bidi-font-weight:
+normal'>aprender representaciones eficientes (codificaciones)</b> de los datos,
+normalmente de manera no supervisada. El objetivo principal de un <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Autoencoder</b></span> es
+comprimir los datos de entrada en un espacio de menor dimensionalidad y luego
+reconstruir la entrada original a partir de esta representación comprimida.
+Este proceso involucra dos etapas principales: <b style='mso-bidi-font-weight:
+normal'>codificación</b> y <b style='mso-bidi-font-weight:normal'>decodificación</b>.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_qjhilgtfctnl"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt;
+line-height:115%;color:black'>¿Qué es un <span class=SpellE>Autoencoder</span>?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Un <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoder</b></span> consiste en dos
+partes principales:</span></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l0 level1 lfo1'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Codificador (<span
+     class=SpellE>Encoder</span>)</span></b><span lang=es>: Reduce la dimensión
+     de los datos de entrada, creando una representación compacta conocida como
+     <b style='mso-bidi-font-weight:normal'>espacio latente (<span
+     class=SpellE>latent</span> <span class=SpellE>space</span>)</b>.<br
+     style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l0 level1 lfo1'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Decodificador (<span
+     class=SpellE>Decoder</span>)</span></b><span lang=es>: Toma esta
+     representación compacta y trata de reconstruir los datos de entrada
+     originales.</span></li>
+</ol>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_3j40s92tpl6s"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt;
+line-height:115%;color:black'>¿Por Qué Son Necesarios los <span class=SpellE>Autoencoders</span>?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Los <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoders</b></span> son útiles en
+situaciones donde queremos extraer las características más importantes de los
+datos, reducir dimensionalidad, eliminar ruido o aprender una representación
+eficiente. Se utilizan en muchas aplicaciones, como:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l7 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Reducción de dimensionalidad</span></b><span lang=es>: Similar al
+análisis de componentes principales (PCA), pero con la capacidad de modelar
+relaciones no lineales.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span class=SpellE><b style='mso-bidi-font-weight:
+normal'><span lang=es>Denoising</span></b></span><span lang=es>: Remover ruido
+de los datos.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Generación de datos</span></b><span lang=es>: Usados en modelos
+generativos para crear nuevas muestras de datos.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l7 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Compresión</span></b><span lang=es>: Crear representaciones comprimidas
+de datos que luego puedan ser reconstruidas.</span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_1kx1huca8iuj"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Arquitectura Básica de un
+<span class=SpellE>Autoencoder</span><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_j5bbhff1ae8z"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>1. Codificador (<span class=SpellE>Encoder</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <b style='mso-bidi-font-weight:normal'>codificador</b>
+toma los datos de entrada </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:7.5pt;
+ height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image002.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>y los mapea a un espacio de
+menor dimensión, conocido como el <b style='mso-bidi-font-weight:normal'>espacio
+latente (<span class=SpellE>latent</span> <span class=SpellE>space</span>)</b>.
+El codificador aplica una serie de transformaciones (generalmente no lineales)
+que capturan las características esenciales de los datos de entrada.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l10 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Input</span></b><span lang=es>: Una instancia de los datos de entrada </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image002.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>, como una imagen o una señal.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l10 level1 lfo9'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Output</span></b><span lang=es>: Una representación comprimida </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>Z</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image003.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image004.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>, que vive en el <b style='mso-bidi-font-weight:normal'>espacio latente</b>.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:36.0pt;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image5.png" o:spid="_x0000_i1029"
+ type="#_x0000_t75" style='width:175.5pt;height:25.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image005.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=234 height=34
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image006.gif" v:shapes="image5.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Ejemplo</span></b><span
+lang=es>: Si tienes una imagen de 28x28 píxeles (como en MNIST), el codificador
+puede mapearla a un vector de 32 dimensiones que retiene la información clave.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_dpte9z8pw5e7"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>2. Espacio Latente (<span class=SpellE>Latent</span>
+<span class=SpellE>Space</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <b style='mso-bidi-font-weight:normal'>espacio
+latente</b> es la representación comprimida de los datos. Este espacio tiene
+una dimensionalidad más baja que los datos de entrada y captura las
+características más importantes. En este espacio, los datos pueden ser
+interpretados como puntos que contienen las características principales de las
+entradas.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l11 level1 lfo6'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Dimensionalidad</span></b><span lang=es>: Es un <span class=SpellE>hiperparámetro</span>
+clave. Si es demasiado pequeña, puede perder información importante; si es
+demasiado grande, no se logra la compresión esperada.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l11 level1 lfo6'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Interpretabilidad</span></b><span lang=es>: En algunos casos, los
+valores en el espacio latente pueden tener interpretaciones semánticas (por
+ejemplo, en modelos generativos, ciertos vectores en el espacio latente pueden
+representar características como la rotación de una imagen o su estilo).</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_jpk5e5imq2p8"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>3. Decodificador (<span class=SpellE>Decoder</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <b style='mso-bidi-font-weight:normal'>decodificador</b>
+toma la representación en el espacio latente </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>Z</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image003.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image004.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>y trata de reconstruir los datos
+originales </span><!--[if gte msEquation 12]><m:oMath><i style='mso-bidi-font-style:
+ normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image002.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>mediante una serie de
+transformaciones que son el inverso de las aplicadas en el codificador.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l12 level1 lfo12'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Input</span></b><span lang=es>: La representación latente </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>Z</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image003.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image004.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt;text-indent:-18.0pt;mso-list:l12 level1 lfo12'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Output</span></b><span lang=es>: La reconstrucción de los datos de
+entrada </span><!--[if gte msEquation 12]><m:oMath><m:acc><m:accPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:accPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:e></m:acc></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15.75pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image007.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=21
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image008.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:0cm;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:36.0pt;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image3.png" o:spid="_x0000_i1028"
+ type="#_x0000_t75" style='width:187.5pt;height:24.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image009.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=250 height=33
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image010.gif" v:shapes="image3.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:36.0pt'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=es>El objetivo del <span class=SpellE>autoencoder</span>
+es minimizar la diferencia entre los datos originales </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=20
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image002.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es><span style='mso-spacerun:yes'> </span>y la reconstrucción </span><!--[if gte msEquation 12]><m:oMath><m:acc><m:accPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:accPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>X</m:r></span></i></m:e></m:acc></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:7.5pt;height:15.75pt'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image007.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=10 height=21
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image008.gif" v:shapes="_x0000_i1025"><![endif]></span><![endif]><span
+lang=es>.<span style='mso-no-proof:yes'> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image2.png" o:spid="_x0000_i1027"
+ type="#_x0000_t75" style='width:134.25pt;height:33.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image011.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=179 height=45
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image012.gif" v:shapes="image2.png"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=es>Este proceso de codificación y decodificación
+permite que el modelo aprenda una <b style='mso-bidi-font-weight:normal'>compresión</b>
+y <b style='mso-bidi-font-weight:normal'>descompresión</b> de los datos.<span
+style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_tny7341yot6x"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Componentes Importantes
+en los <span class=SpellE>Autoencoders</span><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_v5qvpd6fcyjm"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Manifold <span class=SpellE>Learning</span>
+(Aprendizaje del Colector)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>Manifold <span class=SpellE>Learning</span></b> se refiere a la idea de
+que los datos en alta dimensionalidad (como las imágenes) en realidad residen
+en un espacio de menor dimensionalidad. Por ejemplo, aunque las imágenes pueden
+tener miles de píxeles, todas las imágenes de un mismo objeto (con diferentes
+rotaciones o colores) pueden estar distribuidas de manera &quot;suave&quot; en
+un espacio más pequeño.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Los <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoders</b></span> aprenden a mapear
+los datos desde el espacio de alta dimensionalidad a este &quot;colector&quot;
+o espacio de características latentes, donde los<b style='mso-bidi-font-weight:
+normal'> datos similares</b> están más <b style='mso-bidi-font-weight:normal'>agrupados.<o:p></o:p></b></span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_v99yc5o7214y"></a><span
+class=SpellE><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:11.0pt;line-height:115%;color:black'>Latent</span></b></span><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'> <span class=SpellE>Space</span> (Espacio
+Latente)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Latent</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=SpellE>Space</span></b> es la <b style='mso-bidi-font-weight:
+normal'>representación comprimida de los datos de entrada</b>. Es un espacio de
+menor dimensionalidad que contiene las <b style='mso-bidi-font-weight:normal'>características
+clave</b> de los datos. El tamaño y la estructura del espacio latente
+determinan la calidad de la compresión y la capacidad del <span class=SpellE>autoencoder</span>
+para reconstruir los datos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm;text-indent:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-18.0pt;mso-list:l1 level1 lfo10'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>Si tienes imágenes de dígitos
+escritos a mano (como en el <span class=SpellE>dataset</span> MNIST), un
+espacio latente de menor dimensión puede representar características generales
+como si el dígito es curvo o recto, su grosor, o su tamaño.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_8uf1l6za3phe"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Codificación (<span class=SpellE>Encoding</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>proceso de codificación</b> es la transformación de los datos de
+entrada en una representación comprimida en el espacio latente. Este proceso es
+clave para aprender características que sean representativas de los datos
+originales, pero en un espacio más pequeño.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_5rhp76kzqtsv"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Decodificación (<span class=SpellE>Decoding</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>proceso de decodificación</b> toma la representación comprimida en el
+espacio latente y la transforma nuevamente en una representación en el espacio
+original (es decir, intenta reconstruir la entrada). El éxito de la
+decodificación determina qué tan bien ha aprendido el <span class=SpellE>autoencoder</span>
+a representar los datos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image4.png" o:spid="_x0000_i1026"
+ type="#_x0000_t75" style='width:451.5pt;height:205.5pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image013.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=602 height=274
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image014.jpg" v:shapes="image4.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://www.v7labs.com/blog/autoencoders-guide"><span lang=EN-US
+style='color:#1155CC;mso-ansi-language:EN-US'>Autoencoders in Deep Learning:
+Tutorial &amp; Use Cases [2024]</span></a></span><span lang=es
+style='mso-ansi-language:EN-US'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_43woupv9azs8"></a><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:black;mso-ansi-language:
+EN-US'><o:p>&nbsp;</o:p></span></b></h3>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_jcdnl8nxz71s"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Tipos de <span
+class=SpellE>Autoencoders</span><o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Hay varios tipos de <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>autoencoders</b></span> que se han
+desarrollado para abordar diferentes problemas. Vamos a cubrir algunos de los
+más comunes.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_kwy0srtqsjy7"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>1. <span class=SpellE>Autoencoder</span> Denso
+(Básico)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>Es el <span class=SpellE>autoencoder</span>
+más básico, donde tanto el codificador como el decodificador están formados por
+capas completamente conectadas (<span class=SpellE><b style='mso-bidi-font-weight:
+normal'>fully</b></span><b style='mso-bidi-font-weight:normal'> <span
+class=SpellE>connected</span> <span class=SpellE>layers</span></b>). Este tipo
+de <span class=SpellE>autoencoder</span> es útil para tareas simples de
+reducción de dimensionalidad o reconstrucción, pero su capacidad es limitada en
+datos complejos como imágenes.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-18.0pt;mso-list:l8 level1 lfo2'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Aplicación</span></b><span lang=es>: Reducción de dimensionalidad,
+compresión.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_5x0svqfc0pq"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>2. <span class=SpellE>Autoencoder</span>
+Convolucional (<span class=SpellE>Convolutional</span> <span class=SpellE>Autoencoder</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>En el <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>autoencoder</b></span><b style='mso-bidi-font-weight:
+normal'> convolucional</b>, el codificador y decodificador utilizan <b
+style='mso-bidi-font-weight:normal'>capas convolucionales</b> en lugar de capas
+completamente conectadas. Son muy efectivos en tareas donde los datos tienen
+una estructura espacial, como imágenes.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l5 level1 lfo11'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Codificador</span></b><span lang=es>: Las capas convolucionales extraen
+características espaciales relevantes de los datos de entrada.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l5 level1 lfo11'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Decodificador</span></b><span lang=es>: Utiliza <b style='mso-bidi-font-weight:
+normal'>capas convolucionales transpuestas</b> (<span class=SpellE>deconvoluciones</span>)
+para reconstruir los datos a partir de la representación comprimida.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Aplicación</span></b><span lang=es>: Reducción de dimensionalidad en
+imágenes, eliminación de ruido en imágenes (<span class=SpellE>denoising</span>).</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_mzcxf9ygxorr"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>3. <span class=SpellE>Autoencoder</span>
+Variacional (VAE - <span class=SpellE>Variational</span> <span class=SpellE>Autoencoder</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoder</b></span><b style='mso-bidi-font-weight:
+normal'> Variacional</b> es un tipo especial de <span class=SpellE>autoencoder</span>
+que <b style='mso-bidi-font-weight:normal'>no solo aprende una representación
+comprimida de los datos</b>, sino que también puede generar <b
+style='mso-bidi-font-weight:normal'>nuevos datos similares</b> a los datos de
+entrada. Esto lo convierte en un modelo generativo, ya que el espacio latente
+aprendido tiene una estructura probabilística.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Espacio Latente</span></b><span lang=es>: En lugar de generar un punto
+exacto en el espacio latente, el codificador de un VAE genera una distribución
+probabilística (normalmente gaussiana) para cada dimensión del espacio latente.
+Luego, se <b style='mso-bidi-font-weight:normal'>muestra</b> un punto de esta
+distribución durante la decodificación.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Aplicación</span></b><span lang=es>: Generación de imágenes,
+interpolación en el espacio latente, modelos generativos para datos complejos.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Diferencia clave</span></b><span lang=es>: En lugar de mapear
+directamente los datos a un punto en el espacio latente, el VAE aprende a
+mapear los datos a una distribución. Esta diferencia permite que el VAE sea
+útil no solo para reconstruir datos, sino también para <b style='mso-bidi-font-weight:
+normal'>generar nuevos ejemplos</b>.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ti5z2i39k3l"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>4. <span class=SpellE>Denoising</span> <span
+class=SpellE>Autoencoder</span><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Denoising</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=SpellE>Autoencoder</span></b> es una variación del <span
+class=SpellE>autoencoder</span> que se entrena para eliminar ruido de los datos
+de entrada. Durante el entrenamiento, se <span class=GramE>le</span> agrega
+ruido a los datos originales y se entrena al modelo para que reconstruya los
+datos sin el ruido.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l3 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Codificador</span></b><span lang=es>: Aprende a extraer las
+características importantes y eliminar el ruido.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Decodificador</span></b><span lang=es>: Reconstruye la versión original
+y limpia de los datos.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Aplicación</span></b><span lang=es>: Eliminación de ruido en imágenes o
+señales, mejora de la calidad de los datos.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_te9yw01315yq"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>5. <span class=SpellE>Sparse</span> <span
+class=SpellE>Autoencoder</span> (<span class=SpellE>Autoencoder</span> <span
+class=SpellE>Esparso</span>)<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Sparse</b></span><b style='mso-bidi-font-weight:
+normal'> <span class=SpellE>Autoencoder</span></b> introduce una restricción
+adicional al <span class=SpellE>autoencoder</span> estándar: se impone que solo
+una pequeña fracción de las neuronas en la capa intermedia (espacio latente)
+sean activadas. Esto permite al <span class=SpellE>autoencoder</span> aprender
+características más interpretables y hace que el modelo sea más eficiente en la
+captura de estructuras importantes en los datos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-18.0pt;mso-list:l4 level1 lfo13'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Aplicación</span></b><span lang=es>: Representaciones <span
+class=SpellE>esparsas</span>, compresión, reducción de dimensionalidad.</span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_c906hj6oh3c6"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Aplicaciones Prácticas de
+los <span class=SpellE>Autoencoders</span> en Reducción de Dimensionalidad y
+Generación de Datos<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Los <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoders</b></span> son herramientas
+versátiles que tienen muchas aplicaciones en el mundo real, particularmente en <b
+style='mso-bidi-font-weight:normal'>reducción de dimensionalidad</b> y <b
+style='mso-bidi-font-weight:normal'>generación de datos</b>. Vamos a ver cómo
+funcionan en estos contextos y algunos ejemplos prácticos de su uso.</span></p>
+
+<h3 style='margin-top:14.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+36.0pt;text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level1 lfo8'><a name="_xdwjaa9xrkpf"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:13.0pt;line-height:115%;color:black'>Reducción de
+Dimensionalidad con <span class=SpellE>Autoencoders</span><br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level2 lfo8'><a name="_47rkibf748bl"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>¿Por Qué Es
+Importante la Reducción de Dimensionalidad?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>En muchos problemas de <b
+style='mso-bidi-font-weight:normal'>aprendizaje automático</b>, los datos con
+los que trabajamos tienen una <b style='mso-bidi-font-weight:normal'>alta
+dimensionalidad</b> (por ejemplo, imágenes de alta resolución, datos genéticos,
+sensores <span class=SpellE>IoT</span>, etc.). Manejar y procesar datos de alta
+dimensionalidad puede ser ineficiente y, en algunos casos, incluso perjudicial
+debido a problemas como el <b style='mso-bidi-font-weight:normal'>sobreajuste</b>
+y la <b style='mso-bidi-font-weight:normal'>maldición de la dimensionalidad</b>.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>La <b style='mso-bidi-font-weight:
+normal'>reducción de dimensionalidad</b> permite:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:108.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:
+l9 level1 lfo4'><![if !supportLists]><span lang=es><span style='mso-list:Ignore'>●<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=es>Eliminar características
+irrelevantes o redundantes</span></b><span lang=es>.<br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:108.0pt;text-indent:-18.0pt;mso-list:
+l9 level1 lfo4'><![if !supportLists]><span lang=es><span style='mso-list:Ignore'>●<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=es>Simplificar el procesamiento
+de datos</span></b><span lang=es>, haciendo que los modelos sean más rápidos y
+manejables.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:108.0pt;text-indent:-18.0pt;mso-list:
+l9 level1 lfo4'><![if !supportLists]><span lang=es><span style='mso-list:Ignore'>●<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><b
+style='mso-bidi-font-weight:normal'><span lang=es>Descubrir patrones o
+estructuras subyacentes</span></b><span lang=es> en los datos.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:108.0pt;text-indent:-18.0pt;mso-list:
+l9 level1 lfo4'><![if !supportLists]><span lang=es><span style='mso-list:Ignore'>●<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=es>Aunque existen técnicas lineales como el <b style='mso-bidi-font-weight:
+normal'>Análisis de Componentes Principales (PCA)</b>, los <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoders</b></span> son más potentes
+porque pueden <b style='mso-bidi-font-weight:normal'>capturar relaciones no
+lineales</b> entre las características.<br>
+<br>
+<br>
+<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level2 lfo8'><a name="_fpxp8ah41vix"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>¿Cómo Ayudan los <span
+class=SpellE>Autoencoders</span> en la Reducción de Dimensionalidad?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>En un <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoder</b></span>, el <b
+style='mso-bidi-font-weight:normal'>codificador (<span class=SpellE>encoder</span>)</b>
+reduce los datos de entrada a una representación comprimida en un espacio de
+menor dimensionalidad llamado <b style='mso-bidi-font-weight:normal'>espacio
+latente (<span class=SpellE>latent</span> <span class=SpellE>space</span>)</b>.
+La idea es que esta representación en el espacio latente retenga las
+características más importantes de los datos, pero con una menor cantidad de
+información redundante.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Al aprender a reconstruir los datos a
+partir de esta representación comprimida, el <span class=SpellE>Autoencoder</span>
+aprende a seleccionar las características más relevantes, lo que es esencial
+para la reducción de dimensionalidad.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level2 lfo8'><a name="_92kghdrcgi5p"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Aplicaciones de
+la Reducción de Dimensionalidad:<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></b></h4>
+
+<h5 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_aniqk2jhtq1j"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Compresión de Imágenes<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En la <b style='mso-bidi-font-weight:
+normal'>compresión de imágenes</b>, un <span class=SpellE>autoencoder</span>
+puede tomar una imagen de alta resolución y aprender a representarla en una
+forma comprimida con una cantidad de información mucho menor. Posteriormente,
+puede reconstruir la imagen con una calidad razonable a partir de esta
+representación comprimida. Esto es útil en aplicaciones donde el almacenamiento
+y la transmisión de imágenes debe ser eficiente.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Una imagen de 256x256 píxeles puede
+ser comprimida a un vector de 32 dimensiones en el espacio latente. Aunque se
+pierde algo de información, el <span class=SpellE>autoencoder</span> aprende a
+mantener las características más importantes, como los bordes o patrones.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_ss6mxytj6syb"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Reducción de Dimensionalidad para Preprocesamiento
+de Datos<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Los <span class=SpellE>autoencoders</span>
+se pueden usar como una forma avanzada de <b style='mso-bidi-font-weight:normal'>preprocesamiento</b>
+de datos. Antes de alimentar los datos a un modelo de aprendizaje supervisado
+(como una red neuronal para clasificación), puedes usar un <span class=SpellE>autoencoder</span>
+para reducir la dimensionalidad de los datos, haciendo que el modelo sea más
+eficiente y menos propenso a <span class=SpellE>sobreajustarse</span>.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En un conjunto de datos genéticos con
+miles de características, un <span class=SpellE>autoencoder</span> puede
+reducir la dimensionalidad a solo unos cientos de características relevantes,
+lo que facilita la clasificación de los datos.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_a431beqfwok9"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Reducción de Dimensionalidad en Análisis de Datos:<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En problemas con <b style='mso-bidi-font-weight:
+normal'>datos no estructurados</b> o <b style='mso-bidi-font-weight:normal'>datos
+de alta dimensionalidad</b> (como en el caso de texto o señales biológicas),
+los <span class=SpellE>autoencoders</span> pueden aprender una representación
+de los datos que facilita la visualización o el agrupamiento en grupos
+semánticos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En el análisis de datos médicos,
+donde cada paciente tiene miles de variables (edad, género, historial médico,
+resultados de laboratorio), un <span class=SpellE>autoencoder</span> puede
+reducir esta dimensionalidad para extraer características clave y ayudar en el
+diagnóstico.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_8g5d20q6ctz8"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Exploración de Datos en el Espacio Latente<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>La <b style='mso-bidi-font-weight:
+normal'>representación latente</b> generada por un <span class=SpellE>autoencoder</span>
+puede ser útil para <b style='mso-bidi-font-weight:normal'>explorar datos</b> y
+visualizar cómo los datos similares están agrupados. Esto se utiliza en
+análisis exploratorio de datos, para entender las relaciones entre los datos y
+descubrir patrones subyacentes.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En un conjunto de datos de imágenes
+de dígitos escritos a mano (como el <span class=SpellE>dataset</span> <b
+style='mso-bidi-font-weight:normal'>MNIST</b>), un <span class=SpellE>autoencoder</span>
+puede mapear las imágenes de los dígitos a un espacio latente en 2D o 3D, donde
+puedes visualizar cómo los dígitos similares están agrupados.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h3 style='margin-top:14.0pt;margin-right:0cm;margin-bottom:4.0pt;margin-left:
+36.0pt;text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level1 lfo8'><a name="_jh6nhuf5boip"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:13.0pt;line-height:115%;color:black'>Generación de
+Datos con <span class=SpellE>Autoencoders</span><o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Además de reducir la dimensionalidad,
+los <span class=SpellE>autoencoders</span>, especialmente las variantes como
+los <span class=SpellE><b style='mso-bidi-font-weight:normal'>Autoencoders</b></span><b
+style='mso-bidi-font-weight:normal'> Variacionales (VAE)</b>, pueden ser
+utilizados para <b style='mso-bidi-font-weight:normal'>generar nuevos datos</b>
+a partir de la representación latente. Esto los convierte en una poderosa
+herramienta para <b style='mso-bidi-font-weight:normal'>modelos generativos</b>,
+donde el objetivo es crear nuevas muestras que sean similares a las del
+conjunto de datos original.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level2 lfo8'><a name="_m4ok04jcwix8"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>¿Cómo Generan
+Datos los <span class=SpellE>Autoencoders</span>?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Autoencoder</b></span><b style='mso-bidi-font-weight:
+normal'> Variacional (VAE)</b> es particularmente útil en la <b
+style='mso-bidi-font-weight:normal'>generación de datos</b>. En lugar de
+codificar los datos en un único punto en el espacio latente, el <b
+style='mso-bidi-font-weight:normal'>VAE</b> codifica los datos en una <b
+style='mso-bidi-font-weight:normal'>distribución probabilística</b> (por lo
+general, una distribución gaussiana). Luego, durante la generación de nuevos
+datos, puedes muestrear de esta distribución para obtener nuevos puntos en el
+espacio latente, que el decodificador puede transformar en nuevos datos.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Este enfoque permite que el modelo <b
+style='mso-bidi-font-weight:normal'>genere nuevas muestras</b> que sean
+consistentes con las características aprendidas del conjunto de datos original.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level2 lfo8'><a name="_i8l4fhlus4kl"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Aplicaciones en
+Generación de Datos:<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></b></h4>
+
+<h5 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_5fi9z73iabdf"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Generación de Imágenes<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Una de las aplicaciones más populares
+de los <span class=SpellE><b style='mso-bidi-font-weight:normal'>VAEs</b></span>
+es la <b style='mso-bidi-font-weight:normal'>generación de imágenes</b>. El
+modelo aprende la distribución de las imágenes en el espacio latente y luego
+puede generar nuevas imágenes muestreando de este espacio.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En el <span class=SpellE>dataset</span>
+<b style='mso-bidi-font-weight:normal'>MNIST</b> (dígitos escritos a mano),
+después de entrenar un VAE, puedes generar nuevas imágenes de dígitos que no
+existían en el conjunto de datos original. El decodificador toma un punto
+aleatorio del espacio latente y lo convierte en una imagen de un dígito.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_fx9ir9ckktxa"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Interpolación entre Imágenes<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Una de las propiedades interesantes
+del <b style='mso-bidi-font-weight:normal'>espacio latente</b> en un VAE es que
+puedes <b style='mso-bidi-font-weight:normal'>interpolar</b> entre dos imágenes
+diferentes. Esto significa que puedes tomar dos puntos en el espacio latente
+que representan dos imágenes distintas y generar una secuencia de imágenes que
+&quot;<span class=SpellE>transicionen</span>&quot; suavemente de una a otra.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Si tienes una imagen de un
+&quot;0&quot; y una de un &quot;9&quot;, puedes crear una secuencia de imágenes
+donde el &quot;0&quot; se convierte gradualmente en un &quot;9&quot;, pasando
+por formas intermedias.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_woltvavtxh4g"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Generación de Imágenes Realistas<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En tareas más avanzadas, los <span
+class=SpellE>autoencoders</span> se pueden usar para generar imágenes
+realistas, como caras humanas o paisajes. Estos modelos aprenden a generar
+imágenes que son coherentes y parecen auténticas.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Modelos Generativos de Rostros</span></b><span lang=es>: Un <span
+class=SpellE>autoencoder</span> puede ser entrenado en un conjunto de datos de
+rostros humanos y luego ser utilizado para generar rostros que no pertenecen a
+ninguna persona real. Las aplicaciones de este tipo de modelos incluyen la
+creación de avatares o personajes ficticios en videojuegos.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_39suvzwl4tcm"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Generación de Música o Señales:<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Los <span class=SpellE>autoencoders</span>
+también se utilizan para la generación de datos no visuales, como <b
+style='mso-bidi-font-weight:normal'>señales de audio</b> o <b style='mso-bidi-font-weight:
+normal'>música</b>. Aquí, el <span class=SpellE>autoencoder</span> aprende una
+representación comprimida de la señal de entrada (como una pieza musical) y
+luego puede generar nuevas señales al muestrear del espacio latente.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Un VAE entrenado en música clásica
+podría generar nuevas composiciones musicales al decodificar puntos en el
+espacio latente que corresponden a diferentes estilos y patrones rítmicos.</span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+108.0pt;text-indent:-108.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l2 level3 lfo8'><a name="_chp4nkdm3ek0"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Aumentación de Datos (Data <span class=SpellE>Augmentation</span>):<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En muchos casos, los conjuntos de
+datos son limitados o están desbalanceados. Los <span class=SpellE>autoencoders</span>
+pueden ayudar a <b style='mso-bidi-font-weight:normal'>generar datos
+adicionales</b> para balancear los conjuntos de datos o aumentar la cantidad de
+ejemplos para mejorar el rendimiento del modelo.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Ejemplo</span></b><span lang=es>:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>En un conjunto de datos médicos con
+pocas muestras de una condición rara, un <span class=SpellE>autoencoder</span>
+puede generar nuevas muestras que sean similares a las existentes, lo que
+permite entrenar mejores modelos.</span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%'>Resumen de Aplicaciones Prácticas<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image1.png" o:spid="_x0000_i1025"
+ type="#_x0000_t75" style='width:451.5pt;height:396pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image015.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=602 height=528
+src="S13.1%20Algoritmos%20de%20Autoencoders_archivos/image016.gif" v:shapes="image1.png"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=es>Los <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Autoencoders</b></span> son modelos fundamentales en el aprendizaje
+profundo que permiten aprender representaciones compactas y útiles de datos de
+alta dimensionalidad. Son esenciales en tareas de <b style='mso-bidi-font-weight:
+normal'>reducción de dimensionalidad</b>, <b style='mso-bidi-font-weight:normal'>eliminación
+de ruido</b>, <b style='mso-bidi-font-weight:normal'>compresión</b>, y también
+sirven como base para <b style='mso-bidi-font-weight:normal'>modelos
+generativos</b> más avanzados como los <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Variational</b></span><b style='mso-bidi-font-weight:normal'> <span
+class=SpellE>Autoencoders</span> (VAE)</b>. Los conceptos de <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>manifold</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE>learning</span></b>, <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>latent</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE>space</span></b>, <b
+style='mso-bidi-font-weight:normal'>codificación</b> y <b style='mso-bidi-font-weight:
+normal'>decodificación</b> son claves para entender cómo los <span
+class=SpellE>autoencoders</span> logran capturar las características esenciales
+de los datos y, en muchos casos, producir nuevos datos basados en la
+representación latente.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal><span class=SpellE><span lang=es>Ademas</span></span><span
+lang=es> de ser modelos increíblemente poderosos para <b style='mso-bidi-font-weight:
+normal'>reducir dimensionalidad</b> y <b style='mso-bidi-font-weight:normal'>generar
+datos</b>. En la reducción de dimensionalidad, son más flexibles y potentes que
+las técnicas lineales tradicionales como <b style='mso-bidi-font-weight:normal'>PCA</b>,
+ya que pueden capturar relaciones no lineales complejas. En la generación de
+datos, los <span class=SpellE><b style='mso-bidi-font-weight:normal'>Autoencoders</b></span><b
+style='mso-bidi-font-weight:normal'> Variacionales (VAE)</b> permiten crear
+nuevos datos que siguen la distribución aprendida del conjunto original, lo que
+es útil para <b style='mso-bidi-font-weight:normal'>data <span class=SpellE>augmentation</span></b>,
+<b style='mso-bidi-font-weight:normal'>creación de imágenes</b>, o incluso para
+aplicaciones creativas como la <b style='mso-bidi-font-weight:normal'>generación
+de música</b>.</span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Enlaces de <span class=SpellE>interes</span>: <br>
+<br>
+</span></b><span lang=es><a
+href="https://www.v7labs.com/blog/autoencoders-guide"><span lang=EN-US
+style='color:#1155CC;mso-ansi-language:EN-US'>Autoencoders in Deep Learning:
+Tutorial &amp; Use Cases [2024]</span></a></span><span lang=EN-US
+style='mso-ansi-language:EN-US'><br>
+<br>
+</span><span lang=es><a
+href="https://www.youtube.com/watch?v=L8HKweZIOmg&amp;t=10s&amp;ab_channel=StatQuestwithJoshStarmer"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Sequence-to-Sequence
+(seq2seq) Encoder-Decoder Neural Networks, Clearly Explained!!!</span></a></span><span
+lang=es style='mso-ansi-language:EN-US'> </span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'> </span><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

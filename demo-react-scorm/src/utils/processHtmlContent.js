@@ -96,6 +96,78 @@ const imageGlobs = {
     "s9.2": import.meta.glob(
         "../assets/semana9/s9.2/*",
         { eager: true, query: '?url', import: 'default' }
+    ),
+    "s10.1": import.meta.glob(
+        "../assets/semana10/s10.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s10.1.1": import.meta.glob(
+        "../assets/semana10/s10.1.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s10.1.2": import.meta.glob(
+        "../assets/semana10/s10.1.2/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s11.1": import.meta.glob(
+        "../assets/semana11/s11.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s11.2": import.meta.glob(
+        "../assets/semana11/s11.2/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s11.2.1": import.meta.glob(
+        "../assets/semana11/s11.2.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s12.1": import.meta.glob(
+        "../assets/semana12/s12.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s12.2": import.meta.glob(
+        "../assets/semana12/s12.2/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s12.2.1": import.meta.glob(
+        "../assets/semana12/s12.2.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s13.1": import.meta.glob(
+        "../assets/semana13/s13.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s13.2": import.meta.glob(
+        "../assets/semana13/s13.2/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s13.2.1": import.meta.glob(
+        "../assets/semana13/s13.2.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s14.1": import.meta.glob(
+        "../assets/semana14/s14.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s14.1.1": import.meta.glob(
+        "../assets/semana14/s14.1.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s14.3": import.meta.glob(
+        "../assets/semana14/s14.3/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s15.1": import.meta.glob(
+        "../assets/semana15/s15.1/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s15.2": import.meta.glob(
+        "../assets/semana15/s15.2/*",
+        { eager: true, query: '?url', import: 'default' }
+    ),
+    "s15.3": import.meta.glob(
+        "../assets/semana15/s15.3/*",
+        { eager: true, query: '?url', import: 'default' }
     )
     // Puedes agregar más entradas según necesites.
   };

@@ -45,7 +45,7 @@ export default function AppRouter() {
         <Route path="/semana7" element={<Semana7 />} />
         <Route path="/semana8" element={<Semana8 />} />
         <Route path="/semana9" element={<Semana9 />} />
-        <Route path="/semana10" element={<Semana10 />} />
+        <Route path="/semana10" element={<Semana10/>} />
         <Route path="/semana11" element={<Semana11 />} />
         <Route path="/semana12" element={<Semana12 />} />
         <Route path="/semana13" element={<Semana13 />} />

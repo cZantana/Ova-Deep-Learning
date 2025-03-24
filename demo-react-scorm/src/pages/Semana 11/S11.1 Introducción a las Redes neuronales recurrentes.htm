@@ -1,0 +1,2625 @@
+  <html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/filelist.xml">
+<link rel=Edit-Time-Data
+href="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>miguel mora</o:Author>
+  <o:LastAuthor>Miguel Angel Mora Ramirez</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>4</o:TotalTime>
+  <o:Created>2025-03-24T00:31:00Z</o:Created>
+  <o:LastSaved>2025-03-24T00:31:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1797</o:Words>
+  <o:Characters>9888</o:Characters>
+  <o:Lines>82</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>11662</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData
+href="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES-CO</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-alt:Arial;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:20.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	mso-font-kerning:0pt;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:16.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#434343;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h4
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h5
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h6
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:26.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:16.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	color:#666666;
+	mso-ansi-language:#000A;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	mso-font-kerning:0pt;
+	mso-ligatures:none;
+	mso-ansi-language:#000A;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	line-height:115%;}
+@page WordSection1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-page-numbers:1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:465468123;
+	mso-list-template-ids:-100776164;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1
+	{mso-list-id:647906973;
+	mso-list-template-ids:1317850550;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	color:black;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level2
+	{mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	mso-ansi-font-weight:bold;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level3
+	{mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level4
+	{mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l1:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2
+	{mso-list-id:790322174;
+	mso-list-template-ids:-823883208;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:72.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:108.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:144.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:180.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:216.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:252.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:288.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:324.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:360.0pt;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3
+	{mso-list-id:1039209162;
+	mso-list-template-ids:487227990;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4
+	{mso-list-id:1589390269;
+	mso-list-template-ids:2016732762;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5
+	{mso-list-id:1649095591;
+	mso-list-template-ids:-1290883200;}
+@list l5:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	color:black;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level2
+	{mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	color:black;
+	mso-ansi-font-weight:bold;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level3
+	{mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level4
+	{mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l5:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6
+	{mso-list-id:1839037136;
+	mso-list-template-ids:-1724509302;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:●;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:○;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:■;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7
+	{mso-list-id:2044553224;
+	mso-list-template-ids:-2092903578;}
+@list l7:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+@list l7:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	text-decoration:none;
+	text-underline:none;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+table.TableNormal
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ES-CO style='tab-interval:36.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es>SEMANA
+11</span></b></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_b5d3l7h73i4p"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Introducción a las Redes
+Neuronales Recurrentes (RNN)<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Las <b style='mso-bidi-font-weight:normal'>Redes
+Neuronales Recurrentes (RNN)</b> son un tipo de arquitectura de red neuronal
+diseñada para procesar <b style='mso-bidi-font-weight:normal'>datos
+secuenciales</b>. A diferencia de las redes neuronales tradicionales, las RNN
+tienen la capacidad de <b style='mso-bidi-font-weight:normal'>retener
+información</b> sobre entradas anteriores mediante el uso de ciclos o
+&quot;recurrentes&quot;, lo que les permite mantener un <b style='mso-bidi-font-weight:
+normal'>estado de memoria</b> mientras procesan secuencias.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Esto las hace ideales para tareas donde
+el orden de los datos es importante y cada dato está relacionado con los
+anteriores, como en la <b style='mso-bidi-font-weight:normal'>traducción
+automática</b>, el <b style='mso-bidi-font-weight:normal'>análisis de series
+temporales</b>, o el <b style='mso-bidi-font-weight:normal'>procesamiento de
+lenguaje natural (NLP)</b>.</span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_n1q3xo64awni"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>¿Qué es una Red Neuronal
+Recurrente?<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Una <b style='mso-bidi-font-weight:normal'>RNN</b>
+tiene una estructura en la que <b style='mso-bidi-font-weight:normal'>la salida
+de una capa no solo pasa a la siguiente capa</b>, sino que <b style='mso-bidi-font-weight:
+normal'>también se retroalimenta hacia la misma capa o hacia capas anteriores</b>.
+Esto les da la capacidad de <b style='mso-bidi-font-weight:normal'>recordar</b>
+y utilizar <b style='mso-bidi-font-weight:normal'>información previa </b>para
+influir en la <b style='mso-bidi-font-weight:normal'>predicción actual</b>. A
+medida que procesan una secuencia de datos, las RNN <b style='mso-bidi-font-weight:
+normal'>actualizan su estado oculto</b>, lo que les permite retener información
+sobre el contexto previo.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_bn2heli81r27"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Estructura Básica de una RNN<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>En cada paso de tiempo </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:4.5pt;
+ height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=6 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image002.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>, una RNN toma
+como entrada:</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l3 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>La <b style='mso-bidi-font-weight:
+normal'>entrada actual</b> </span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>x</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:9.75pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image003.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=13 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image004.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l3 level1 lfo3'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>estado oculto</b> </span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>h</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r><m:r>-</m:r><m:r>1</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:21pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image005.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=28 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image006.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>de la iteración anterior.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><span lang=es>La salida </span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>y</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:9.75pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image007.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=13 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image008.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>y el nuevo estado oculto </span><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>h</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:10.5pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image009.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=14 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image010.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>se calculan de la siguiente manera:</span><!--[if gte vml 1]><o:wrapblock><v:shape
+  id="image5.png" o:spid="_x0000_s1026" type="#_x0000_t75" style='position:absolute;
+  left:0;text-align:left;margin-left:119.25pt;margin-top:27.75pt;width:213pt;
+  height:62.25pt;z-index:251658240;visibility:visible;mso-wrap-style:square;
+  mso-wrap-distance-left:4.5pt;mso-wrap-distance-top:4.5pt;
+  mso-wrap-distance-right:4.5pt;mso-wrap-distance-bottom:4.5pt;
+  mso-position-horizontal:absolute;mso-position-horizontal-relative:text;
+  mso-position-vertical:absolute;mso-position-vertical-relative:text'>
+  <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image011.png"
+   o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0>
+  <tr>
+   <td width=159 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=284 height=83
+   src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image012.gif"
+   v:shapes="image5.png"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+</p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:36.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Donde:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>W</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>h</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>,</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>W</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>x</m:r></span></i></m:sub></m:sSub><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>,</m:r></span></i><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>W</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>y</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:6.0pt;mso-text-raise:-6.0pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:50.25pt;height:16.5pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image013.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=67 height=22
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image014.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>​ son matrices
+de pesos.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>f</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image015.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=8 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image016.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>y </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>g</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image017.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image018.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>son funciones de activación (típicamente ReLU
+o tanh para </span><!--[if gte msEquation 12]><m:oMath><i style='mso-bidi-font-style:
+ normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>f</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image015.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=8 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image016.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>, y softmax
+para </span><!--[if gte msEquation 12]><m:oMath><i style='mso-bidi-font-style:
+ normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>g</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:6.75pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image017.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=9 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image018.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>en la salida).</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>h</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:10.5pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image009.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=14 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image010.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>​ es el estado
+oculto en el paso </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:4.5pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=6 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image002.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>, que actúa
+como memoria de la red.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l6 level1 lfo5'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><!--[if gte msEquation 12]><m:oMath><m:sSub><m:sSubPr><span
+   style='font-family:"Cambria Math",serif;mso-ascii-font-family:"Cambria Math";
+   mso-hansi-font-family:"Cambria Math"'><m:ctrlPr></m:ctrlPr></span></m:sSubPr><m:e><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>y</m:r></span></i></m:e><m:sub><i
+   style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:sub></m:sSub></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:9.75pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image007.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=13 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image008.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es><span
+style='mso-spacerun:yes'> </span>es la salida en el paso </span><!--[if gte msEquation 12]><m:oMath><i
+ style='mso-bidi-font-style:normal'><span lang=es style='font-family:"Cambria Math",serif'><m:r>t</m:r></span></i></m:oMath><![endif]--><![if !msEquation]><span
+lang=es style='font-size:11.0pt;line-height:115%;font-family:"Arial",sans-serif;
+mso-fareast-font-family:Arial;position:relative;top:4.5pt;mso-text-raise:-4.5pt;
+mso-font-kerning:0pt;mso-ligatures:none;mso-ansi-language:#000A;mso-fareast-language:
+ES-CO;mso-bidi-language:AR-SA'><!--[if gte vml 1]><v:shape id="_x0000_i1025"
+ type="#_x0000_t75" style='width:4.5pt;height:15pt'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image001.png"
+  o:title="" chromakey="white"/>
+</v:shape><![endif]--><![if !vml]><img width=6 height=20
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image002.gif"
+v:shapes="_x0000_i1025"><![endif]></span><![endif]><span lang=es>.</span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es>Más
+información sobre redes neuronales recurrentes: </span></b><span lang=  ><a
+href="https://www.youtube.com/watch?v=AsNTP8Kwu80"><span
+class=SpellE><span style='color:#1155CC'>Recurrent</span></span><span
+style='color:#1155CC'> Neural Networks (<span class=SpellE>RNNs</span>), <span
+class=SpellE>Clearly</span> <span class=SpellE>Explained</span>!!!</span></a> <span
+style='mso-no-proof:yes'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image2.png" o:spid="_x0000_i1030"
+ type="#_x0000_t75" style='width:495pt;height:221.25pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image019.png"
+  o:title="" croptop="14949f" cropbottom="13732f" cropleft="7185f" cropright="6640f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=660 height=295
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image020.jpg"
+v:shapes="image2.png"><![endif]></span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span> de: </span></b><span
+lang=es><a
+href="https://vijaygadre.medium.com/recurrent-neural-networks-a-beginners-guide-16333bd2eeb1"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Recurrent Neural
+Networks: A Beginner’s Guide | by Vijay Gadre</span></a></span><span lang=es
+style='mso-ansi-language:EN-US'> </span><span lang=es style='mso-no-proof:yes'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image4.png" o:spid="_x0000_i1029"
+ type="#_x0000_t75" style='width:441.75pt;height:189pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image021.png"
+  o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=589 height=252
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image022.gif"
+v:shapes="image4.png"><![endif]></span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span> de: </span></b><span
+lang=es><a
+href="https://vijaygadre.medium.com/recurrent-neural-networks-a-beginners-guide-16333bd2eeb1"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Recurrent Neural
+Networks: A Beginner’s Guide | by Vijay Gadre</span></a></span><span lang=es
+style='mso-ansi-language:EN-US'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_p4xcjsfx7rar"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>Tipos de arquitectura de
+Redes Neuronales Recurrentes:<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Se <span class=GramE>exploraran</span>
+ejemplos de redes neuronales recurrentes (RNN) para los tres tipos principales
+de arquitecturas: <span class=SpellE><b style='mso-bidi-font-weight:normal'>Many-to-One</b></span>,
+<span class=SpellE><b style='mso-bidi-font-weight:normal'>Many-to-Many</b></span>,
+y <span class=SpellE><b style='mso-bidi-font-weight:normal'>One-to-Many</b></span>.
+Cada uno tiene aplicaciones específicas, donde se <span class=GramE>brindara</span>
+un ejemplo de cada una.</span></p>
+
+<h3 style='margin-top:14.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+36.0pt;text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level1 lfo2'><a name="_4pvse2zijp"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:black;mso-ansi-language:EN-US'><span style='mso-list:
+Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:black;mso-ansi-language:
+EN-US'>Many-to-One (Muchos a Uno)<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></b><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_4wnhb5i0dkm6"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Descripción:</span><span
+lang=es><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>En una red <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Many-to-One</b></span>, se recibe una <b
+style='mso-bidi-font-weight:normal'>secuencia de entradas</b> y se genera una <b
+style='mso-bidi-font-weight:normal'>única salida</b>. Esto es útil en tareas
+donde la secuencia completa es importante para tomar una decisión final, pero
+la salida no necesita ser secuencial.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_a4m3l5hlqqa1"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Ejemplo: Análisis
+de Sentimiento</span><span lang=es><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Dada una secuencia de palabras (por
+ejemplo, una oración o un párrafo), la red produce una <b style='mso-bidi-font-weight:
+normal'>única salida</b> que indica el sentimiento general (positivo o
+negativo, por ejemplo).</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Entrada</span></b><span lang=es>: Secuencia de palabras en una oración
+o párrafo.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>&quot;Hoy estoy muy feliz porque me
+fue bien en el examen.&quot;</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>(x1, x2, x3, ..., <span class=SpellE>xT</span>)</span></b><span
+lang=es>: Cada palabra es una entrada en la secuencia.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Salida</span></b><span lang=es>: Una etiqueta que representa el
+sentimiento de la oración o párrafo.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>Salida: &quot;Positivo&quot; o
+&quot;Negativo&quot;.</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-72.0pt;mso-text-indent-alt:
+-18.0pt;mso-list:l5 level2 lfo2'><![if !supportLists]><b style='mso-bidi-font-weight:
+normal'><span lang=es style='color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-family:"Arial Unicode MS";mso-fareast-font-family:"Arial Unicode MS";
+mso-bidi-font-family:"Arial Unicode MS"'>Diagrama:<br>
+<span style='mso-tab-count:1'>            </span><br>
+<span style='mso-tab-count:1'>            </span>(x1, x2, x3, ..., <span
+class=SpellE>xT</span>) → [RNN] → Salida (y)</span><span lang=es><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:36.0pt'><b style='mso-bidi-font-weight:
+normal'><span lang=es><o:p>&nbsp;</o:p></span></b></p>
+
+<h3 style='margin-top:14.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+36.0pt;text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level1 lfo2'><a name="_l61aekg3io1j"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:black;mso-ansi-language:EN-US'><span style='mso-list:
+Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:black;mso-ansi-language:
+EN-US'>Many-to-One (Muchos a Uno)<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></b><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_fs4n80alt7mt"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Descripción:</span><span
+lang=es><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>En una red <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Many-to-Many</b></span>, tanto la entrada
+como la salida son secuencias. En este caso, se recibe una secuencia de
+entradas y se genera una secuencia de salidas. Puede haber dos tipos: las
+secuencias de entrada y salida pueden tener la misma longitud o longitudes
+diferentes.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_2e1uniwu5xgn"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Ejemplo 1:
+Traducción Automática (<span class=SpellE>Many-to-Many</span> con diferentes
+longitudes)</span><span lang=es><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Dada una secuencia de palabras en un
+idioma (por ejemplo, en inglés), la red produce una secuencia de palabras en
+otro idioma (por ejemplo, en español). La longitud de las secuencias puede ser
+diferente porque la estructura gramatical y el vocabulario varían entre los
+idiomas.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Entrada</span></b><span lang=es>: Secuencia de palabras en inglés.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=EN-US style='mso-ansi-language:EN-US'>&quot;How
+are you?&quot;<br>
+<b style='mso-bidi-font-weight:normal'>(x1, x2, x3)</b>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Salida</span></b><span lang=es>: Secuencia de palabras traducida al
+español.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>&quot;¿Cómo estás?&quot;<br>
+<b style='mso-bidi-font-weight:normal'>(y1, y2)</b>.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_20agjgrursok"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Diagrama</span></b></h4>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:36.0pt'><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-family:"Arial Unicode MS";
+mso-fareast-font-family:"Arial Unicode MS";mso-bidi-font-family:"Arial Unicode MS"'>(x1,
+x2, x3) → [RNN] → (y1, y2)</span></b></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_e93x8egbhfgg"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Ejemplo 2:
+Etiquetado Gramatical (<span class=SpellE>Many-to-Many</span> con igual
+longitud)</span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>En este caso, la secuencia de salida
+tiene la misma longitud que la secuencia de entrada. Por ejemplo, en el <b
+style='mso-bidi-font-weight:normal'>etiquetado gramatical</b> (<span
+class=SpellE>part-of-speech</span> <span class=SpellE>tagging</span>), cada
+palabra de la entrada es etiquetada con su categoría gramatical (sustantivo,
+verbo, adjetivo, etc.).</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Entrada</span></b><span lang=es>: Secuencia de palabras.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><span lang=es>&quot;El perro corre.&quot;</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>(x1, x2, x3)</span></b><span lang=es>: Cada palabra de la secuencia es
+una entrada.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Salida</span></b><span lang=es>: Secuencia de etiquetas gramaticales.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>(y1, y2, y3)</span></b><span lang=es>: Sustantivo, Sustantivo, Verbo.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;
+mso-list:l5 level2 lfo2'><![if !supportLists]><b style='mso-bidi-font-weight:
+normal'><span lang=es style='color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Diagrama:</span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-family:"Arial Unicode MS";mso-fareast-font-family:"Arial Unicode MS";
+mso-bidi-font-family:"Arial Unicode MS"'>(x1, x2, x3) → [RNN] → (y1, y2, y3)</span><span
+lang=es><o:p></o:p></span></b></p>
+
+<h3 style='margin-top:14.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+36.0pt;text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level1 lfo2'><a name="_1aany5d2sdyf"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:black;mso-ansi-language:EN-US'><span style='mso-list:
+Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:black;mso-ansi-language:
+EN-US'>Many-to-One (Muchos a Uno)<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></b><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></b></h3>
+
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_gwyjhh0f0og"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>3.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Descripción:<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>En una red <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>One-to-Many</b></span>, se recibe una <b
+style='mso-bidi-font-weight:normal'>única entrada</b> y se genera una <b
+style='mso-bidi-font-weight:normal'>secuencia de salidas</b>. Esto es útil
+cuando una sola entrada desencadena una serie de eventos o cuando una entrada
+debe ser expandida en una secuencia.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l5 level2 lfo2'><a name="_ji9s53e3p37c"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>3.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Ejemplo:
+Generación de Descripción de Imágenes<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Dada una imagen, la red genera una
+secuencia de palabras que describen la imagen. Este proceso se usa en sistemas
+de subtitulado automático de imágenes.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Entrada</span></b><span lang=es>: Una imagen.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>(x)</span></b><span lang=es>: La imagen es procesada por la red.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>Salida</span></b><span lang=es>: Una secuencia de palabras que describe
+la imagen.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:108.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=es>(y1, y2, y3, ..., <span class=SpellE>yT</span>)</span></b><span
+lang=es>: &quot;Un perro corre en el parque.&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-72.0pt;mso-text-indent-alt:
+-18.0pt;mso-list:l5 level2 lfo2'><![if !supportLists]><b style='mso-bidi-font-weight:
+normal'><span lang=es style='color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>3.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Diagrama:<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></b></p>
+
+<p class=MsoNormal style='margin-left:108.0pt'><b style='mso-bidi-font-weight:
+normal'><span lang=es style='font-family:"Arial Unicode MS";mso-fareast-font-family:
+"Arial Unicode MS";mso-bidi-font-family:"Arial Unicode MS"'>(x) → [RNN] → (y1,
+y2, y3, ..., <span class=SpellE>yT</span>)</span><span lang=es><o:p></o:p></span></b></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_2e7wp35r9pgb"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'><o:p>&nbsp;</o:p></span></b></h3>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_uowhbrgin6uo"></a><span class=SpellE><b style='mso-bidi-font-weight:
+normal'><span lang=es style='font-size:13.0pt;line-height:115%;color:black'>Backpropagation</span></b></span><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt;
+line-height:115%;color:black'> <span class=SpellE>Through</span> Time (BPTT) – <span
+class=SpellE>Retropropagación</span> a lo Largo del Tiempo<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>Backpropagation</b></span><b
+style='mso-bidi-font-weight:normal'> <span class=SpellE>Through</span> Time
+(BPTT)</b> es una extensión del algoritmo de <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>retropropagación</b></span> que se utiliza
+para entrenar <b style='mso-bidi-font-weight:normal'>redes neuronales
+recurrentes (RNN)</b>. Dado que las RNN procesan secuencias de datos, BPTT se
+encarga de calcular y ajustar los gradientes a lo largo de múltiples pasos
+temporales, permitiendo que la red aprenda dependencias a través de las
+secuencias.</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ss39oym0xiv6"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>¿Cómo Funciona BPTT?<o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>En las <b style='mso-bidi-font-weight:
+normal'>redes neuronales <span class=SpellE>feedforward</span></b> estándar
+(como las redes totalmente conectadas o convolucionales), el algoritmo de <span
+class=SpellE>retropropagación</span> se utiliza para ajustar los pesos de la
+red mediante el cálculo de los gradientes de error en cada capa y propagándolos
+hacia atrás desde la salida hacia la entrada. Sin embargo, en una RNN, el
+proceso es un poco más complejo debido a la <b style='mso-bidi-font-weight:
+normal'>dependencia temporal</b>.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>En una RNN, la salida en cada paso de
+tiempo depende tanto de la entrada actual como de los estados ocultos previos.
+Esto significa <span class=GramE>que</span> <b style='mso-bidi-font-weight:
+normal'>para calcular el error en un paso de tiempo</b>, también <b
+style='mso-bidi-font-weight:normal'>se debe considerar </b>cómo los errores de<b
+style='mso-bidi-font-weight:normal'> todos </b>los <b style='mso-bidi-font-weight:
+normal'><u>pasos</u> anteriores</b> a este, <b style='mso-bidi-font-weight:
+normal'>influyen </b>en el <b style='mso-bidi-font-weight:normal'>estado actual</b>.
+<br>
+<br>
+BPTT<b style='mso-bidi-font-weight:normal'> extiende la <span class=SpellE>retropropagación</span>
+</b>a lo largo de <b style='mso-bidi-font-weight:normal'>los varios pasos de
+tiempo </b>para calcular los gradientes de todos estos pasos. Para luego
+realizar este proceso con cada capa de la red recurrente</span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+0cm;mso-pagination:widow-orphan;page-break-after:auto'><a name="_ruyhne8k6v7j"></a><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'>Desglose del Proceso<o:p></o:p></span></b></h4>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l7 level1 lfo1'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Propagación hacia
+     adelante</span></b><span lang=es>: La red procesa una secuencia de
+     entradas en varios pasos temporales. En cada paso, la RNN actualiza su
+     estado oculto y genera una salida.<br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo1'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Cálculo de la pérdida</span></b><span lang=es>: La
+     red calcula el error o pérdida entre la salida predicha y la salida real
+     en cada paso de tiempo.<br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='mso-list:l7 level1 lfo1'><b style='mso-bidi-font-weight:
+     normal'><span lang=es>Propagación hacia atrás en el tiempo</span></b><span
+     lang=es>: En lugar de <b style='mso-bidi-font-weight:normal'>solo calcular
+     los gradientes</b> de la pérdida para el <b style='mso-bidi-font-weight:
+     normal'>paso actual</b>, la RNN <span class=SpellE>retropropaga</span> los
+     gradientes <b style='mso-bidi-font-weight:normal'>hacia atrás a lo largo
+     de la <u>secuencia temporal</u></b>. Esto significa que ajusta los pesos
+     considerando cómo los errores en pasos anteriores afectan los estados
+     actuales y futuros. <b style='mso-bidi-font-weight:normal'>Para luego
+     realizar la <span class=SpellE>retropropagación</span> normal con cada
+     capa.</b><br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l7 level1 lfo1'><b
+     style='mso-bidi-font-weight:normal'><span lang=es>Actualización de los
+     pesos</span></b><span lang=es>: Los pesos de la RNN se ajustan en función
+     de los gradientes acumulados en todos los pasos de tiempo.</span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Este proceso permite que la red aprenda
+dependencias tanto <b style='mso-bidi-font-weight:normal'>corto plazo</b> (lo
+que acaba de ocurrir) como de <b style='mso-bidi-font-weight:normal'>largo
+plazo</b> (eventos pasados que aún influyen en el presente).<span
+style='mso-no-proof:yes'> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ alt="Diagrama&#10;&#10;El contenido generado por IA puede ser incorrecto."
+ style='width:346.5pt;height:151.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image023.png"
+  o:title="Diagrama&#10;&#10;El contenido generado por IA puede ser incorrecto"
+  croptop="3821f" cropbottom="19977f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=462 height=202
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image024.jpg"
+alt="Diagrama&#10;&#10;El contenido generado por IA puede ser incorrecto."
+v:shapes="_x0000_i1028"><![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image1.png" o:spid="_x0000_i1027"
+ type="#_x0000_t75" alt="Diagrama&#10;&#10;El contenido generado por IA puede ser incorrecto."
+ style='width:346.5pt;height:28.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image023.png"
+  o:title="Diagrama&#10;&#10;El contenido generado por IA puede ser incorrecto"
+  croptop="52892f" cropbottom="4742f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=462 height=38
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image025.jpg"
+alt="Diagrama&#10;&#10;El contenido generado por IA puede ser incorrecto."
+v:shapes="image1.png"><![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span> de: </span></b><span
+lang=es><a
+href="https://medium.com/@lakshmi.pallempati22/backpropagation-through-time-bptt-7f32037a2699"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Backpropagation
+through time (BPTT) | by Lakshmi <span class=SpellE>Pallempati</span> | Medium</span></a></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> <br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>¿Qué es el Problema del
+Gradiente <span class=SpellE>Desapareciente</span> y Explosivo?<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>El <b style='mso-bidi-font-weight:normal'>problema
+del gradiente <span class=SpellE>desapareciente</span></b> y el <b
+style='mso-bidi-font-weight:normal'>gradiente explosivo</b> son problemas
+comunes que <b style='mso-bidi-font-weight:normal'>ocurren durante el
+entrenamiento de redes profundas</b>, especialmente en <span class=SpellE><b
+style='mso-bidi-font-weight:normal'>RNNs</b></span> cuando se procesan <b
+style='mso-bidi-font-weight:normal'>secuencias largas</b>. Ambos problemas
+están relacionados con <b style='mso-bidi-font-weight:normal'>la naturaleza de
+los gradientes que se calculan durante la <span class=SpellE>retropropagación</span>
+a través del tiempo (BPTT).<o:p></o:p></b></span></p>
+
+<h4 style='margin-top:12.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+36.0pt;text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l1 level1 lfo8'><a name="_bp4nl44gb53b"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Gradiente <span
+class=SpellE>Desapareciente</span> (<span class=SpellE>Vanishing</span> <span
+class=SpellE>Gradient</span>)<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span lang=es><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-72.0pt;mso-text-indent-alt:
+-18.0pt;mso-list:l1 level2 lfo8'><![if !supportLists]><b style='mso-bidi-font-weight:
+normal'><span lang=es><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>El</span></b><span lang=es> <b style='mso-bidi-font-weight:normal'>gradiente
+<span class=SpellE>desapareciente</span></b> ocurre cuando los gradientes
+calculados durante la <span class=SpellE>retropropagación</span> se vuelven
+extremadamente pequeños a medida que se <span class=SpellE>retropropagan</span>
+hacia las capas más profundas o hacia los pasos de tiempo anteriores. Esto
+significa que los pesos en estas capas o pasos no se actualizan de manera
+significativa, lo que impide que el modelo aprenda correctamente las
+dependencias a largo plazo.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h5 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l1 level2 lfo8'><a name="_y4dg3mct8hpq"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>¿Por qué sucede?<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>Cuando se utiliza una función de
+activación como la <b style='mso-bidi-font-weight:normal'>sigmoide</b> o <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>tanh</b></span>, los
+gradientes de la función pueden ser muy pequeños (valores entre 0 y 1). A
+medida que el error se propaga hacia atrás a través de muchos <b
+style='mso-bidi-font-weight:normal'>pasos de tiempo</b>,<b style='mso-bidi-font-weight:
+normal'> los gradientes multiplicados tienden a hacerse más pequeños</b> y,
+eventualmente, se <b style='mso-bidi-font-weight:normal'>desvanecen</b>. Esto
+hace que la red tenga dificultades para aprender dependencias a largo plazo, ya
+que<b style='mso-bidi-font-weight:normal'> la influencia de los estados pasados</b>
+en la secuencia<b style='mso-bidi-font-weight:normal'> se atenúa rápidamente</b>.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image3.png" o:spid="_x0000_i1026"
+ type="#_x0000_t75" alt="Imagen que contiene Gráfico&#10;&#10;El contenido generado por IA puede ser incorrecto."
+ style='width:272.25pt;height:173.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image026.png"
+  o:title="Imagen que contiene Gráfico&#10;&#10;El contenido generado por IA puede ser incorrecto"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=363 height=231
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image027.gif"
+alt="Imagen que contiene Gráfico&#10;&#10;El contenido generado por IA puede ser incorrecto."
+v:shapes="image3.png"><![endif]></span><b style='mso-bidi-font-weight:normal'><span
+lang=es><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Imagen <span class=SpellE>tomada</span>
+de: </span></b><span lang=es><a
+href="https://www.youtube.com/watch?v=AsNTP8Kwu80&amp;ab_channel=StatQuestwithJoshStarmer"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Recurrent Neural
+Networks (RNNs), Clearly Explained!!!</span></a></span><span lang=es
+style='mso-ansi-language:EN-US'> </span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<h5 style='margin-top:11.0pt;margin-right:0cm;margin-bottom:0cm;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l1 level2 lfo8'><a name="_70usurtalh1r"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>1.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>Consecuencias<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></b><span lang=es style='color:black'><o:p></o:p></span></h5>
+
+<p class=MsoNormal style='margin-left:108.0pt;text-indent:-18.0pt;mso-list:
+l4 level1 lfo6'><![if !supportLists]><span lang=es><span style='mso-list:Ignore'>●<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=es>La red solo puede aprender relaciones de corto plazo.<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-left:108.0pt;text-indent:-18.0pt;mso-list:
+l4 level1 lfo6'><![if !supportLists]><span lang=es><span style='mso-list:Ignore'>●<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><span
+lang=es>Las dependencias a largo plazo en secuencias largas no se capturan
+adecuadamente.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h4 style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:36.0pt;
+text-indent:-36.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l1 level1 lfo8'><a name="_17f55miypg8y"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='font-size:11.0pt;
+line-height:115%;color:black'><span style='mso-list:Ignore'><span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:11.0pt;line-height:115%;color:black'>Gradiente
+Explosivo (<span class=SpellE>Exploding</span> <span class=SpellE>Gradient</span>)<br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span><span lang=es><o:p></o:p></span></b></h4>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-72.0pt;mso-text-indent-alt:
+-18.0pt;mso-list:l1 level2 lfo8'><![if !supportLists]><b style='mso-bidi-font-weight:
+normal'><span lang=es><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><span lang=es>El <b style='mso-bidi-font-weight:
+normal'>gradiente explosivo</b> es el problema opuesto. Ocurre cuando los
+gradientes durante la <span class=SpellE>retropropagación</span> se vuelven
+extremadamente grandes. En este caso, los pesos de la red experimentan
+actualizaciones enormes, lo que hace que el modelo se vuelva inestable y puede
+provocar que los valores de los pesos se desborden o que el modelo no aprenda
+nada útil.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<h5 style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;margin-left:
+72.0pt;text-indent:-72.0pt;mso-text-indent-alt:-18.0pt;mso-pagination:widow-orphan;
+page-break-after:auto;mso-list:l1 level2 lfo8'><a name="_roqkul5dwfb0"></a><![if !supportLists]><b
+style='mso-bidi-font-weight:normal'><span lang=es style='color:black'><span
+style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es style='color:black'>¿Por qué sucede?<o:p></o:p></span></b></h5>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es>El problema del gradiente explosivo
+ocurre cuando<b style='mso-bidi-font-weight:normal'> los gradientes</b> en la <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>retropropagación</b></span>
+se <b style='mso-bidi-font-weight:normal'>multiplican por grandes valores</b>
+(en lugar de valores pequeños, como en el gradiente <span class=SpellE>desapareciente</span>).
+Esto puede suceder si los pesos iniciales de la red están mal escalados o si
+las secuencias son largas y no están bien controladas las actualizaciones de
+los gradientes.<span style='mso-no-proof:yes'> <o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es style='mso-no-proof:yes'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:72.0pt;text-align:center'><span lang=es
+style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image6.png" o:spid="_x0000_i1025"
+ type="#_x0000_t75" alt="Gráfico, Gráfico de líneas&#10;&#10;El contenido generado por IA puede ser incorrecto."
+ style='width:269.25pt;height:182.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image028.png"
+  o:title="Gráfico, Gráfico de líneas&#10;&#10;El contenido generado por IA puede ser incorrecto"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=359 height=243
+src="S11.1%20Introducción%20a%20las%20Redes%20neuronales%20recurrentes_archivos/image029.gif"
+alt="Gráfico, Gráfico de líneas&#10;&#10;El contenido generado por IA puede ser incorrecto."
+v:shapes="image6.png"><![endif]></span><b style='mso-bidi-font-weight:normal'><span
+lang=es><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:72.0pt'><span lang=es><br>
+<b style='mso-bidi-font-weight:normal'>Imagen tomada de: </b><a
+href="https://www.youtube.com/watch?v=AsNTP8Kwu80&amp;ab_channel=StatQuestwithJoshStarmer"><span
+class=SpellE><span style='color:#1155CC'>Recurrent</span></span><span
+style='color:#1155CC'> Neural Networks (<span class=SpellE>RNNs</span>), <span
+class=SpellE>Clearly</span> <span class=SpellE>Explained</span>!!!</span></a> <br
+style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:72.0pt;margin-bottom:.0001pt;text-indent:-72.0pt;mso-text-indent-alt:
+-18.0pt;mso-list:l1 level2 lfo8'><![if !supportLists]><b style='mso-bidi-font-weight:
+normal'><span lang=es><span style='mso-list:Ignore'><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>2.3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span></b><![endif]><b style='mso-bidi-font-weight:normal'><span
+lang=es>Consecuencias</span></b><b style='mso-bidi-font-weight:normal'><span
+lang=es style='font-size:10.0pt;line-height:115%'>:</span><span lang=es><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>El entrenamiento se vuelve
+inestable.<br style='mso-special-character:line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:72.0pt;text-indent:-18.0pt;mso-list:l2 level1 lfo7'><![if !supportLists]><span
+lang=es><span style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=es>La función de pérdida puede
+fluctuar o &quot;explotar&quot;, impidiendo que el modelo converja.</span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+<h3 style='margin-top:14.0pt;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_punn3a8adi79"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:13.0pt;line-height:115%;color:black'>¿Por Qué Son Necesarias
+las Redes Neuronales Recurrentes?<o:p></o:p></span></b></h3>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es>Las <b style='mso-bidi-font-weight:normal'>RNN</b>
+son necesarias porque muchos problemas en el mundo real involucran <b
+style='mso-bidi-font-weight:normal'>datos secuenciales</b>, donde cada elemento
+depende de los anteriores. Las RNN permiten modelar este tipo de datos
+secuenciales, lo que no es posible con redes neuronales tradicionales como las <b
+style='mso-bidi-font-weight:normal'>redes totalmente conectadas</b> o las <b
+style='mso-bidi-font-weight:normal'>redes neuronales convolucionales</b> (CNN),
+que asumen que todas las entradas son independientes entre sí.</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>Las
+RNN son particularmente útiles cuando:<o:p></o:p></span></b></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='margin-top:12.0pt;mso-list:l0 level1 lfo4'><span
+     lang=es>El contexto anterior es importante para realizar predicciones.</span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo4'><span lang=es>Se necesita
+     manejar secuencias de longitud variable.</span></li>
+ <li class=MsoNormal style='margin-bottom:12.0pt;mso-list:l0 level1 lfo4'><span
+     lang=es>Se requiere retener información pasada para tomar decisiones
+     futuras.<br style='mso-special-character:line-break'>
+     <![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+     <![endif]></span></li>
+</ol>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'>Enlaces de <span class=SpellE>interes</span>:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:0cm'><span lang=es><a
+href="https://www.youtube.com/watch?v=AsNTP8Kwu80&amp;ab_channel=StatQuestwithJoshStarmer"><span
+lang=EN-US style='color:#1155CC;mso-ansi-language:EN-US'>Recurrent Neural
+Networks (RNNs), Clearly Explained!!!</span></a></span><span lang=es
+style='mso-ansi-language:EN-US'> </span><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-ansi-language:EN-US'><br style='mso-special-character:
+line-break'>
+<![if !supportLineBreakNewLine]><br style='mso-special-character:line-break'>
+<![endif]><o:p></o:p></span></b></p>
+
+</div>
+
+</body>
+
+</html>
