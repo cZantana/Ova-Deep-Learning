@@ -123,8 +123,8 @@ const DragAndDropForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2F2F2] flex flex-col justify-center py-6 sm:py-12">
-      <div className="w-[80vw] min-w-0 sm:w-[40vw] sm:min-w-[650px] mx-auto bg-white p-8 sm:p-16 rounded-[2%] shadow-md">
+    <div className="h-screen bg-[#F2F2F2] flex flex-col mt-8 items-center">
+      <div className="w-[30vw] min-w-[350px] sm:min-w-[400px] bg-white p-8 sm:p-16 rounded-[2%] shadow-md">
         <h2 className="text-[#424AB5] text-center font-bold mb-4 text-3xl [font-feature-settings:'liga'_off,'clig'_off]">
           Crea tu asistente inteligente
           <br />
@@ -157,8 +157,8 @@ const DragAndDropForm = () => {
             <FileDragger onFilesSelected={handleFilesSelected} />
 
             {files.length > 0 && (
-              <div className="mt-2 h-[100px] overflow-y-auto">
-                <h4 className="text-gray-700 font-semibold mb-1 text-[13px]">
+              <div className="mt-2 max-h-[100px] overflow-y-auto">
+                <h4 className="text-gray-700 font-semibold text-[13px]">
                   Archivos seleccionados:
                 </h4>
                 <ul className="text-[13px] list-disc list-inside text-sm text-gray-600 space-y-2">
@@ -169,7 +169,7 @@ const DragAndDropForm = () => {
                         onClick={() => handleRemoveFile(index)}
                         className="ml-4 text-[#FF00B1] font-semibold hover:underline"
                       >
-                        <MdOutlineCancel style={{ fontSize: "2vw" }} />
+                        <MdOutlineCancel style={{ fontSize: "25px" }} />
                       </button>
                     </li>
                   ))}
@@ -223,7 +223,7 @@ const DragAndDropForm = () => {
 
       {/* POPUP (Modal) */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded shadow-lg w-[90%] max-w-sm text-center">
             <p className="mb-4 text-lg font-semibold">{popupMessage}</p>
             <button
