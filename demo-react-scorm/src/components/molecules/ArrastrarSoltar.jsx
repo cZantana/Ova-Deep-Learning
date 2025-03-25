@@ -126,7 +126,16 @@ const ArrastrarSoltar = ({ onFinalString }) => {
     }
   };
 
-  const createFinalString = (code, outputs) => {
+  const createFinalString = (code, outputs, options = {}) => {
+    // Parámetros configurables con valores por defecto
+    const preamble =
+      options.preamble || "Evalúa el siguiente código y sus resultados:";
+    const codeStart = options.codeStart || "[CODIGO]";
+    const codeEnd = options.codeEnd || "[/CODIGO]";
+    const resultsStart = options.resultsStart || "[RESULTADOS]";
+    const resultsEnd = options.resultsEnd || "[/RESULTADOS]";
+  
+    // Concatenar los outputs
     let concatenatedOutput = "";
     outputs.forEach((out) => {
       if (out.type === "text") {
@@ -135,9 +144,11 @@ const ArrastrarSoltar = ({ onFinalString }) => {
         concatenatedOutput += "[IMAGE]" + out.content + "[/IMAGE]\n";
       }
     });
-    return `"Evalua el siguiete codigo y sus resultados: [CODIGO]${code}[/CODIGO][RESULTADOS]${concatenatedOutput}[/RESULTADOS]"`;
+  
+    // Retorna el string formateado con los delimitadores configurables
+    return `${preamble} ${codeStart}${code}${codeEnd}${resultsStart}${concatenatedOutput}${resultsEnd}`;
   };
-
+  
   return (
     <div className="mx-6 py-8">
       <div
