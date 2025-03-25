@@ -1,9 +1,11 @@
 // src/pages/PaginaRubrica.jsx
-import React from "react";
+import React, { useState } from "react";
 import TablaRubrica from "../../components/molecules/TablaRubrica";
 import Actividad from "../../components/organisms/Actividad";
 import ArrastrarSoltar from "../../components/molecules/ArrastrarSoltar";
+import BotonEvaluar from "../../components/molecules/BotonEvaluar";
 
+const NombreActividad = "S2.5.1. Implementación de Redes Neuronales Básicas en Google Colab";
 
 const actividadData = {
     activityCode: "S2.5.1",
@@ -92,6 +94,9 @@ const rubricData = [
 
 
 const S2_5_1 = () => {
+
+  const [finalString, setFinalString] = useState("");
+
     return (
         <div className="min-h-screen bg-[var(--color-neutral-300)] p-4">
           <Actividad {...actividadData} />            
@@ -101,7 +106,12 @@ const S2_5_1 = () => {
             maxScore="5.0"
             rubricData={rubricData}
           />
-            <ArrastrarSoltar/>
+          <ArrastrarSoltar onFinalString={setFinalString} />
+          {/* Mostrar el botón solo cuando exista un finalString */}
+          {/* Mostrar el botón solo cuando exista un finalString */}
+          {finalString && (
+            <BotonEvaluar finalString={finalString} NombreActividad={NombreActividad} />
+          )}
         </div>
       );
     };

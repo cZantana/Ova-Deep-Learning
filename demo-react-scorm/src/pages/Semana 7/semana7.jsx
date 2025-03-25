@@ -8,7 +8,7 @@ import S7_2 from "./s7.2";
 import S7_3_1 from "./s7.3.1";
 
 
-
+const myAudioFiles = [];
 
 
 // const lastQuiz = getLastQuiz();
@@ -59,7 +59,7 @@ const Semana7 = () => {
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} weekId={semana} />
+      <SemanaContent myAudioFiles={myAudioFiles} docs={docs} menuData={menuData} weekId={semana} />
     </div>
   );
 };

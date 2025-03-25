@@ -7,7 +7,7 @@ import SemanaContent from "../../components/templates/SemanaContent";
 import S1_1 from "./S1.1";
 import S1_2 from "./S1.2";
 import A1_1 from "./s1.1.wav"; // Ajusta la ruta a tu proyecto
-// import A1_2 from "./s1.2.wav"; // Ajusta la ruta a tu proyecto
+import A1_2 from "./s1.2.wav"; // Ajusta la ruta a tu proyecto
 
 
 // const lastQuiz = getLastQuiz();
@@ -15,7 +15,7 @@ const weekId = "semana1_0";
 
 // Datos del menú lateral para la semana
 const docs = [S1_1, S1_2];
-const myAudioFiles = [A1_1];
+const myAudioFiles = [A1_1,A1_2];
 
 
 

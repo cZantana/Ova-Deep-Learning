@@ -6,7 +6,7 @@ import SemanaContent from "../../components/templates/SemanaContent";
 import S10_1 from "./s10.1";
 import S10_2_1 from "./s10.2.1";
 
-
+const myAudioFiles = [];
 
 const semana = "semana10_0";
 // Arreglo de documentos (componentes) a mostrar
@@ -42,7 +42,7 @@ const Semana10 = () => {
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} weekId={semana} />
+      <SemanaContent myAudioFiles={myAudioFiles} docs={docs} menuData={menuData} weekId={semana} />
     </div>
   );
 };

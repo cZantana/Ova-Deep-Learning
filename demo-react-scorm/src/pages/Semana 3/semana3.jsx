@@ -9,6 +9,7 @@ import S3_3 from "./s3.3";
 import S3_4 from "./s3.4";
 import S3_5_1 from "./s3.5.1";
 
+const myAudioFiles = [];
 
 // const lastQuiz = getLastQuiz();
 const semana = "semana3_0";
@@ -75,7 +76,7 @@ const Semana3 = () => {
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} weekId={semana} />
+      <SemanaContent myAudioFiles={myAudioFiles} docs={docs} menuData={menuData} weekId={semana} />
     </div>
   );
 };

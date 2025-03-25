@@ -8,8 +8,9 @@ import S2_2 from "./s2.2";
 import S2_3 from "./s2.3";
 import S2_4 from "./s2.4";
 import S2_5_1 from "./s2.5.1";
+// import A1_1 from "./s1.1.wav"; // Ajusta la ruta a tu proyecto
 
-
+const myAudioFiles = [];
 
 // const lastQuiz = getLastQuiz();
 const semana = "semana2_0";
@@ -81,7 +82,7 @@ const Semana2 = () => {
       {/* Navbar en la parte superior */}
       <Navbar />
       {/* Componente reutilizable que renderiza el contenido de la semana */}
-      <SemanaContent docs={docs} menuData={menuData} weekId={semana} />
+      <SemanaContent myAudioFiles={myAudioFiles} docs={docs} menuData={menuData} weekId={semana} />
     </div>
   );
 };
