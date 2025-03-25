@@ -100,7 +100,7 @@ const Sidebar = ({ menuData, weekId, activeDocIndex, onSelectDoc }) => {
               }, 500);
 
               // En mobile, al seleccionar se cierra el sidebar
-              setIsOpen(True);
+              setIsOpen(true);
             }}
             onItemClick={(position) => scrollToSection(position)}
           />
