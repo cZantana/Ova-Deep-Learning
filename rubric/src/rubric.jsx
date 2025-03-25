@@ -25,12 +25,32 @@ const FileDragger = ({ onFilesSelected }) => {
     </div>
   );
 };
+ 
+const activityOptions = [
+  { value: "S2.5.1", label: "S2.5.1" },
+  { value: "S3.5.1", label: "S3.5.1" },
+  { value: "S4.5.1", label: "S4.5.1" },
+  { value: "S4.6.1", label: "S4.6.1" },
+  { value: "S5.3.2", label: "S5.3.2" },
+  { value: "S6.3.1", label: "S6.3.1" },
+  { value: "S7.3.1", label: "S7.3.1" },
+  { value: "S8.2.1", label: "S8.2.1" },
+  { value: "S9.3.1", label: "S9.3.1" },
+  { value: "S10.2.1", label: "S10.2.1" },
+  { value: "S11.3.1", label: "S11.3.1" },
+  { value: "S12.3.1", label: "S12.3.1" },
+  { value: "S13.3.1", label: "S13.3.1" },
+  { value: "S14.2.1", label: "S14.2.1" },
+  { value: "S14.4.1", label: "S14.4.1" },
+  { value: "S15.4.1", label: "S15.4.1" },
+  { value: "S15.4.1", label: "S15.4.1" },
+];
 
 // Componente principal
 const DragAndDropForm = () => {
   const [files, setFiles] = useState([]);
   const [vectorStoreName, setVectorStoreName] = useState("");
-  const [assistantModel, setAssistantModel] = useState("gpt-4o");
+  const [assistantModel, setAssistantModel] = useState("gpt-4o-mini");
   const [assistantName, setAssistantName] = useState("");
   const [assistantInstructions, setAssistantInstructions] = useState(`Eres un asistente experto en la evaluación de proyectos de código relacionado con el tema de DeepLearning. Tu función es la siguiente:
 
@@ -124,7 +144,7 @@ const DragAndDropForm = () => {
 
   return (
     <div className="h-screen bg-[#F2F2F2] flex flex-col mt-8 items-center">
-      <div className="w-[30vw] min-w-[350px] sm:min-w-[400px] bg-white p-8 sm:p-16 rounded-[2%] shadow-md">
+      <div className="w-[30vw] min-w-[350px] sm:min-w-[600px] bg-white p-8 sm:p-16 rounded-[2%] shadow-md">
         <h2 className="text-[#424AB5] text-center font-bold mb-4 text-3xl [font-feature-settings:'liga'_off,'clig'_off]">
           Crea tu asistente inteligente
           <br />
@@ -140,14 +160,19 @@ const DragAndDropForm = () => {
             <label className="block text-[#687079] font-regular mb-1">
               Nombre de la actividad
             </label>
-            <input
-              type="text"
-              placeholder="Coloca el nombre de la actividad..."
+            <select
               value={actividad}
               onChange={(e) => setActividad(e.target.value)}
               className="bg-[#F7F7FF] w-full rounded px-3 py-2
-                         focus:outline-none focus:border-indigo-500 placeholder:text-[13px] placeholder:text-[#B6B7CD]"
-            />
+                         focus:outline-none focus:border-indigo-500 
+                         placeholder:text-[13px] placeholder:text-[#B6B7CD]"
+            >
+              {activityOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div className="mb-8">
