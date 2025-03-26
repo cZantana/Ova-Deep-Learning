@@ -5,7 +5,7 @@ import Actividad from "../../components/organisms/Actividad";
 import ArrastrarSoltar from "../../components/molecules/ArrastrarSoltar";
 import BotonEvaluar from "../../components/molecules/BotonEvaluar";
 
-const NombreActividad = "S2.5.1. Implementación de Redes Neuronales Básicas en Google Colab";
+const NombreActividad = "S2.5.1";
 
 const actividadData = {
     activityCode: "S2.5.1",

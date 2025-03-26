@@ -1,61 +1,80 @@
-import React from "react";
+// src/components/SemanaAcordion.jsx
+import React, { useState } from 'react';
 import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
   Typography,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import TemaItem from "../molecules/TemaItem";
+  Divider,
+  Box
+} from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import TemaItem from '../molecules/TemaItem';
 
-const SemanaAccordion = ({ weekNumber, items }) => {
+const SemanaAcordion = ({ activityKey, activityDefinition, evaluation }) => {
+  // activityKey es por ejemplo "S2.5.1"
+  // activityDefinition tiene { Actividad, criterios: [...] }
+  // evaluation tiene { criterios: [...], comentarios: [...], final: "nota final" }
+  
+  // Si no hay evaluación, se puede mostrar "Pendiente"
+  const finalGrade = evaluation && evaluation.final ? evaluation.final : "Pendiente";
+  
+  // Para combinar criterios, se puede recorrer el array de activityDefinition.criterios y emparejarlo
+  // con los datos en evaluation.criterios y evaluation.comentarios (por posición)
+  const criterios = activityDefinition?.criterios || [];
+  const evalCriterios = evaluation?.criterios || [];
+  const evalComentarios = evaluation?.comentarios || [];
+  
+  const [expanded, setExpanded] = useState(false);
+  
   return (
-    <Accordion
-      // Personaliza estilos usando sx (puedes combinar con tus variables de Tailwind)
-      sx={{
-        backgroundColor: "var(--color-neutral-300)",
-        borderBottom: "1px solid var(--color-neutral-400)",
-        boxShadow: "none",
-        marginBottom: "0rem",
-        "&.Mui-expanded": {
-          margin: "auto",
-        },
-        "&::before": {
-          display: "none", // Elimina la línea que MUI pone antes del accordion
-        },
-      }}
-    >
-      <AccordionSummary
-        expandIcon={<ExpandMoreIcon/>}
-        aria-controls={`panel${weekNumber}-content`}
-        id={`panel${weekNumber}-header`}
-        sx={{    
-          // Aumentar padding horizontal y vertical en el summary
-          px: 3, // Equivale a 24px de padding horizontal
-          // py: 2, // Equivale a 16px de padding vertical
-      
-          "& .MuiAccordionSummary-expandIconWrapper": {
-            // Agregar margen a la derecha del ícono
-            marginRight: "5px",
-          },
-        }}
-      >
-        <Typography
-          variant="h6"
-        >
-          <div className="text-1xl font-sans font-semibold text-[var(--color-blue-600)] ml-3">
-          Semana {weekNumber}
-          </div>
-        </Typography>
+    <Accordion expanded={expanded} onChange={() => setExpanded(!expanded)}>
+      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+          <Typography variant="subtitle1">
+            {activityKey} - {activityDefinition?.Actividad}
+          </Typography>
+          <Typography variant="subtitle1" fontWeight="bold">
+            Nota Final: {finalGrade}
+          </Typography>
+        </Box>
       </AccordionSummary>
-
-      <AccordionDetails className="w-11/12 mx-auto divide-y divide-[var(--color-neutral-400)]">
-        {items.map((item, index) => (
-          <TemaItem key={index} {...item} />
-        ))}
+      <AccordionDetails>
+        {/* Sección: Calificaciones por criterio */}
+        <Accordion defaultExpanded>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="subtitle2">Calificaciones por criterio</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {criterios.map((crit, index) => (
+              <TemaItem
+                key={index}
+                label={crit}
+                value={evalCriterios[index] || "N/A"}
+              />
+            ))}
+          </AccordionDetails>
+        </Accordion>
+        <Divider sx={{ my: 1 }} />
+        {/* Sección: Retroalimentación */}
+        <Accordion defaultExpanded>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="subtitle2">Retroalimentación</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {criterios.map((crit, index) => (
+              <Box key={index} sx={{ my: 0.5 }}>
+                <Typography variant="body2" fontWeight="bold">{crit}</Typography>
+                <Typography variant="body2">
+                  {evalComentarios[index] || "Sin retroalimentación"}
+                </Typography>
+              </Box>
+            ))}
+          </AccordionDetails>
+        </Accordion>
       </AccordionDetails>
     </Accordion>
   );
 };
 
-export default SemanaAccordion;
+export default SemanaAcordion;

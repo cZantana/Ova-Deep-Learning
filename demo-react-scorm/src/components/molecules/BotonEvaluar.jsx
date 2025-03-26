@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import { buildAndStoreEvaluation } from "../../utils/evaluationProcessor";
 import MarkdownRenderer from "./MarkdownRenderer";
+import SCORMContext from "../../context/SCORMContext";
 
 const BotonEvaluar = ({ finalString, NombreActividad }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [apiResponse, setApiResponse] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Obtén la función refreshSCORMData desde el contexto
+  const { refreshSCORMData } = useContext(SCORMContext);
+
   const handleEvaluar = async () => {
-    // Al presionar el botón, establecemos isLoading en true
     setIsLoading(true);
     try {
       const response = await axios.post(
@@ -16,7 +20,7 @@ const BotonEvaluar = ({ finalString, NombreActividad }) => {
         {
           assistant_id: "asst_XdACCr9pixWqpypY9YWVaCjT",
           vector_store_ids: "vs_67e30be011808191b6bf3a83bf4fbabf",
-          prompt: finalString // Aquí se envía el string formateado
+          prompt: finalString,
         },
         {
           headers: {
@@ -26,16 +30,25 @@ const BotonEvaluar = ({ finalString, NombreActividad }) => {
       );
 
       console.log("Respuesta de la API:", response.data);
+      // Guarda la respuesta en el estado y muestra el pop-up
+
+      const evaluacionJSON = buildAndStoreEvaluation(NombreActividad, response.data, refreshSCORMData);
+
+      console.log("Evaluación JSON:", evaluacionJSON);
+
+      // Guarda la respuesta en el estado y muestra el pop-up
       setApiResponse(response.data);
+
+    //   setApiResponse(response.data);
       setShowPopup(true);
     } catch (error) {
       console.error("Error en la evaluación:", error);
       setApiResponse({ error: "Ocurrió un error al procesar la evaluación" });
       setShowPopup(true);
-    } finally {
-      // Al terminar la petición (éxito o error), restablecemos isLoading a false
-      setIsLoading(false);
-    }
+    }finally {
+        // Al terminar la petición (éxito o error), restablecemos isLoading a false
+        setIsLoading(false);
+      }
   };
 
   return (
@@ -71,5 +84,6 @@ const BotonEvaluar = ({ finalString, NombreActividad }) => {
     </>
   );
 };
+
 
 export default BotonEvaluar;
