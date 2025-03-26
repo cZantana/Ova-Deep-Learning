@@ -1,22 +1,13 @@
-import React from "react";
+// src/components/TemaItem.jsx
+import React from 'react';
+import { Typography, Box } from '@mui/material';
 
-const TemaItem = ({ title, status, score }) => {
+const TemaItem = ({ label, value }) => {
   return (
-    <div className="bg-[var(--color-neutral-300)] p-3 rounded-md flex items-center justify-between mb-2">
-      <div>
-        <div className="text-[var(--color-blue-800)] font-medium">
-          {title}
-        </div>
-        <div className="text-[var(--color-neutral-700)] text-sm">
-          {status}
-        </div>
-      </div>
-      {score && (
-        <div className="text-[var(--color-primary)] font-bold text-md ml-10">
-          {score}
-        </div>
-      )}
-    </div>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', my: 0.5 }}>
+      <Typography variant="body1">{label}</Typography>
+      <Typography variant="body1" fontWeight="bold">{value}</Typography>
+    </Box>
   );
 };
 

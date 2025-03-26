@@ -25,7 +25,7 @@ const CallToAction = () => {
         <div className="md:w-1/2 ">
           <h2 className="text-3xl font-bold text-[var(--color-neutral-900)] flex text-center sm:text-left">
           {lastQuiz && quizConfig ? (
-          <p>Continuar Con: {quizConfig.description}</p>
+          <p className="text-(--color-info)">Continuar Con: <p className="text-(--color-neutral-900)">{quizConfig.description}</p></p>
           ) : (
             <p>Aún no has realizado ninguna actividad.</p>
           )}
@@ -40,7 +40,7 @@ const CallToAction = () => {
               
             </div>
             <Button
-              text={lastQuiz == null ? (
+              text={lastQuiz && quizConfig ? (
                 <p>Continuar</p>
               ) : (
                 <p>Empezar viaje</p>

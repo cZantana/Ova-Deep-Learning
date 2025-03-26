@@ -1,6 +1,5 @@
 // src/utils/evaluationManager.js
 import pipwerks from 'pipwerks-scorm-api-wrapper';
-import { quizzes } from '../config/Quizzes'; // Si lo necesitas
 
 export const getEvaluationData = () => {
   const data = pipwerks.SCORM.get("cmi.suspend_data");
@@ -12,19 +11,21 @@ export const getEvaluationData = () => {
 };
 
 export const updateEvaluationData = (quizKey, evaluation) => {
-  // Obtiene los datos existentes; si no existen, se inicializa como objeto vacío
   let data = getEvaluationData();
   if (!data || typeof data !== "object") {
     data = {};
   }
-  // Actualiza o agrega la evaluación para el quizKey
   data[quizKey] = evaluation;
   
-  // Guarda el objeto actualizado en cmi.suspend_data
+  console.log("Antes de set:", data);
+  
   pipwerks.SCORM.set("cmi.suspend_data", JSON.stringify(data));
+  
   if (typeof pipwerks.SCORM.save === "function") {
     pipwerks.SCORM.save();
   } else {
     console.warn("SCORM.save no está disponible.");
   }
+  
+  console.log("Dentro de updateEvaluationData, datos guardados:", data);
 };

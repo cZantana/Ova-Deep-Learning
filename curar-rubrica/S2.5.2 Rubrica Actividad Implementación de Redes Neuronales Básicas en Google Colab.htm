@@ -1,0 +1,1368 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List
+href="S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/filelist.xml">
+<link rel=Edit-Time-Data
+href="S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>User</o:Author>
+  <o:LastAuthor>Cristian Santana</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2025-03-26T01:00:00Z</o:Created>
+  <o:LastSaved>2025-03-26T01:00:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1069</o:Words>
+  <o:Characters>5882</o:Characters>
+  <o:Lines>49</o:Lines>
+  <o:Paragraphs>13</o:Paragraphs>
+  <o:CharactersWithSpaces>6938</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData
+href="S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/themedata.thmx">
+<link rel=colorSchemeMapping
+href="S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>ES-CO</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="376">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hashtag"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Unresolved Mention"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Smart Link"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-469750017 -1073732485 9 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:20.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	mso-font-kerning:0pt;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h2
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h3
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:16.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#434343;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h4
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h5
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;}
+h6
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#666666;
+	mso-ansi-language:#000A;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:26.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	mso-ansi-language:#000A;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-priority:11;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:16.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:15.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Arial;
+	color:#666666;
+	mso-ansi-language:#000A;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	mso-ansi-language:#000A;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	line-height:115%;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/header.htm") fs;
+	mso-footnote-continuation-separator:url("S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/header.htm") fcs;
+	mso-endnote-separator:url("S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/header.htm") es;
+	mso-endnote-continuation-separator:url("S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/header.htm") ecs;}
+@page WordSection1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-page-numbers:1;
+	mso-header:url("S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/header.htm") h1;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Tabla normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+table.TableNormal
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-unhide:no;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+table.a
+	{mso-style-name:"";
+	mso-tstyle-rowband-size:1;
+	mso-tstyle-colband-size:1;
+	mso-style-unhide:no;
+	mso-style-parent:"Table Normal";
+	mso-padding-alt:0cm 5.75pt 0cm 5.75pt;
+	mso-para-margin:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-ansi-language:#000A;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ES-CO style='tab-interval:36.0pt;word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<h3 style='margin-top:0cm;mso-pagination:widow-orphan;page-break-after:auto'><a
+name="_mnq4v95hmfq0"></a><b style='mso-bidi-font-weight:normal'><span lang=es
+style='font-size:11.0pt;line-height:115%;color:black'>SEMANA 2 (RÚBRICA)</span></b></h3>
+
+<table class=a border=1 cellspacing=0 cellpadding=0 width=557 style='margin-left:
+ 2.25pt;border-collapse:collapse;mso-table-layout-alt:fixed;border:none;
+ mso-border-alt:solid black .75pt;mso-padding-alt:0cm 5.75pt 0cm 5.75pt;
+ mso-border-insideh:.75pt solid black;mso-border-insidev:.75pt solid black'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:13.55pt'>
+  <td width=382 colspan=2 valign=top style='width:286.55pt;border:solid black 1.0pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:13.55pt'>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Rúbrica
+  de Evaluación<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=175 rowspan=4 valign=top style='width:131.2pt;border:solid black 1.0pt;
+  border-left:none;mso-border-left-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:13.55pt'>
+  <p class=MsoNormal style='line-height:normal'><!--[if gte vml 1]><v:shapetype
+   id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+   path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="image1.png" o:spid="_x0000_s1026" type="#_x0000_t75"
+   style='position:absolute;margin-left:22.1pt;margin-top:14.95pt;width:78.8pt;
+   height:106.1pt;z-index:251658240;visibility:visible;mso-wrap-style:square;
+   mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;
+   mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;
+   mso-position-horizontal:absolute;mso-position-horizontal-relative:text;
+   mso-position-vertical:absolute;mso-position-vertical-relative:text'>
+   <v:imagedata src="S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/image001.png"
+    o:title=""/>
+  </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:251658240;margin-left:30px;margin-top:20px;
+  width:105px;height:141px'><img width=105 height=141
+  src="S2.5.2%20Rubrica%20Actividad%20Implementación%20de%20Redes%20Neuronales%20Básicas%20en%20Google%20Colab_archivos/image002.gif"
+  v:shapes="image1.png"></span><![endif]><b style='mso-bidi-font-weight:normal'><span
+  lang=es style='font-size:12.0pt'><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:14.25pt'>
+  <td width=382 colspan=2 valign=top style='width:286.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:14.25pt'>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'>REA 1. <o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:9.3pt'>
+  <td width=382 colspan=2 valign=top style='width:286.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:9.3pt'>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'>Actividad 1: </span></b><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:13.0pt'><span
+  style='mso-spacerun:yes'> </span>Implementación de Redes Neuronales Básicas
+  en Google <span class=SpellE>Colab</span></span></b><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:12.85pt'>
+  <td width=382 colspan=2 valign=top style='width:286.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:12.85pt'>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'>Máxima calificación 5.0 <o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:262.1pt'>
+  <td width=233 valign=top style='width:174.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:262.1pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Primer
+  criterio de Evaluación.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><span lang=es style='font-size:12.0pt;line-height:
+  115%'>En este criterio, los estudiantes deben implementar un <b
+  style='mso-bidi-font-weight:normal'>perceptrón</b> desde cero, sin utilizar
+  librerías especializadas en <span class=SpellE>deep</span> <span
+  class=SpellE>learning</span> como <span class=SpellE>TensorFlow</span> o <span
+  class=SpellE>PyTorch</span>. El perceptrón debe estar programado utilizando
+  operaciones matriciales y lógicas con <span class=SpellE><b style='mso-bidi-font-weight:
+  normal'>NumPy</b></span>. Se espera que los estudiantes demuestren cómo este
+  modelo puede realizar una clasificación binaria, basándose en un conjunto de
+  datos sencillo.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Este
+  criterio representa 1 unidades del total de 5 que tiene la actividad.<o:p></o:p></span></b></p>
+  </td>
+  <td width=324 colspan=2 valign=top style='width:243.2pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:262.1pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(4
+  - 5<span class=GramE>) :</span> Excelente</span></b><span lang=es>: El
+  perceptrón está completamente implementado y resuelve correctamente problemas
+  de clasificación linealmente separables. El código es eficiente, claro y
+  sigue buenas prácticas de programación.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(3
+  - 4<span class=GramE>) :</span> Bueno</span></b><span lang=es>: El perceptrón
+  está implementado correctamente y resuelve la mayoría de los problemas de
+  clasificación lineal. El código es funcional, aunque puede mejorar en
+  claridad o eficiencia.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(2
+  - 3<span class=GramE>) :</span> Suficiente</span></b><span lang=es>: El
+  perceptrón está parcialmente implementado, con algunos errores que afectan su
+  funcionamiento. Resuelve algunos casos de clasificación, pero con
+  limitaciones.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(1
+  - 2<span class=GramE>) :</span> Deficiente</span></b><span lang=es>: El
+  perceptrón está incompleto o con fallos graves que impiden que funcione en la
+  mayoría de los casos.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(0
+  - 1<span class=GramE>) :</span> Insuficiente</span></b><span lang=es>: El
+  perceptrón no está implementado o la implementación es incorrecta y no
+  clasifica correctamente ningún conjunto de datos.</span><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt;line-height:115%'><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:6.8pt'>
+  <td width=233 valign=top style='width:174.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Segundo
+  criterio de Evaluación.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><span lang=es style='font-size:12.0pt;line-height:
+  115%'>Este criterio evalúa la implementación de una <b style='mso-bidi-font-weight:
+  normal'>red neuronal de una sola capa</b>. El modelo debe extender el
+  concepto de perceptrón a múltiples neuronas en una capa de salida, utilizando
+  operaciones matriciales. El objetivo es que los estudiantes implementen una
+  red que pueda realizar tareas de clasificación binaria o multiclase simple.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+  lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Este
+  criterio representa 1 unidades del total de 5 que tiene la actividad.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=324 colspan=2 valign=top style='width:243.2pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(4
+  - 5<span class=GramE>) :</span> Excelente</span></b><span lang=es>: La red
+  neuronal de una capa está correctamente implementada. Los resultados son
+  correctos y el código sigue buenas prácticas.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(3
+  - 4<span class=GramE>) :</span> Bueno</span></b><span lang=es>: La red neuronal
+  de una capa está mayormente implementada, con pequeños detalles que pueden
+  mejorarse en términos de eficiencia o claridad.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(2
+  - 3<span class=GramE>) :</span> Suficiente</span></b><span lang=es>: La red
+  neuronal de una capa tiene algunos errores, pero la lógica básica está
+  presente.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(1
+  - 2<span class=GramE>) :</span> Deficiente</span></b><span lang=es>: La red
+  neuronal de una capa está incompleta o con errores graves que afectan su
+  funcionamiento.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(0
+  - 1<span class=GramE>) :</span> Insuficiente</span></b><span lang=es>: La red
+  neuronal de una capa no está implementada correctamente o no produce
+  resultados válidos.</span><b style='mso-bidi-font-weight:normal'><span
+  lang=es style='font-size:12.0pt;line-height:115%'><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:6.8pt'>
+  <td width=233 valign=top style='width:174.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Tercer
+  criterio de Evaluación.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><span lang=es style='font-size:12.0pt;line-height:
+  115%'>Este criterio evalúa la implementación de una <b style='mso-bidi-font-weight:
+  normal'>red neuronal multicapa</b>, que incluye al menos una capa oculta. Los
+  estudiantes deben demostrar cómo las capas ocultas permiten a la red aprender
+  características más complejas. Se espera que la red ajuste manualmente o
+  básicamente los pesos y realizar la clasificación.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Este
+  criterio representa 3 unidades del total de 5 que tiene la actividad.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=324 colspan=2 valign=top style='width:243.2pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(4
+  - 5<span class=GramE>) :</span> Excelente</span></b><span lang=es>: La red
+  neuronal multicapa está completamente implementada con múltiples capas y
+  funciones de activación, que funcionan correctamente.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(3
+  - 4<span class=GramE>) :</span> Bueno</span></b><span lang=es>: La red
+  neuronal multicapa está implementada, pero podría mejorar en claridad o
+  eficiencia del código. Los resultados son en su mayoría correctos.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(2
+  - 3<span class=GramE>) :</span> Suficiente</span></b><span lang=es>: La red
+  neuronal multicapa tiene algunos errores en la implementación, pero funciona
+  parcialmente.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(1
+  - 2<span class=GramE>) :</span> Deficiente</span></b><span lang=es>: La red
+  neuronal multicapa está incompleta o con errores graves.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(0
+  - 1<span class=GramE>) :</span> Insuficiente</span></b><span lang=es>: La red
+  neuronal multicapa no está implementada correctamente o no produce resultados
+  válidos.</span><b style='mso-bidi-font-weight:normal'><span lang=es
+  style='font-size:12.0pt;line-height:115%'><o:p></o:p></span></b></p>
+  <p class=MsoNormal style='line-height:normal'><b style='mso-bidi-font-weight:
+  normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:6.8pt'>
+  <td width=233 valign=top style='width:174.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Cuarto
+  criterio de Evaluación.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><span lang=es style='font-size:12.0pt;line-height:
+  115%'>Este criterio evalúa el uso adecuado de <span class=SpellE><b
+  style='mso-bidi-font-weight:normal'>NumPy</b></span> para realizar las
+  operaciones matriciales necesarias en la implementación de las redes
+  neuronales. Se espera que los estudiantes utilicen operaciones vectorizadas
+  para mejorar la eficiencia de los cálculos y evitar el uso de bucles
+  innecesarios.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Este
+  criterio representa 1 unidades del total de 5 que tiene la actividad.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=324 colspan=2 valign=top style='width:243.2pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(4
+  - 5<span class=GramE>) :</span> Excelente</span></b><span lang=es>: Todas las
+  operaciones matriciales (multiplicaciones, sumas, transposiciones, etc.)
+  están correctamente implementadas usando <span class=SpellE><b
+  style='mso-bidi-font-weight:normal'>NumPy</b></span>. El código es eficiente
+  y bien optimizado.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(3
+  - 4<span class=GramE>) :</span> Bueno</span></b><span lang=es>: Las
+  operaciones con <span class=SpellE><b style='mso-bidi-font-weight:normal'>NumPy</b></span>
+  están bien implementadas, pero podrían mejorarse algunas áreas para mayor
+  eficiencia.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(2
+  - 3<span class=GramE>) :</span> Suficiente</span></b><span lang=es>: Las
+  operaciones con <span class=SpellE><b style='mso-bidi-font-weight:normal'>NumPy</b></span>
+  están parcialmente implementadas, pero tienen errores o ineficiencias en
+  algunos puntos.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(1
+  - 2<span class=GramE>) :</span> Deficiente</span></b><span lang=es>: El uso
+  de <span class=SpellE><b style='mso-bidi-font-weight:normal'>NumPy</b></span>
+  es limitado o tiene errores significativos en la implementación.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(0
+  - 1<span class=GramE>) :</span> Insuficiente</span></b><span lang=es>: El uso
+  de <span class=SpellE><b style='mso-bidi-font-weight:normal'>NumPy</b></span>
+  es incorrecto o mínimo, y las operaciones no se realizan de manera correcta.<b
+  style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:6.8pt'>
+  <td width=233 valign=top style='width:174.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Quinto
+  criterio de Evaluación.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><span lang=es style='font-size:12.0pt;line-height:
+  115%'>Este criterio evalúa la <b style='mso-bidi-font-weight:normal'>documentación</b>
+  y <b style='mso-bidi-font-weight:normal'>organización del código</b>. Los
+  estudiantes deben presentar un código bien estructurado, fácil de seguir, con
+  comentarios que expliquen cada parte del proceso, desde la carga de los datos
+  hasta la implementación de las redes neuronales y las funciones de
+  optimización.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Este
+  criterio representa 1 unidades del total de 5 que tiene la actividad.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=324 colspan=2 valign=top style='width:243.2pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(4
+  - 5<span class=GramE>) :</span> Excelente</span></b><span lang=es>: El código
+  está bien documentado, con comentarios claros que explican cada paso. Está
+  organizado, con funciones y variables bien definidas y estructuradas.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(3
+  - 4<span class=GramE>) :</span> Bueno</span></b><span lang=es>: El código está
+  mayormente documentado y organizado, pero podría mejorarse en algunos
+  comentarios o en la estructura del código.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(2
+  - 3<span class=GramE>) :</span> Suficiente</span></b><span lang=es>: La
+  documentación y organización del código son mínimas, pero <span class=SpellE>aún</span>
+  así es posible entender el código con algo de esfuerzo.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(1
+  - 2<span class=GramE>) :</span> Deficiente</span></b><span lang=es>: La
+  documentación es escasa o inexistente y el código está desorganizado,
+  dificultando la comprensión.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(0
+  - 1<span class=GramE>) :</span> Insuficiente</span></b><span lang=es>: No hay
+  documentación ni organización en el código, lo que lo hace difícil de
+  entender.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes;height:6.8pt'>
+  <td width=233 valign=top style='width:174.55pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;mso-border-alt:solid black .75pt;
+  padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Sexto
+  criterio de Evaluación.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><span lang=es style='font-size:12.0pt;line-height:
+  115%'>Este criterio evalúa el <b style='mso-bidi-font-weight:normal'>funcionamiento
+  global</b> del código y la <b style='mso-bidi-font-weight:normal'>calidad de
+  los resultados obtenidos</b>. El enfoque está en qué tan bien el modelo
+  implementado funciona en términos de clasificación y si los resultados
+  obtenidos son consistentes y de alta calidad.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'>Este
+  criterio representa 1 unidades del total de 5 que tiene la actividad.<o:p></o:p></span></b></p>
+  <p class=MsoNormal style='text-align:justify;line-height:normal'><b
+  style='mso-bidi-font-weight:normal'><span lang=es style='font-size:12.0pt'><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td width=324 colspan=2 valign=top style='width:243.2pt;border-top:none;
+  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  mso-border-alt:solid black .75pt;padding:0cm 5.75pt 0cm 5.75pt;height:6.8pt'>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(4
+  - 5<span class=GramE>) :</span> Excelente</span></b><span lang=es>: Todos los
+  modelos (perceptrón, red de una capa y multicapa) funcionan correctamente y
+  los resultados son consistentes. La presentación de los resultados es clara y
+  adecuada.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(3
+  - 4<span class=GramE>) :</span> Bueno</span></b><span lang=es>: Los modelos
+  funcionan correctamente en su mayoría, aunque algunos resultados podrían
+  estar mejor presentados o justificarse con más detalle.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(2
+  - 3<span class=GramE>) :</span> Suficiente</span></b><span lang=es>: Los
+  resultados son parcialmente correctos, pero hay errores o inconsistencias en
+  algunos casos.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(1
+  - 2<span class=GramE>) :</span> Deficiente</span></b><span lang=es>: Los
+  resultados son mayormente incorrectos y hay errores importantes en el
+  funcionamiento de los modelos.</span></p>
+  <p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+  12.0pt;margin-left:0cm'><b style='mso-bidi-font-weight:normal'><span lang=es>(0
+  - 1<span class=GramE>) :</span> Insuficiente</span></b><span lang=es>: Los
+  modelos no funcionan correctamente y no producen resultados válidos.<b
+  style='mso-bidi-font-weight:normal'><o:p></o:p></b></span></p>
+  </td>
+ </tr>
+ <![if !supportMisalignedColumns]>
+ <tr height=0>
+  <td width=233 style='border:none'></td>
+  <td width=149 style='border:none'></td>
+  <td width=175 style='border:none'></td>
+ </tr>
+ <![endif]>
+</table>
+
+<p class=MsoNormal style='line-height:normal'><span lang=es style='font-size:
+12.0pt;font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=es><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
