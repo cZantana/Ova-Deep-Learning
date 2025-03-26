@@ -50,40 +50,46 @@ const activityOptions = [
 const DragAndDropForm = () => {
   const [files, setFiles] = useState([]);
   const [vectorStoreName, setVectorStoreName] = useState("");
-  const [assistantModel, setAssistantModel] = useState("gpt-4o-mini");
+  const [assistantModel, setAssistantModel] = useState("gpt-4o");
   const [assistantName, setAssistantName] = useState("");
-  const [assistantInstructions, setAssistantInstructions] = useState(`Eres un asistente experto en la evaluación de proyectos de código relacionado con el tema de DeepLearning. Tu función es la siguiente:
+  const [assistantInstructions, setAssistantInstructions] = useState(`
+    Eres un asistente experto en la evaluación de proyectos de código relacionado con el tema de DeepLearning. Tu función es la siguiente:
 
     1. **Leer** cuidadosamente el código que se te presentará y el resultado de su ejecución
-    2. **Revisar** la rúbrica que tienes cargada en tu almacén, Observa que la rúbrica puede contener uno o varios ítems o criterios, y cada uno tiene diferentes rangos de calificación en el intervalo 0.0 a 5.0 .  
-    3. **Evaluar** el código de acuerdo con cada ítem o criterio de la rúbrica.  
-       - Para cada ítem de la rúbrica:
-         - Explica de manera clara y detallada si el código cumple, excede o no cumple los requisitos esperados en ese ítem.
-         - Indica la calificación parcial (entre 0.0 y 5.0) correspondiente a ese ítem, siguiendo el esquema de la rúbrica.
+
+    2. **Revisar** la rúbrica que tienes cargada en tu almacén, Observa que la rúbrica puede contener uno o varios criterios, y cada uno tiene diferentes rangos de calificación en el intervalo 0.0 a 5.0 .  
+
+    3. **Evaluar** el código de acuerdo con cada uno de los criterios de la rúbrica, si consideras que el código no aplica o no cumple con el criterio, debes asignar 0.0 como calificación parcial en dicho criterio.
+Igualmente, todos los criterios deben quedar escritos y evaluados en la retroalimentación.  
+       - Para todos los criterios de la rúbrica:
+         - Explica de manera clara y detallada si el código cumple, excede o no cumple los requisitos esperados en ese criterio.
+         - Indica la calificación parcial (entre 0.0 y 5.0) correspondiente a ese criterio, siguiendo el esquema de la rúbrica.
+
     4. **Calcular** la calificación final.  
-       - Una vez hayas asignado la calificación parcial para cada criterio, promedia esas calificaciones para obtener la calificación final, también en el rango de 0.0 a 5.0.  
+       - Una vez hayas asignado la calificación parcial para **todos los criterios**, promedia esas calificaciones para obtener la calificación final, también en el rango de 0.0 a 5.0.  
        - Muestra el resultado con la frase:  
          **“Su calificacion final es: [X]”**  
          donde **[X]** es la nota final que consideres adecuada.  
-    5. **Formato de respuesta esperado**:
-    
+
+    5. **IMPORTANTE**: **Formato de respuesta esperado**:
+   
     \`\`\`
-    Retroalimentación para el Ítem 1:
-     - [Observaciones / Justificación detallada]
-    Su calificacion parcial es: [X] [CALIFICACIÓN ENTRE 0.0 Y 5.0]
+    Retroalimentación para el criterio 1:
+     - [Observaciones : Justificación detallada del por que de la calificaciòn del criterio]
+    **Su calificacion parcial es: [X] [CALIFICACIÓN ENTRE 0.0 Y 5.0]**
     
-    Retroalimentación para el Ítem 2:
+    Retroalimentación para el criterio 2:
      - [Observaciones / Justificación detallada]
-    Su calificacion parcial es: [X] [CALIFICACIÓN ENTRE 0.0 Y 5.0]
+    **Su calificacion parcial es: [X] [CALIFICACIÓN ENTRE 0.0 Y 5.0]**
     
     [...]
     
-    Su calificacion final es: [CALIFICACIÓN ENTRE 0.0 Y 5.0]
+    **Su calificacion final es: [CALIFICACIÓN ENTRE 0.0 Y 5.0]**
     \`\`\`
     
-    > Asegúrate de **incluir** la retroalimentación para **cada** ítem de la rúbrica que tengas disponible, usando la misma estructura.  
+    > Asegúrate de **incluir** la retroalimentación para **cada uno de todos los criterios** que tengas disponibles en la rúbrica , usando la misma estructura para todos los criterios.  
     > Finalmente, no olvides **colocar** la frase  
-    > “Su calificacion final es: [X] [CALIFICACIÓN ENTRE 0.0 Y 5.0]”  al terminar toda la evaluación.
+    > **Su calificacion final es: [X] [CALIFICACIÓN ENTRE 0.0 Y 5.0]** al terminar toda la evaluación.
   `);
   const [assistantTemperature, setAssistantTemperature] = useState("0.01");
   const [assistantTopP, setAssistantTopP] = useState("1.0");
@@ -144,7 +150,7 @@ const DragAndDropForm = () => {
 
   return (
     <div className="h-screen bg-[#F2F2F2] flex flex-col mt-8 items-center">
-      <div className="w-[30vw] min-w-[350px] sm:min-w-[600px] bg-white p-8 sm:p-16 rounded-[2%] shadow-md">
+      <div className="w-[30vw] min-w-[350px] sm:min-w-[500px] bg-white p-8  rounded-[2%] shadow-md">
         <h2 className="text-[#424AB5] text-center font-bold mb-4 text-3xl [font-feature-settings:'liga'_off,'clig'_off]">
           Crea tu asistente inteligente
           <br />
@@ -168,7 +174,11 @@ const DragAndDropForm = () => {
                          placeholder:text-[13px] placeholder:text-[#B6B7CD]"
             >
               {activityOptions.map((option) => (
-                <option key={option.value} value={option.value}>
+                <option 
+                key={option.value} 
+                value={option.value}
+                className="bg-white h-6 py-2 px-4"
+                >
                   {option.label}
                 </option>
               ))}
@@ -237,8 +247,7 @@ const DragAndDropForm = () => {
           <div className="mt-8 sm:px-8 w-full flex justify-center">
             <button
               onClick={handleSubmit}
-              className="w-2/4 bg-[#FF00B1] text-white py-4 px-1 rounded-[20px]
-                        font-semibold hover:bg-pink-700 transition-colors"
+              className="w-2/4 mt-4 px-4 py-2 bg-[var(--color-primary)] mx-auto justify-self-center text-white rounded hover:bg-[var(--color-pink-400)] disabled:cursor-not-allowed disabled:opacity-50"
             >
               Crear asistente
             </button>
